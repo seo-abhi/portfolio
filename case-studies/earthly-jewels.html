@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Earthly Jewels SEO Case Study | Abhi Patel</title>
+<meta content="Earthly Jewels SEO case study by Abhi Patel, with 142% organic click growth, 143% impression growth, and average position improving from 14.8 to 9.5." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Growing Organic Clicks by 142% Through End-to-End SEO",
+    "about": "SEO case study for Earthly Jewels",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="Earthly Jewels SEO Case Study | Abhi Patel" property="og:title"/><meta content="Earthly Jewels SEO case study by Abhi Patel, with 142% organic click growth, 143% impression growth, and average position improving from 14.8 to 9.5." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Earthly Jewels SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="Earthly Jewels SEO case study by Abhi Patel, with 142% organic click growth, 143% impression growth, and average position improving from 14.8 to 9.5." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a aria-current="page" href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>Earthly Jewels</span>
+</nav>
+<div class="eyebrow">SEO Case Study / Earthly Jewels</div>
+<h1>Earthly Jewels SEO Case Study</h1>
+<div class="hero-subtitle">Growing Organic Clicks by 142% Through End-to-End SEO</div>
+<div class="hero-copy">
+<p>Earthly Jewels is a direct-to-consumer lab-grown diamond jewellery brand operating in a highly competitive search market.</p><p>When I started working on the project, the website already had organic visibility, but much of its SEO potential was being left untapped. Several pages were ranking around page two, while weak keyword targeting, thin collection and product content, limited internal linking, technical performance issues, and an inconsistent off-page strategy were preventing stronger growth.</p><p>Over the next eight months, I led the SEO project end to end, covering strategy, execution, audits, reporting, team coordination, and ongoing optimization.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot">
+<div class="container">
+<div class="snapshot-top">
+<div>
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">Eight months of end-to-end ecommerce SEO ownership.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">Lab-Grown Diamond Jewellery / E-commerce</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Platform</span>
+<div class="meta-value">Shopify</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Project Duration</span>
+<div class="meta-value">8 Months</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role</span>
+<div class="meta-value">SEO Lead</div>
+</div>
+</div>
+</div>
+<div aria-label="Key SEO results" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">Organic Click Growth</div>
+<div>
+<div class="kpi-value">+142%</div>
+<div class="kpi-detail">23.1K → 55.9K clicks</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Search Impressions</div>
+<div>
+<div class="kpi-value">+143%</div>
+<div class="kpi-detail">2.18M → 5.3M impressions</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Average Position</div>
+<div>
+<div class="kpi-value">14.8 → 9.5</div>
+<div class="kpi-detail">Improvement: 5.3 positions</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">AI Mentions</div>
+<div>
+<div class="kpi-value">28</div>
+<div class="kpi-detail">Semrush third-party AI visibility</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">AI Citations</div>
+<div>
+<div class="kpi-value">764</div>
+<div class="kpi-detail">Semrush third-party AI visibility</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Cited Pages</div>
+<div>
+<div class="kpi-value">399</div>
+<div class="kpi-detail">Semrush third-party AI visibility</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-a-complete-seo-audit">SEO Audit</a></li>
+<li><a href="#building-the-keyword-strategy">Keyword Strategy</a></li>
+<li><a href="#strengthening-collection-pages">Collection SEO</a></li>
+<li><a href="#improving-product-page-seo">Product SEO</a></li>
+<li><a href="#transforming-the-blog-strategy">Content Strategy</a></li>
+<li><a href="#building-a-strong-internal-linking-structure">Internal Linking</a></li>
+<li><a href="#improving-technical-seo">Technical SEO</a></li>
+<li><a href="#improving-off-page-seo">Off-Page SEO</a></li>
+<li><a href="#improving-local-seo">Local SEO</a></li>
+<li><a href="#preparing-earthly-jewels-for-ai-search">AI Search</a></li>
+<li><a href="#overall-seo-results">Overall Results</a></li>
+<li><a href="#keyword-growth-example">Keyword Growth</a></li>
+<li><a href="#collection-page-growth">Collection Growth</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>Earthly Jewels was not starting from zero.
+The website already had organic visibility, regular content publishing, an established social presence, and a growing product catalogue.
+The problem was that SEO was not yet working as one connected system.
+Keyword research was limited, and pages were often created or updated without clear search intent. Several collection pages contained very little useful search-focused content, while many product descriptions followed similar patterns.
+Blogs were being published two to three times per week, but topic selection was not consistently driven by keyword opportunity or commercial relevance.
+Internal linking was extremely limited, technical and mobile-performance issues remained, some important pages were struggling with indexing, and the backlink profile contained a mixture of useful links and low-quality placements.
+The challenge therefore was not simply to publish more content or build more backlinks.
+Earthly Jewels needed a more structured SEO strategy connecting:</p>
+<div class="flow-statement">Keywords → Content → Commercial Pages → Internal Linking → Technical SEO → Authority → Performance</div>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>My audit identified opportunities across almost every major part of the website.</p>
+<h3>Technical SEO</h3>
+<p>The main technical concerns included:</p>
+<ul>
+<li>Mobile Core Web Vitals and page-speed issues</li>
+<li>Product and blog pages appearing under Crawled – currently not indexed</li>
+<li>Pages appearing under Discovered – currently not indexed</li>
+<li>Limited structured data beyond Shopify defaults</li>
+<li>Heading hierarchy issues</li>
+<li>Sitemap and robots.txt areas requiring review</li>
+<li>Favicon visibility problems</li>
+<li>Important updated pages requiring better indexing support</li>
+</ul>
+<p>Several indexing problems were also connected to page quality rather than being purely technical.</p>
+<hr/>
+<h3>On-Page SEO</h3>
+<p>The website lacked a consistent page-level optimization process.
+Common issues included:</p>
+<ul>
+<li>Weak keyword targeting</li>
+<li>Thin collection content</li>
+<li>Similar product descriptions</li>
+<li>Generic meta titles and descriptions</li>
+<li>Inconsistent heading hierarchy</li>
+<li>URLs that were not always optimized</li>
+<li>Limited image alt-text optimization</li>
+<li>Very little internal linking</li>
+<li>Weak differentiation between similar products</li>
+</ul>
+<p>This made it harder for search engines to clearly understand which pages should rank for which searches.</p>
+<hr/>
+<h3>Content</h3>
+<p>Earthly Jewels was already publishing approximately two to three blogs per week.
+The publishing frequency was not the problem.
+The missing element was strategy.
+Many topics were not selected through strong keyword research and did not effectively support important collections or product categories.
+The website did not simply need more articles.
+It needed <strong>content with a clear SEO and business purpose.</strong></p>
+<hr/>
+<h3>Off-Page SEO</h3>
+<p>Earthly Jewels already had backlinks, including some naturally earned links.
+However, backlink quality was inconsistent.
+The profile also included links from low-quality and PBN-style websites, and anchor-text planning was limited. Many links simply used the homepage URL rather than a more deliberate contextual strategy.
+The objective was therefore not just to build more backlinks.
+It was to create a cleaner and more relevant off-page profile.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="my-role"><h2 class="section-title">My Role</h2>
+<p>I led SEO strategy and execution for Earthly Jewels.
+My responsibilities included:</p>
+<ul>
+<li>SEO strategy and prioritization</li>
+<li>On-page SEO audits</li>
+<li>Technical SEO audits</li>
+<li>Keyword research</li>
+<li>Keyword mapping</li>
+<li>Competitor research</li>
+<li>Collection-page SEO</li>
+<li>Product-page SEO</li>
+<li>Blog strategy</li>
+<li>Content planning</li>
+<li>Internal linking</li>
+<li>Backlink strategy</li>
+<li>Local SEO</li>
+<li>AI search optimization</li>
+<li>Performance reporting</li>
+<li>Team coordination</li>
+<li>SEO approvals</li>
+</ul>
+<p>I worked alongside a Shopify developer, a junior SEO/content executive, and a designer.
+I owned the SEO project from strategy through execution, coordination, monitoring, and ongoing optimization.</p>
+<hr/>
+</section>
+<section class="case-section" id="starting-with-a-complete-seo-audit"><h2 class="section-title">Starting With a Complete SEO Audit</h2>
+<p>Before making large changes, I first wanted to understand where the strongest opportunities actually existed.
+I performed an on-page and technical audit using Screaming Frog, then combined that with competitor and backlink research using Semrush and Ubersuggest.
+Google Search Console and Google Analytics were used to understand:</p>
+<ul>
+<li>Existing clicks</li>
+<li>Existing impressions</li>
+<li>Ranking queries</li>
+<li>Page-level performance</li>
+<li>Indexing issues</li>
+<li>Pages already showing search potential</li>
+</ul>
+<p>The audit highlighted several major priorities:</p>
+<ul>
+<li>Weak keyword targeting</li>
+<li>Poor heading hierarchy</li>
+<li>Limited internal linking</li>
+<li>Thin collection and product content</li>
+<li>Weak blog-topic selection</li>
+<li>Mobile performance problems</li>
+<li>Low-quality backlinks</li>
+<li>Indexing issues</li>
+<li>Limited structured data</li>
+</ul>
+<p>Instead of changing everything at once, I prioritized the areas most likely to improve organic visibility.</p>
+<hr/>
+</section>
+<section class="case-section" id="building-the-keyword-strategy"><h2 class="section-title">Building the Keyword Strategy</h2>
+<p>Earthly Jewels previously did not have a structured keyword-research process.
+I started with one of the most useful data sources available:
+<strong>Queries the website was already receiving impressions and clicks for in Google Search Console.</strong>
+From there, I combined:</p>
+<ul>
+<li>Google Search Console data</li>
+<li>Search volume</li>
+<li>Keyword competition</li>
+<li>Search intent</li>
+<li>Competitor rankings</li>
+<li>Product relevance</li>
+<li>Collection relevance</li>
+</ul>
+<p>Competitor research included jewellery brands such as:</p>
+<ul>
+<li>Jewelbox</li>
+<li>Limelight Diamonds</li>
+<li>Emori</li>
+<li>House of Quadri</li>
+<li>Carat Bazaar</li>
+<li>Fiona Diamonds</li>
+</ul>
+<p>The objective was to identify where Earthly Jewels already had momentum and where new opportunities existed.</p>
+<hr/>
+</section>
+<section class="case-section" id="mapping-keywords-across-the-website"><h2 class="section-title">Mapping Keywords Across the Website</h2>
+<p>The jewellery catalogue contained many products with similar designs.
+That created a natural risk of multiple pages targeting the same searches.
+Instead of assigning identical keywords across similar products, I mapped different primary, secondary, and long-tail keyword variations to relevant pages.
+The keyword framework then guided:</p>
+<ul>
+<li>Collection content</li>
+<li>Product descriptions</li>
+<li>Metadata</li>
+<li>Headings</li>
+<li>Blog topics</li>
+<li>Internal links</li>
+<li>Future content planning</li>
+</ul>
+<p>This helped reduce unnecessary keyword cannibalization while expanding the number of relevant searches the website could target.</p>
+<hr/>
+</section>
+<section class="case-section" id="strengthening-collection-pages"><h2 class="section-title">Strengthening Collection Pages</h2>
+<p>Collection pages became one of the biggest priorities.
+Many originally functioned primarily as product grids with little meaningful SEO content.
+For important collections, I worked on:</p>
+<ul>
+<li>Keyword-focused collection content</li>
+<li>H1, H2, and H3 structure</li>
+<li>Meta titles</li>
+<li>Meta descriptions</li>
+<li>Structured data</li>
+<li>Internal linking</li>
+<li>Supporting blog content</li>
+<li>Crawl paths</li>
+<li>Indexing of selected updated URLs</li>
+</ul>
+<p>Competitor analysis had shown that strong jewellery websites treated collection pages as commercial search landing pages rather than simply catalogue listings.
+Earthly Jewels began following the same principle while building each collection around its own keyword opportunity.
+The current lab-grown diamond rings collection, for example, now combines a substantial product catalogue with explanatory content, buying context, brand reasons, and FAQs rather than existing only as a product grid.</p>
+<hr/>
+</section>
+<section class="case-section" id="improving-product-page-seo"><h2 class="section-title">Improving Product Page SEO</h2>
+<p>Product pages required a more granular approach.
+Many jewellery designs naturally shared similar characteristics, which made page differentiation important.
+I worked on:</p>
+<ul>
+<li>Product titles</li>
+<li>H1 optimization</li>
+<li>Product descriptions</li>
+<li>Keyword targeting</li>
+<li>Image alt text</li>
+<li>Meta titles</li>
+<li>Meta descriptions</li>
+<li>Internal linking</li>
+<li>Structured data</li>
+<li>Content quality</li>
+</ul>
+<p>Different keyword variations were assigned across similar products to reduce overlap and expand the catalogue's search footprint.
+This allowed collection pages to focus on broader commercial terms while individual products targeted more specific searches.</p>
+<hr/>
+</section>
+<section class="case-section" id="transforming-the-blog-strategy"><h2 class="section-title">Transforming the Blog Strategy</h2>
+<p>Earthly Jewels was already publishing regularly.
+I changed the focus from publishing frequency toward search opportunity.
+Blog planning began using:</p>
+<ul>
+<li>Google Search Console data</li>
+<li>Keyword clusters</li>
+<li>Competitor performance</li>
+<li>Search intent</li>
+<li>Commercial-page opportunities</li>
+<li>Existing impressions</li>
+<li>Content relevance</li>
+</ul>
+<p>During the project:
+<strong>40 new blogs were published</strong>
+and
+<strong>25 existing blogs were updated</strong></p>
+<hr/>
+</section>
+<section class="case-section" id="updating-existing-content"><h2 class="section-title">Updating Existing Content</h2>
+<p>I did not automatically rewrite every existing article.
+Older blogs were evaluated according to their existing search potential.
+Blogs already receiving impressions were often prioritized because Google was already testing those pages in search.
+Updates focused on:</p>
+<ul>
+<li>Better keyword targeting</li>
+<li>Improved content quality</li>
+<li>Stronger headings</li>
+<li>Internal links</li>
+<li>Relevant commercial connections</li>
+<li>Better search intent alignment</li>
+</ul>
+<p>This allowed existing pages with momentum to become stronger assets rather than always creating another URL.</p>
+<hr/>
+</section>
+<section class="case-section" id="building-content-around-commercial-pages"><h2 class="section-title">Building Content Around Commercial Pages</h2><p>New content included:</p><ul><li>Informational articles</li><li>Collection-focused topics</li><li>Trend-based content</li><li>Commercial list posts</li><li>Product-supporting content</li></ul><p>Every article needed a purpose beyond generating traffic.</p><p>Where relevant, blogs connected users and search engines toward:</p><div aria-label="Blog to commercial page flow" class="horizontal-flow"><span>Relevant Niche Blogs</span><span aria-hidden="true" class="flow-arrow">→</span><span>Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Products</span><span aria-hidden="true" class="flow-arrow">→</span><span>Homepage</span><span aria-hidden="true" class="flow-arrow">→</span><span>Other Important Pages</span></div><p>Some of the strongest growth during the project came from combining:</p><div class="flow-statement">Content Quality + Keyword Targeting + Internal Linking</div><hr/></section>
+<section class="case-section" id="building-a-strong-internal-linking-structure">
+<h2 class="section-title">Building a Strong Internal Linking Structure</h2>
+<p>Internal linking had been one of the most underused SEO opportunities on the website.</p>
+<p>I developed a clearer linking model.</p>
+<div class="link-flow-grid">
+<div class="link-flow-card">
+<h4>Product Pages</h4>
+<div aria-label="Product Pages internal linking flow" class="link-flow-steps">
+<span>Collections</span>
+<span aria-hidden="true" class="flow-arrow">→</span>
+<span>Homepage</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Homepage</h4>
+<div aria-label="Homepage internal linking flow" class="link-flow-steps">
+<span>Important Collections</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Collection Pages</h4>
+<div aria-label="Collection Pages internal linking flow" class="link-flow-steps">
+<span>Related Collections</span>
+<span aria-hidden="true" class="flow-arrow">→</span>
+<span>Homepage</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Blogs</h4>
+<div aria-label="Blogs internal linking flow" class="link-flow-steps">
+<span>Relevant Niche Blogs</span>
+<span aria-hidden="true" class="flow-arrow">→</span>
+<span>Collections</span>
+<span aria-hidden="true" class="flow-arrow">→</span>
+<span>Products</span>
+<span aria-hidden="true" class="flow-arrow">→</span>
+<span>Homepage</span>
+</div>
+</div>
+</div>
+<p>Relevant contextual anchor text was used where it naturally fit instead of relying only on generic phrases.</p>
+<p>This helped search engines discover deeper pages while also strengthening relationships between informational and commercial content.</p>
+<hr/>
+</section>
+<section class="case-section" id="improving-technical-seo"><h2 class="section-title">Improving Technical SEO</h2><p>Technical SEO focused on improving discoverability, page understanding, performance, and user experience.</p><p>Key improvements included:</p><ul><li>Relevant structured data implementation</li><li>Heading hierarchy fixes</li><li>Mobile page-speed improvements</li><li>Core Web Vitals improvements</li><li>Favicon visibility fixes</li><li>Sitemap reviews</li><li>Robots.txt reviews</li><li>Structured data validation</li><li>Indexing improvements</li><li>Manual indexing of selected important URLs</li></ul><p>One of the more difficult issues involved product and blog pages appearing as:</p><ul class="status-list"><li><strong>Crawled – currently not indexed</strong></li><li><strong>Discovered – currently not indexed</strong></li></ul><p>Rather than treating these only as Search Console errors, I improved the underlying pages.</p><p>The strategy included:</p><ul><li>Better content</li><li>Stronger keyword relevance</li><li>More internal links</li><li>Clearer page relationships</li><li>Better technical signals</li><li>Manual indexing where appropriate</li></ul><p>Mobile performance also required substantial coordination and research with the Shopify development team.</p><hr/></section>
+<section class="case-section" id="improving-indexing"><h2 class="section-title">Improving Indexing</h2><p>Indexing improvement became a combination of technical SEO and page quality.</p><p>Instead of repeatedly submitting weak pages to Google, I worked on making the pages more useful and easier to discover first.</p><p>That meant:</p><div aria-label="Indexing improvement process" class="horizontal-flow"><span>Improve Content</span><span aria-hidden="true" class="flow-arrow">→</span><span>Strengthen Internal Links</span><span aria-hidden="true" class="flow-arrow">→</span><span>Clarify Keyword Relevance</span><span aria-hidden="true" class="flow-arrow">→</span><span>Fix Technical Signals</span><span aria-hidden="true" class="flow-arrow">→</span><span>Submit Important Updated URLs</span></div><p>This reinforced one of the broader lessons from the project:</p><p><strong>Some indexing problems that look technical are actually content and internal-linking problems underneath.</strong></p><hr/></section>
+<section class="case-section" id="improving-off-page-seo"><h2 class="section-title">Improving Off-Page SEO</h2>
+<p>Earthly Jewels already had an existing backlink profile, but the quality was inconsistent.
+I audited the profile and reviewed questionable domains, including low-quality and PBN-style placements.
+The objective was to improve the profile rather than simply increase its size.
+During the project, I also built approximately:</p>
+<h3>20 New Backlinks</h3>
+<p>primarily through relevant guest-post opportunities.
+Anchor-text selection became more deliberate instead of repeatedly relying on the homepage URL.
+The broader goal was:</p>
+<div class="flow-statement">Better Relevance → Better Placements → Cleaner Authority Signals</div>
+<hr/>
+</section>
+<section class="case-section" id="improving-local-seo"><h2 class="section-title">Improving Local SEO</h2><p>Earthly Jewels also had a physical local presence in Mumbai.</p><p>Its Google Business Profile existed but was not being maintained consistently.</p><p>I introduced regular profile updates and supported local search visibility with Mumbai-focused content.</p><p>Over time, Earthly Jewels began appearing for locally relevant searches including:</p><ul class="keyword-list compact-keyword-list"><li><strong>Lab Grown Diamond Jewellery Shop in Mumbai</strong></li><li><strong>Lab Grown Diamond Jewellery Shop in Andheri Mumbai</strong></li></ul><p>This connected the ecommerce brand with users searching for high-intent local jewellery options.</p><p>The live site currently lists its Andheri West, Mumbai location and includes a Store Locator, reinforcing that online + local relationship.</p><hr/></section>
+<section class="case-section case-section--proof" id="preparing-earthly-jewels-for-ai-search"><h2 class="section-title">Preparing Earthly Jewels for AI Search</h2>
+<p>The SEO strategy also expanded beyond traditional search results.
+I worked on making Earthly Jewels content easier for AI-driven systems to interpret and reference.
+This included:</p>
+<ul>
+<li>Relevant structured data</li>
+<li>FAQ sections</li>
+<li>Clearer content sections</li>
+<li>More informative content</li>
+<li>Better brand mentions</li>
+<li>Citations</li>
+<li>Stronger relationships between topics and pages</li>
+</ul>
+<p>According to Semrush AI visibility reporting, Earthly Jewels later recorded:
+<strong>28 AI mentions</strong>
+<strong>764 AI citations</strong>
+<strong>399 cited pages</strong>
+These are third-party AI visibility figures rather than Google Search Console measurements.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Semrush AI Visibility overview for earthlyjewels.co showing 28 mentions, 764 citations, and 399 cited pages." decoding="async" height="765" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/earthly-jewels/01-semrush-ai-visibility-third-party-ai-citation-and-brand-mention-reporting.webp" width="1588"/>
+</div>
+<figcaption>Semrush AI Visibility, third-party AI citation and brand-mention reporting</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="overall-seo-results"><h2 class="section-title">Overall SEO Results</h2>
+<p>Comparing the latest seven-month period with the previous seven months in Google Search Console:</p>
+<h3>Organic Clicks</h3>
+<p><strong>23.1K → 55.9K</strong>
+Increase: <strong>+32.8K clicks</strong>
+Growth: <strong>+142%</strong>
+Organic clicks grew to approximately <strong>2.4×</strong> the previous level.</p>
+<hr/>
+<h3>Search Impressions</h3>
+<p><strong>2.18M → 5.3M</strong>
+Increase: <strong>+3.12 million impressions</strong>
+Growth: <strong>+143%</strong>
+Search visibility grew to approximately <strong>2.4×</strong> the previous level.</p>
+<hr/>
+<h3>Average Position</h3>
+<p><strong>14.8 → 9.5</strong>
+Improvement: <strong>5.3 positions</strong>
+At a site-wide level, average search position moved from page-two territory into page-one territory.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console comparison for Earthly Jewels showing 55.9K clicks versus 23.1K, 5.3M impressions versus 2.18M, 1.1 percent CTR in both periods, and average position 9.5 versus 14.8." decoding="async" height="733" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/earthly-jewels/02-google-search-console-latest-7-months-vs-previous-7-months.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, latest 7 months vs previous 7 months</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="keyword-growth-example"><h2 class="section-title">Keyword Growth Example</h2>
+<p>One of the strongest commercial keywords was:</p>
+<h3>“lab grown diamond rings”</h3>
+<h4>Clicks</h4>
+<p><strong>1,109 → 3,228</strong></p>
+<h4>Impressions</h4>
+<p><strong>30,239 → 63,060</strong></p>
+<h4>Average Position</h4>
+<p><strong>12 → 6.1</strong>
+The keyword moved from page-two territory into a much stronger page-one position while clicks nearly tripled.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console comparison for the query "lab grown diamond rings", showing 3,228 clicks versus 1,109, 63,060 impressions versus 30,239, 5.1 percent CTR versus 3.7 percent, and average position 6.1 versus 12.' decoding="async" height="729" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/earthly-jewels/03-google-search-console-lab-grown-diamond-rings-query-comparison.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, "lab grown diamond rings" query comparison</figcaption>
+</figure>
+The corresponding collection remains a major commercial page on the live website and contains extensive products, explanatory SEO content and FAQs.
+
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="collection-page-growth"><h2 class="section-title">Collection Page Growth</h2>
+<p>One of the strongest commercial-page examples was the:</p>
+<h3>Lab Grown Diamond Rings Collection</h3>
+<h4>Before</h4>
+<p><strong>3,136 clicks</strong>
+<strong>189,772 impressions</strong>
+<strong>11.3 average position</strong></p>
+<h4>After</h4>
+<p><strong>20,746 clicks</strong>
+<strong>1,562,909 impressions</strong>
+<strong>8.9 average position</strong></p>
+<h4>Increase</h4>
+<p><strong>+17,610 clicks</strong>
+<strong>+1,373,137 impressions</strong>
+This became one of the clearest examples of how:
+<strong>Keyword Targeting + Collection Content + Internal Linking + Ongoing Optimization</strong>
+could work together.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console comparison for the Lab Grown Diamond Rings collection showing 20,746 clicks versus 3,136, 1,562,909 impressions versus 189,772, and average position 8.9 versus 11.3." decoding="async" height="730" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/earthly-jewels/04-google-search-console-lab-grown-diamond-rings-collection.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, Lab Grown Diamond Rings collection</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section" id="new-pages-gaining-search-visibility"><h2 class="section-title">New Pages Gaining Search Visibility</h2>
+<p>Organic growth was not limited to one keyword or collection.
+Multiple pages that previously had little or no meaningful visibility began appearing for searches around:</p>
+<ul>
+<li>Marquise diamonds</li>
+<li>1 carat lab-grown diamond pricing in India</li>
+<li>Women's jewellery trends</li>
+<li>Vanki jewellery</li>
+<li>Yellow diamond men's rings</li>
+<li>Vanki ring designs</li>
+<li>Cushion-cut engagement rings</li>
+<li>Princess diamond tennis bracelets</li>
+<li>Heart-shaped solitaire necklaces</li>
+</ul>
+<p>This showed that visibility was expanding across:</p>
+<div class="flow-statement">Collections + Products + Informational Content</div>
+rather than depending on a single successful page.
+
+<hr/>
+</section>
+<section class="case-section" id="business-impact"><h2 class="section-title">Business Impact</h2>
+<p>Organic visibility was not the only area that improved.
+The SEO work also supported broader business performance.
+However, sales and conversion figures are confidential and are intentionally not included in this portfolio.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<p>The portfolio version can place direct evidence beside the claims it supports.</p>
+<h4>Overall Organic Growth</h4>
+<p><strong>GSC Screenshot</strong>
+23.1K → 55.9K clicks
+2.18M → 5.3M impressions
+14.8 → 9.5 average position</p>
+<h4>Keyword Performance</h4>
+<p><strong>GSC Screenshot</strong>
+“lab grown diamond rings”
+1,109 → 3,228 clicks
+Position 12 → 6.1</p>
+<h4>Collection Performance</h4>
+<p><strong>GSC Screenshot</strong>
+Lab Grown Diamond Rings collection
+3,136 → 20,746 clicks</p>
+<h4>Organic Traffic</h4>
+<p><strong>GA4 Screenshot</strong>
+Organic traffic trend during the project period</p>
+<h4>AI Search Visibility</h4>
+<p><strong>Semrush AI Visibility Screenshot</strong>
+Third-party AI citation and prompt visibility
+This makes the major performance claims directly verifiable instead of grouping unrelated screenshots into one gallery.</p>
+<hr/>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Analytics 4 Traffic Acquisition report filtered to Organic Search, comparing January through July 2026 with January through December 2025." decoding="async" height="735" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/earthly-jewels/05-google-analytics-4-organic-search-traffic-comparison.webp" width="1599"/>
+</div>
+<figcaption>Google Analytics 4, Organic Search traffic comparison</figcaption>
+</figure></section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Google Analytics</li>
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Screaming Frog</li>
+<li>PageSpeed Insights</li>
+<li>Google Rich Results Test</li>
+<li>Ahrefs</li>
+<li>SEO Meta in 1 Click</li>
+<li>Shopify</li>
+</ul>
+<hr/>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>One of the most difficult parts of the project was improving the website as a connected ecommerce SEO system rather than treating each problem independently.
+Collection pages needed stronger content.
+Products needed different keyword targets.
+Blogs needed better search intent.
+Internal linking needed to connect those assets.
+Indexing problems required both technical and content improvements.
+Mobile performance required developer coordination.
+The backlink profile needed quality control.
+None of these areas could create the strongest result in isolation.
+The challenge was making them support the same SEO strategy.</p>
+<hr/>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>One of the biggest lessons from Earthly Jewels was that some of the most effective SEO practices are also among the easiest to underestimate.
+Consistently improving existing content and building relevant internal links produced more value than simply publishing more pages.
+The project reinforced a principle I continue to follow:
+<strong>Classic SEO fundamentals still work when they are applied strategically, consistently, and with attention to quality.</strong>
+Technical SEO alone was not enough.
+Content alone was not enough.
+Backlinks alone were not enough.
+The strongest improvements came from making those areas reinforce each other.</p>
+<hr/>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>Earthly Jewels became a strong example of what happens when SEO stops being a collection of isolated tasks and starts working as one connected system.
+Keyword research informed the content.
+Content supported collections and products.
+Internal links connected those pages.
+Technical SEO improved accessibility and understanding.
+Backlinks and Local SEO strengthened visibility outside the website.
+Reporting showed what was working and where the next opportunity existed.
+For me, this project demonstrates the kind of responsibility I am comfortable taking on:
+<strong>Owning an SEO project end to end, identifying the biggest opportunities, coordinating the team, executing the strategy, and continuously improving it based on performance.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="streamit.html"><span class="case-pagination-label">Next Case Study</span><strong>Streamit</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a aria-current="page" href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

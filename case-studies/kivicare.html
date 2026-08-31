@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KiviCare Off-Page SEO Case Study | Abhi Patel</title>
+<meta content="KiviCare off-page SEO case study by Abhi Patel, covering backlink audits, relevance-led link building, anchor strategy, target pages, and authority signals." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Tinyfacets structured keyword architecture */
+    .keyword-architecture {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .keyword-architecture-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .keyword-architecture-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .keyword-architecture-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Search-result mini cards */
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .result-mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .result-mini-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .result-mini-card p {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    /* Screenshot placeholders, ready for future proof images */
+    .evidence-placeholder {
+      margin: 34px 0 44px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+        var(--surface);
+      text-align: center;
+    }
+
+    .evidence-placeholder .placeholder-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-placeholder .placeholder-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evidence-placeholder figcaption {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Learnings */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .learning-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 620px) {
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Final indexing-status card fix */
+    .status-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .status-list li {
+      list-style: none !important;
+      padding: 16px 18px !important;
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+    }
+
+    .status-list li::before,
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+
+  
+    /* Jewelite specific structured blocks */
+    .team-grid,
+    .schema-grid,
+    .trust-grid,
+    .keyword-architecture,
+    .result-mini-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .team-card,
+    .schema-card,
+    .trust-card,
+    .keyword-architecture-card,
+    .result-mini-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .team-card h3,
+    .schema-card h3,
+    .trust-card h3,
+    .keyword-architecture-card h3,
+    .result-mini-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .team-card p,
+    .schema-card p,
+    .trust-card p,
+    .keyword-architecture-card p,
+    .result-mini-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .learning-item {
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .metric-note {
+      margin: 18px 0 28px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e8e8e8;
+    }
+
+    .code-sample {
+      margin: 16px 0 24px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #050505;
+      color: #f0f0f0;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 620px) {
+      .team-grid,
+      .schema-grid,
+      .trust-grid,
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Tech focused-scope additions */
+    .scope-grid,
+    .page-result-grid,
+    .query-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .page-result-card,
+    .query-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .page-result-card h3,
+    .query-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .scope-card p,
+    .page-result-card p,
+    .query-card p {
+      margin: 0 0 7px;
+      font-size: 14px;
+    }
+
+    .query-card .query-name {
+      margin-bottom: 14px;
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .query-card .query-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .query-card .query-metrics span {
+      display: block;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #dcdcdc;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .landing-page-callout {
+      margin: 22px 0 30px;
+      padding: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .landing-page-callout h3 {
+      margin: 0 0 10px;
+    }
+
+    .landing-page-callout p {
+      margin: 0;
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .page-result-grid,
+      .query-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .query-card .query-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* KiviCare off-page case-study additions */
+    .quality-grid,
+    .method-grid,
+    .authority-grid,
+    .query-compare-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .quality-card,
+    .method-card,
+    .authority-card,
+    .query-compare-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .quality-card h3,
+    .method-card h3,
+    .authority-card h3,
+    .query-compare-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .quality-card p,
+    .method-card p,
+    .authority-card p,
+    .query-compare-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .authority-card .authority-value {
+      margin: 8px 0 4px;
+      color: #fff;
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .authority-card .authority-source {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-card {
+      min-height: 150px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-number {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .metric-note,
+    .policy-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .comparison-arrow {
+      display: inline-block;
+      margin: 0 7px;
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .comparison-line {
+      margin: 12px 0 0;
+      color: #e7e7e7;
+      font-weight: 800;
+    }
+
+    .context-stack {
+      display: grid;
+      gap: 8px;
+      margin: 20px 0 28px;
+    }
+
+    .context-stack span {
+      display: block;
+      padding: 13px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      color: #fff;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .context-stack .flow-arrow {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .quality-grid,
+      .method-grid,
+      .authority-grid,
+      .query-compare-grid,
+      .learning-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building a Stronger Backlink Profile for a Healthcare Software Brand",
+    "about": "Off-page SEO case study for KiviCare",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="KiviCare Off-Page SEO Case Study | Abhi Patel" property="og:title"/><meta content="KiviCare off-page SEO case study by Abhi Patel, covering backlink audits, relevance-led link building, anchor strategy, target pages, and authority signals." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="KiviCare Off-Page SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="KiviCare off-page SEO case study by Abhi Patel, covering backlink audits, relevance-led link building, anchor strategy, target pages, and authority signals." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a aria-current="page" href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>KiviCare</span>
+</nav>
+<div class="eyebrow">SEO Case Study / KiviCare</div>
+<h1>KiviCare Off-Page SEO Case Study</h1>
+<div class="hero-subtitle">Building a Stronger Backlink Profile for a Healthcare Software Brand</div>
+<div class="hero-copy">
+<p>KiviCare was different from most of my SEO projects.</p>
+<p>I was not responsible for its on-page SEO, technical SEO, or content strategy. My responsibility was focused entirely on off-page SEO.</p>
+<p>Over approximately six months, I led the backlink strategy around auditing, website selection, quality review, target-page decisions, anchor planning, competitor research, approvals, verification, and reporting.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot">
+<div class="container">
+<div class="snapshot-top">
+<div>
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">A relevance-first off-page SEO system for healthcare software.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">Healthcare Software / Clinic Management</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">SEO Scope</span>
+<div class="meta-value">Off-Page SEO</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Project Duration</span>
+<div class="meta-value">6 Months and Ongoing</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role</span>
+<div class="meta-value">SEO Lead</div>
+</div>
+</div>
+</div>
+<div aria-label="Off-page SEO progress" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">New Referring Domains</div>
+<div><div class="kpi-value">60+</div><div class="kpi-detail">Direct campaign contribution</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Monthly Link Pace</div>
+<div><div class="kpi-value">10–12</div><div class="kpi-detail">New links per month</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Ahrefs DR</div>
+<div><div class="kpi-value">61</div><div class="kpi-detail">Current authority signal</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Moz DA</div>
+<div><div class="kpi-value">20</div><div class="kpi-detail">Current authority signal</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Semrush Referring Domains</div>
+<div><div class="kpi-value">550</div><div class="kpi-detail">Current broader domain profile</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Semrush Backlinks</div>
+<div><div class="kpi-value">23.4K</div><div class="kpi-detail">Current broader domain profile</div></div>
+</article>
+</div>
+<div class="metric-note">
+          The current third-party authority and backlink-profile figures include historical, naturally acquired, campaign-generated, and other links. My direct campaign contribution during this project is approximately <strong>60+ new referring domains</strong>.
+        </div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-off-page-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-the-backlink-audit">Backlink Audit</a></li>
+<li><a href="#rebuilding-the-off-page-strategy">Strategy</a></li>
+<li><a href="#building-a-backlink-quality-framework">Quality Framework</a></li>
+<li><a href="#why-healthcare-relevance-matters">Healthcare Relevance</a></li>
+<li><a href="#link-building-methods">Link Methods</a></li>
+<li><a href="#building-60-new-referring-domains">60+ Referring Domains</a></li>
+<li><a href="#building-the-target-page-strategy">Target Pages</a></li>
+<li><a href="#building-the-anchor-text-strategy">Anchor Strategy</a></li>
+<li><a href="#using-competitor-research">Competitor Research</a></li>
+<li><a href="#building-a-repeatable-backlink-approval-workflow">Approval Workflow</a></li>
+<li><a href="#current-authority-profile">Authority Profile</a></li>
+<li><a href="#keyword-visibility-example">Keyword Visibility</a></li>
+<li><a href="#page-growth-example">Page Growth</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#tools-platforms-used">Tools</a></li>
+<li><a href="#the-most-difficult-part">Difficult Part</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>KiviCare was not starting from zero.</p>
+<p>The website already had backlinks and an established product ecosystem. The problem was that the backlink strategy behind that website was not as controlled as it needed to be.</p>
+<p>The existing profile showed issues such as:</p>
+<ul>
+<li>Limited backlink volume in areas that needed stronger support</li>
+<li>Irrelevant linking domains</li>
+<li>Low-quality backlinks</li>
+<li>Too much homepage concentration</li>
+<li>Weak authority support for deeper pages</li>
+<li>Poor anchor-text diversity</li>
+<li>Heavy dependence on branded anchors</li>
+<li>Some overused exact-match anchors</li>
+<li>An authority gap compared with competitors</li>
+</ul>
+<p>Exact historical authority and referring-domain figures were not available. For that reason, I do not create unsupported before-and-after DR, DA, or referring-domain growth claims.</p>
+<p>The challenge was not:</p>
+<div class="flow-statement">How do I get KiviCare more backlinks?</div>
+<p>It was:</p>
+<div class="flow-statement">How do I build better backlinks with stronger relevance, better context, better anchors, and smarter target-page selection?</div>
+</section>
+<section class="case-section" id="the-initial-off-page-problems"><h2 class="section-title">The Initial Off-Page Problems</h2>
+<div class="quality-grid">
+<div class="quality-card">
+<h4>Backlink Quality</h4>
+<p>Some existing links came from irrelevant, questionable, or low-quality domains. A backlink was not automatically useful simply because it existed.</p>
+</div>
+<div class="quality-card">
+<h4>Relevance</h4>
+<p>Healthcare software needs a tighter contextual relationship than a generic technology campaign. Unrelated links could add volume without adding meaningful topical support.</p>
+</div>
+<div class="quality-card">
+<h4>Anchor Text</h4>
+<p>The anchor profile relied heavily on branded anchors, homepage URLs, and repeated commercial phrases. A more natural mix was needed.</p>
+</div>
+<div class="quality-card">
+<h4>Target Pages</h4>
+<p>Too much activity was concentrated around the homepage. Relevant informational and topic-specific pages also needed authority where the context justified it.</p>
+</div>
+<div class="quality-card">
+<h4>Campaign Control</h4>
+<p>Backlinks needed a clearer review process before and after implementation rather than a volume-first approach.</p>
+</div>
+</div>
+<p>The solution required more than prospecting. It needed:</p>
+<div aria-label="KiviCare backlink workflow" class="horizontal-flow"><span>Audit</span><span aria-hidden="true" class="flow-arrow">→</span><span>Quality Review</span><span aria-hidden="true" class="flow-arrow">→</span><span>Context</span><span aria-hidden="true" class="flow-arrow">→</span><span>Target Page</span><span aria-hidden="true" class="flow-arrow">→</span><span>Anchor</span><span aria-hidden="true" class="flow-arrow">→</span><span>Approval</span><span aria-hidden="true" class="flow-arrow">→</span><span>Placement</span><span aria-hidden="true" class="flow-arrow">→</span><span>Verification</span><span aria-hidden="true" class="flow-arrow">→</span><span>Reporting</span></div></section>
+<section class="case-section case-section--structured" id="my-role"><h2 class="section-title">My Role</h2>
+<p>I lead KiviCare's off-page SEO strategy end to end.</p>
+<p>My responsibilities include:</p>
+<ul>
+<li>Backlink strategy</li>
+<li>Backlink-profile audits</li>
+<li>Identifying low-quality domains</li>
+<li>Website quality evaluation</li>
+<li>Competitor research</li>
+<li>Target-page selection</li>
+<li>Anchor-text research</li>
+<li>Link-opportunity approval</li>
+<li>SEO team coordination</li>
+<li>Final backlink verification</li>
+<li>Monthly backlink reporting</li>
+</ul>
+<p>Before a backlink is created, I review:</p>
+<ul class="keyword-list"><li>The Website</li><li>Relevance</li><li>Quality</li><li>Target Page</li><li>Anchor Text</li><li>Placement Opportunity</li></ul>
+<p>After the backlink goes live, I verify the final placement. This keeps the campaign controlled instead of treating link building as a volume exercise.</p>
+<div class="metric-note"><strong>Scope note:</strong> I was not responsible for KiviCare's on-page SEO, technical SEO, or content strategy. This case study represents my off-page SEO ownership only.</div>
+</section>
+<section class="case-section" id="starting-with-the-backlink-audit"><h2 class="section-title">Starting With the Backlink Audit</h2>
+<p>Before expanding the campaign, I first wanted to understand what already existed.</p>
+<p>The audit focused on identifying:</p>
+<ul class="keyword-list"><li>Relevant Domains</li><li>Irrelevant Domains</li><li>Low-Quality Links</li><li>Questionable Placements</li><li>Anchor Patterns</li><li>Homepage Concentration</li><li>Deep-Page Support</li><li>Overall Authority Gaps</li></ul>
+<p>This mattered because building more links on top of an inconsistent profile would not solve the underlying problem.</p>
+<div class="flow-statement">Understand the Existing Profile Before Expanding It</div>
+</section>
+<section class="case-section" id="auditing-and-cleaning-low-quality-backlinks"><h2 class="section-title">Auditing and Cleaning Low-Quality Backlinks</h2>
+<p>The audit identified links from domains that appeared irrelevant, low quality, questionable, or potentially harmful.</p>
+<p>I reviewed these domains individually rather than assuming every weak-looking backlink needed action.</p>
+<p>Selected problematic domains were identified for cleanup where appropriate.</p>
+</section>
+<section class="case-section" id="disavowing-selected-backlinks"><h2 class="section-title">Disavowing Selected Backlinks</h2>
+<p>Selected problematic domains were reviewed and, where appropriate, submitted through Google's Disavow Links tool.</p>
+<p>I do not treat disavowal as routine cleanup or assume that a low third-party metric alone makes a backlink harmful.</p>
+<p>The objective was to deal carefully with links that appeared clearly problematic while keeping the wider focus on improving the quality of the backlink profile.</p>
+<div class="flow-statement">Review the Profile Carefully, Then Expand It</div>
+</section>
+<section class="case-section" id="rebuilding-the-off-page-strategy"><h2 class="section-title">Rebuilding the Off-Page Strategy</h2>
+<p>After the audit, I defined a clearer objective:</p>
+<h3>Build authority through relevant healthcare and software websites while supporting important KiviCare pages with stronger contextual links.</h3>
+<p>The strategy focused on:</p>
+<ul>
+<li>Relevance before volume</li>
+<li>Better-quality domains</li>
+<li>Contextual placements</li>
+<li>Better anchor selection</li>
+<li>Smarter target-page selection</li>
+<li>Stronger niche relationships</li>
+<li>Consistent monthly acquisition</li>
+<li>Ongoing backlink monitoring</li>
+</ul>
+<p>A high DR or DA alone was not enough for approval. Every opportunity needed to make sense within the context of:</p>
+<ul class="keyword-list"><li>Healthcare</li><li>Software</li><li>Clinic Management</li><li>Relevant User Problems</li></ul>
+<p>KiviCare's product sits directly in these areas, covering clinic workflows, appointments, patient records, EHR, telemedicine, and practice management.</p>
+</section>
+<section class="case-section case-section--structured" id="building-a-backlink-quality-framework"><h2 class="section-title">Building a Backlink Quality Framework</h2>
+<p>Every backlink opportunity goes through a review process.</p>
+<div class="quality-grid">
+<div class="quality-card"><h4>Niche Relevance</h4><p>Is the website genuinely connected to healthcare, software, technology, business, or another closely related topic?</p></div>
+<div class="quality-card"><h4>Organic Traffic</h4><p>Does the site appear to receive real search visibility?</p></div>
+<div class="quality-card"><h4>DA / DR</h4><p>Authority metrics are supporting signals, not the only reason to approve a website.</p></div>
+<div class="quality-card"><h4>Spam Indicators</h4><p>High-risk domains are avoided.</p></div>
+<div class="quality-card"><h4>Website Quality</h4><p>I manually review the website instead of relying only on third-party scores.</p></div>
+<div class="quality-card"><h4>Indexed Pages</h4><p>Weak or unusual indexation can signal deeper quality concerns.</p></div>
+<div class="quality-card"><h4>Country Relevance</h4><p>Geographic fit is considered where useful.</p></div>
+<div class="quality-card"><h4>Outbound-Link Behaviour</h4><p>I review whether the site appears to exist mainly for selling or exchanging backlinks.</p></div>
+<div class="quality-card"><h4>Content Quality</h4><p>The surrounding page needs enough topical context for the KiviCare reference to make sense.</p></div>
+</div>
+<p>This filtering stage became one of the most important parts of the campaign.</p>
+</section>
+<section class="case-section" id="why-healthcare-relevance-matters"><h2 class="section-title">Why Healthcare Relevance Matters</h2>
+<p>Healthcare software creates a different backlink problem from a generic SaaS website.</p>
+<p>I do not always look for a page containing the exact anchor keyword. Instead, I look for content where KiviCare naturally belongs.</p>
+<p>Examples include articles discussing:</p>
+<ul class="keyword-list"><li>Healthcare Software</li><li>Clinic Management</li><li>Patient Management</li><li>Appointment Systems</li><li>Electronic Health Records</li><li>Healthcare Workflows</li></ul>
+<p>A relevant EHR article can naturally support a KiviCare healthcare resource even if the paragraph does not contain an exact-match commercial phrase.</p>
+<p>This became one of the strongest principles from the campaign:</p>
+<div class="flow-statement">The Right Context Can Matter More Than the Perfect Exact-Match Anchor</div>
+</section>
+<section class="case-section" id="link-building-methods"><h2 class="section-title">Link-Building Methods</h2>
+<p>The campaign primarily uses two approaches.</p>
+<div class="method-grid">
+<div class="method-card">
+<h4>Contextual Link Partnerships</h4>
+<p>Approximately 90% of placements came through individually reviewed partnerships. Each opportunity was evaluated for site relevance, surrounding content, target-page fit, and anchor context before implementation.</p>
+</div>
+<div class="method-card">
+<h4>Guest Posts</h4>
+<p>Approximately 10% of placements came through guest posts where a longer contextual placement made sense and the website met the campaign's quality and relevance requirements.</p>
+</div>
+</div>
+<p>The objective was contextual fit, not mechanical reciprocal linking.</p>
+</section>
+<section class="case-section" id="building-60-new-referring-domains"><h2 class="section-title">Building 60+ New Referring Domains</h2>
+<p>Over approximately six months, the SEO team built links from:</p>
+<h3>60+ New Referring Domains</h3>
+<p>at an average pace of:</p>
+<h3>10–12 New Links Per Month</h3>
+<p>The majority of placements were do-follow.</p>
+<p>The goal was not to create a sudden artificial spike in backlink activity. It was to build authority consistently while maintaining quality control.</p>
+<p>That gave the campaign a more predictable rhythm:</p>
+<div aria-label="Monthly backlink acquisition rhythm" class="horizontal-flow"><span>Research</span><span aria-hidden="true" class="flow-arrow">→</span><span>Review</span><span aria-hidden="true" class="flow-arrow">→</span><span>Approve</span><span aria-hidden="true" class="flow-arrow">→</span><span>Build</span><span aria-hidden="true" class="flow-arrow">→</span><span>Verify</span><span aria-hidden="true" class="flow-arrow">→</span><span>Repeat</span></div></section>
+<section class="case-section" id="building-the-target-page-strategy"><h2 class="section-title">Building the Target-Page Strategy</h2>
+<p>Not every backlink should point to the homepage.</p>
+<p>Most campaign links have supported:</p>
+<ul class="keyword-list"><li>KiviCare Homepage</li><li>Relevant Informational Blog Pages</li></ul>
+<p>The decision depends primarily on context.</p>
+<p>For example, if an external article discusses:</p>
+<h3>Electronic Health Records</h3>
+<p>then linking to a relevant KiviCare EHR article may be more useful than forcing a homepage link.</p>
+<p>If the context is broader clinic-management software, the homepage may make more sense.</p>
+<div class="flow-statement">Page Selection Follows Relevance</div>
+<p>This helped improve deep-page support while keeping placements more natural.</p>
+</section>
+<section class="case-section case-section--structured" id="building-the-anchor-text-strategy"><h2 class="section-title">Building the Anchor-Text Strategy</h2>
+<p>The campaign also moved away from over-reliance on branded anchors.</p>
+<h4>Anchor Examples</h4>
+<ul class="keyword-list"><li>Doctor Appointment Booking System</li><li>Appointment Booking System</li><li>Doctor Appointment Booking Plugin WordPress</li><li>Appointment Booking</li><li>Electronic Health Records</li><li>Kivi Healthcare</li></ul>
+<h4>Wider Anchor Mix</h4>
+<ul class="keyword-list"><li>Commercial Anchors</li><li>Partial-Match Anchors</li><li>Branded Variations</li><li>Generic Anchors</li><li>Contextual Anchors</li></ul>
+<p>The objective was not to force every target keyword into an anchor. It was to build a more diverse profile where the anchor made sense within the actual paragraph and linking page.</p>
+</section>
+<section class="case-section" id="selecting-keywords-for-backlinks"><h2 class="section-title">Selecting Keywords for Backlinks</h2>
+<p>Target keywords are selected using:</p>
+<ul class="keyword-list"><li>Google Search Console</li><li>Search Volume</li><li>Competitor Research</li><li>Existing Page Relevance</li></ul>
+<p>A keyword is not automatically selected just because it ranks on page two, three, or four.</p>
+<p>The first question is:</p>
+<div class="flow-statement">Does This Keyword Naturally Fit Both the Page Receiving the Backlink and the Page Providing It?</div>
+<p>This helps keep the campaign context-driven rather than purely position-driven.</p>
+</section>
+<section class="case-section" id="using-competitor-research"><h2 class="section-title">Using Competitor Research</h2>
+<p>I also reviewed backlink and search patterns from healthcare technology companies including:</p>
+<ul class="keyword-list"><li>ScienceSoft Healthcare</li><li>GeBBS Healthcare Solutions</li></ul>
+<p>Competitor analysis helped identify:</p>
+<ul>
+<li>Healthcare terminology</li>
+<li>Keyword themes</li>
+<li>Anchor ideas</li>
+<li>Content types earning backlinks</li>
+<li>Relevant authority opportunities</li>
+</ul>
+<p>The purpose was not to recreate competitor backlink profiles. It was to understand:</p>
+<div class="flow-statement">What Kinds of Topics and Pages Naturally Attract Authority in the Healthcare Technology Space?</div>
+</section>
+<section class="case-section" id="building-a-repeatable-backlink-approval-workflow"><h2 class="section-title">Building a Repeatable Backlink Approval Workflow</h2>
+<p>One of the most important improvements was turning backlink building into a repeatable process.</p>
+<div class="process-grid">
+<div class="process-card"><div class="process-number">Step 01</div><h4>Identify Potential Website</h4><p>Find a relevant healthcare, software, technology, business, or related domain.</p></div>
+<div class="process-card"><div class="process-number">Step 02</div><h4>Quality Review</h4><p>Check traffic, authority, spam indicators, indexing, content quality, and outbound-link behaviour.</p></div>
+<div class="process-card"><div class="process-number">Step 03</div><h4>Find Relevant Content</h4><p>Identify an existing page where a KiviCare reference naturally makes sense.</p></div>
+<div class="process-card"><div class="process-number">Step 04</div><h4>Select Target Page</h4><p>Choose the homepage or a relevant deep page based on context.</p></div>
+<div class="process-card"><div class="process-number">Step 05</div><h4>Select Anchor</h4><p>Use a commercial, partial-match, branded, generic, or contextual anchor that fits naturally.</p></div>
+<div class="process-card"><div class="process-number">Step 06</div><h4>Approve Placement</h4><p>Review the opportunity before implementation.</p></div>
+<div class="process-card"><div class="process-number">Step 07</div><h4>Partnership Placement</h4><p>Where a partnership is involved, identify a relevant contextual placement on both sides.</p></div>
+<div class="process-card"><div class="process-number">Step 08</div><h4>Verify the Live Link</h4><p>Review the final link, surrounding content, and destination after publishing.</p></div>
+<div class="process-card"><div class="process-number">Step 09</div><h4>Report</h4><p>Add completed backlinks to the monthly campaign report.</p></div>
+</div>
+<p>This transformed off-page SEO from individual backlink decisions into a controlled operating process.</p>
+</section>
+<section class="case-section case-section--proof" id="current-authority-profile"><h2 class="section-title">Current Authority Profile</h2>
+<p>Exact historical third-party authority metrics were not available. For that reason, I do not present unsupported percentage growth.</p>
+<p>Current third-party signals include:</p>
+<div class="authority-grid">
+<div class="authority-card">
+<div class="authority-source">Ahrefs</div>
+<div class="authority-value">61</div>
+<h4>Domain Rating</h4>
+<p>17K backlinks and 543 linking websites are shown in the supplied Ahrefs snapshot.</p>
+</div>
+<div class="authority-card">
+<div class="authority-source">Moz</div>
+<div class="authority-value">20</div>
+<h4>Domain Authority</h4>
+<p>358 linking root domains, 145 ranking keywords, and 1% Spam Score are shown in the supplied Moz snapshot.</p>
+</div>
+<div class="authority-card">
+<div class="authority-source">Semrush</div>
+<div class="authority-value">550</div>
+<h4>Referring Domains</h4>
+<p>23.4K backlinks and Authority Score 19 are shown in the supplied Semrush snapshot.</p>
+</div>
+</div>
+<p>The 550 referring domains represent KiviCare's broader current Semrush profile, including historical links, naturally acquired links, links from other campaigns, and links built during my campaign.</p>
+<p>Therefore, I do not claim that all 550 were created by my team.</p>
+<p>The direct campaign contribution is approximately:</p>
+<h3>60+ New Referring Domains</h3>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Semrush Backlink Analytics for KiviCare showing 550 referring domains, 23.4K backlinks and Authority Score 19." decoding="async" height="761" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/kivicare/01-semrush-backlink-analytics-current-kivicare-backlink-profile.webp" width="1599"/>
+</div>
+<figcaption>Semrush Backlink Analytics, current KiviCare backlink profile</figcaption>
+</figure>
+<h3>Authority Signals</h3>
+<p>Moz, Ahrefs, and Semrush maintain different backlink databases and definitions. I keep each metric clearly labeled by source rather than treating them as interchangeable.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Moz authority overview for kivicare.io showing Domain Authority 20, 358 linking root domains, 145 ranking keywords and 1 percent spam score." decoding="async" height="768" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/kivicare/02-moz-current-kivicare-authority-signals.webp" width="1599"/>
+</div>
+<figcaption>Moz, current KiviCare authority signals</figcaption>
+</figure><figure class="evidence">
+<div class="evidence-frame">
+<img alt="Ahrefs domain overview for kivicare.io showing Domain Rating 61, 17K backlinks and 543 linking websites." decoding="async" height="762" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/kivicare/03-ahrefs-current-kivicare-authority-signals.webp" width="1596"/>
+</div>
+<figcaption>Ahrefs, current KiviCare authority signals</figcaption>
+</figure></section>
+<section class="case-section" id="search-visibility-improvements"><h2 class="section-title">Search Visibility Improvements</h2>
+<p>Search performance also improved across selected queries and pages during the campaign.</p>
+<p>However, rankings can be affected by many factors:</p>
+<ul class="keyword-list"><li>Content</li><li>On-Page SEO</li><li>Technical SEO</li><li>Competition</li><li>Google Updates</li><li>User Behaviour</li><li>Backlinks</li></ul>
+<p>Because I did not own all of those areas, I do not claim that backlink activity alone caused the ranking improvements.</p>
+<p>Instead, I present them as:</p>
+<div class="flow-statement">Search Improvements Observed During and Alongside the Off-Page Campaign</div>
+</section>
+<section class="case-section case-section--proof" id="keyword-visibility-example"><h2 class="section-title">Keyword Visibility Example</h2>
+<p>One example was:</p>
+<h3>“electronic health records”</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Previous Impressions</h4><p><strong>293</strong></p></div><div class="result-mini-card"><h4>Current Impressions</h4><p><strong>1,655</strong></p></div><div class="result-mini-card"><h4>Previous Position</h4><p><strong>75.1</strong></p></div><div class="result-mini-card"><h4>Current Position</h4><p><strong>36.8</strong></p></div></div>
+<p class="comparison-line">Impressions: <strong>293</strong><span class="comparison-arrow">→</span><strong>1,655</strong></p>
+<p class="comparison-line">Average Position: <strong>75.1</strong><span class="comparison-arrow">→</span><strong>36.8</strong></p>
+<p>The query gained substantially more search visibility during the campaign.</p>
+<p>I do not describe this as backlinks moving the keyword from 75.1 to 36.8 because that would imply causation I cannot prove.</p>
+<p>Instead, it is useful evidence of search improvement occurring while the backlink strategy was being strengthened.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console comparison for the query "electronic health records" showing impressions increasing from 293 to 1,655 and average position improving from 75.1 to 36.8.' decoding="async" height="764" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/kivicare/04-google-search-console-electronic-health-records-query-comparison.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, “electronic health records” query comparison</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="page-growth-example"><h2 class="section-title">Page Growth Example</h2>
+<p>One page that showed noticeable visibility expansion was:</p>
+<h3>How Do Electronic Health Records Work?</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Previous Impressions</h4><p><strong>3,424</strong></p></div><div class="result-mini-card"><h4>Current Impressions</h4><p><strong>15,908</strong></p></div><div class="result-mini-card"><h4>Previous Position</h4><p><strong>38.6</strong></p></div><div class="result-mini-card"><h4>Current Position</h4><p><strong>37.8</strong></p></div></div>
+<p class="comparison-line">Impressions: <strong>3,424</strong><span class="comparison-arrow">→</span><strong>15,908</strong></p>
+<p class="comparison-line">Average Position: <strong>38.6</strong><span class="comparison-arrow">→</span><strong>37.8</strong></p>
+<p>The strongest story here is visibility expansion rather than a major ranking-position improvement.</p>
+<p>The article's search exposure increased substantially while average position moved only slightly.</p>
+<p>Again, this is presented as performance observed during the campaign rather than a result caused exclusively by backlinks.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console comparison for the How Do Electronic Health Records Work article showing impressions increasing from 3,424 to 15,908 and average position moving from 38.6 to 37.8." decoding="async" height="758" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/kivicare/05-google-search-console-ehr-article-performance.webp" width="1596"/>
+</div>
+<figcaption>Google Search Console, EHR article performance</figcaption>
+</figure></section>
+<section class="case-section" id="improving-link-quality-not-just-link-count"><h2 class="section-title">Improving Link Quality, Not Just Link Count</h2>
+<p>The greatest improvement in this project is broader than one keyword or authority metric.</p>
+<p>The backlink process became more intentional.</p>
+<p>Compared with the starting approach, the campaign now has:</p>
+<ul>
+<li>More relevant referring domains</li>
+<li>Better website-quality checks</li>
+<li>Stronger niche relevance</li>
+<li>More thoughtful anchor selection</li>
+<li>Better contextual placements</li>
+<li>Improved deep-page support</li>
+<li>A repeatable approval workflow</li>
+<li>Final placement verification</li>
+<li>Ongoing backlink-profile monitoring</li>
+</ul>
+<div class="flow-statement">Authority Building Became a Process, Not a Backlink Count</div>
+<p>That is the biggest operational change behind the campaign.</p>
+</section>
+<section class="case-section" id="business-impact"><h2 class="section-title">Business Impact</h2>
+<p>Lead and sales performance also improved during the wider project period.</p>
+<p>However, commercial metrics are confidential and are intentionally excluded from this portfolio.</p>
+<p>I also do not claim that backlink activity alone caused those business improvements.</p>
+</section>
+<section class="case-section" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<p>The strongest proof is placed directly beside the relevant claims throughout the case study. This section acts as a compact evidence recap instead of repeating every screenshot.</p>
+<div class="proof-list">
+<div class="proof-item"><strong>Campaign Contribution</strong>60+ new referring domains built at approximately 10–12 new links per month.</div>
+<div class="proof-item"><strong>Current Semrush Profile</strong>550 referring domains · 23.4K backlinks · Authority Score 19.</div>
+<div class="proof-item"><strong>Authority Signals</strong>Ahrefs DR 61 · Moz DA 20.</div>
+<div class="proof-item"><strong>Keyword Visibility</strong>“electronic health records” impressions 293 → 1,655 · average position 75.1 → 36.8.</div>
+<div class="proof-item"><strong>EHR Article Visibility</strong>How Do Electronic Health Records Work? impressions 3,424 → 15,908 · average position 38.6 → 37.8.</div>
+</div>
+<p>The third-party authority metrics describe the current broader domain profile. They are not presented as before-and-after campaign growth metrics because historical snapshots were not available.</p>
+</section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Semrush</li>
+<li>Ahrefs</li>
+<li>Moz</li>
+<li>Ubersuggest</li>
+</ul>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The hardest part of the campaign was not finding websites willing to provide backlinks.</p>
+<p>It was finding:</p>
+<h3>The Right Contextual Opportunity Inside Those Websites</h3>
+<p>A domain can have good traffic, strong DR, strong DA, and good overall metrics and still be a poor backlink opportunity.</p>
+<p>If its content has no real relationship to healthcare software, clinic management, patient workflows, or another relevant topic, forcing a KiviCare backlink into the page can weaken the quality of the placement.</p>
+<div aria-label="Contextual backlink decision flow" class="context-stack">
+<span>The Right Website</span>
+<span class="flow-arrow">↓</span>
+<span>The Right Article</span>
+<span class="flow-arrow">↓</span>
+<span>The Right Paragraph</span>
+<span class="flow-arrow">↓</span>
+<span>The Right KiviCare Page</span>
+<span class="flow-arrow">↓</span>
+<span>The Right Anchor</span>
+</div>
+<p>That became the core of my off-page decision-making process.</p>
+</section>
+<section class="case-section" id="what-worked-particularly-well"><h2 class="section-title">What Worked Particularly Well</h2>
+<p>One strategy that worked well was improving the context around a backlink where a page was already genuinely relevant.</p>
+<p>Instead of forcing KiviCare into a sentence where the reference did not naturally belong, the surrounding article could be expanded with a small amount of useful supporting information.</p>
+<p>That made the KiviCare reference more logical for:</p>
+<ul class="keyword-list"><li>The Reader</li><li>The Linking Page</li><li>The Target Page</li><li>The Overall Topic</li></ul>
+<div class="flow-statement">Backlink Relevance Should Come From the Meaning of the Surrounding Content, Not Only From the Anchor Text</div>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>KiviCare changed how I think about link building.</p>
+<p>Earlier, it was easy to spend too much attention on questions such as:</p>
+<div class="flow-statement">What Is the Perfect Anchor Keyword?</div>
+<p>This project reinforced that the more important question is:</p>
+<div class="flow-statement">Is the Page Linking to Us Actually Relevant to What KiviCare and the Target Page Are About?</div>
+<div class="learning-grid">
+<div class="learning-item">Context can be more important than forcing an exact-match commercial anchor.</div>
+<div class="learning-item">Third-party authority metrics are useful filters, not substitutes for manual site review.</div>
+<div class="learning-item">Deep-page support can make a backlink profile more useful than concentrating everything on the homepage.</div>
+<div class="learning-item">A repeatable review and verification process matters as much as prospecting.</div>
+</div>
+<p>The project also reinforced that authority building should be evaluated as a relevance-first process rather than a simple backlink-volume target.</p>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>KiviCare is an important project in my portfolio because it demonstrates a different type of SEO ownership.</p>
+<p>I did not manage:</p>
+<div class="flow-statement">The Entire Website SEO</div>
+<p>I managed:</p>
+<h3>The Off-Page SEO Strategy</h3>
+<p>That meant taking responsibility for:</p>
+<ul>
+<li>Auditing the existing backlink profile</li>
+<li>Identifying low-quality domains</li>
+<li>Reviewing selected problematic backlinks carefully</li>
+<li>Building a quality-review framework</li>
+<li>Researching anchors</li>
+<li>Selecting target pages</li>
+<li>Approving backlink websites</li>
+<li>Coordinating the SEO team</li>
+<li>Verifying placements</li>
+<li>Monitoring the profile</li>
+<li>Reporting progress</li>
+</ul>
+<p>Over approximately six months, that process contributed directly to building:</p>
+<h3>60+ New Referring Domains</h3>
+<p>at a controlled pace of approximately:</p>
+<h3>10–12 Links Per Month</h3>
+<p>while making relevance, context, anchor diversity, and target-page selection central to the campaign.</p>
+<p><strong>For me, this project demonstrates that I can take ownership of an off-page SEO campaign end to end, turn backlink building into a structured quality-control process, coordinate execution, and build authority around relevance rather than volume.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="iqonic-tech.html"><span class="case-pagination-label">Previous Case Study</span><strong>IQONIC Tech</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="iqonic-agency.html"><span class="case-pagination-label">Next Case Study</span><strong>IQONIC Agency</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a aria-current="page" href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

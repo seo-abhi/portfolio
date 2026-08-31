@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jewelite SEO Case Study | Abhi Patel</title>
+<meta content="Jewelite SEO case study by Abhi Patel, showing how SEO visibility was built almost from scratch for a new natural diamond jewellery Shopify brand." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Tinyfacets structured keyword architecture */
+    .keyword-architecture {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .keyword-architecture-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .keyword-architecture-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .keyword-architecture-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Search-result mini cards */
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .result-mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .result-mini-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .result-mini-card p {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    /* Screenshot placeholders, ready for future proof images */
+    .evidence-placeholder {
+      margin: 34px 0 44px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+        var(--surface);
+      text-align: center;
+    }
+
+    .evidence-placeholder .placeholder-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-placeholder .placeholder-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evidence-placeholder figcaption {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Learnings */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .learning-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 620px) {
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Final indexing-status card fix */
+    .status-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .status-list li {
+      list-style: none !important;
+      padding: 16px 18px !important;
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+    }
+
+    .status-list li::before,
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+
+  
+    /* Jewelite specific structured blocks */
+    .team-grid,
+    .schema-grid,
+    .trust-grid,
+    .keyword-architecture,
+    .result-mini-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .team-card,
+    .schema-card,
+    .trust-card,
+    .keyword-architecture-card,
+    .result-mini-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .team-card h3,
+    .schema-card h3,
+    .trust-card h3,
+    .keyword-architecture-card h3,
+    .result-mini-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .team-card p,
+    .schema-card p,
+    .trust-card p,
+    .keyword-architecture-card p,
+    .result-mini-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .learning-item {
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .metric-note {
+      margin: 18px 0 28px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e8e8e8;
+    }
+
+    .code-sample {
+      margin: 16px 0 24px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #050505;
+      color: #f0f0f0;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 620px) {
+      .team-grid,
+      .schema-grid,
+      .trust-grid,
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building Search Visibility From Scratch for a Natural Diamond Jewellery Brand",
+    "about": "SEO case study for Jewelite",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="Jewelite SEO Case Study | Abhi Patel" property="og:title"/><meta content="Jewelite SEO case study by Abhi Patel, showing how SEO visibility was built almost from scratch for a new natural diamond jewellery Shopify brand." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Jewelite SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="Jewelite SEO case study by Abhi Patel, showing how SEO visibility was built almost from scratch for a new natural diamond jewellery Shopify brand." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a aria-current="page" href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>Jewelite</span>
+</nav>
+<div class="eyebrow">SEO Case Study / Jewelite</div>
+<h1>Jewelite SEO Case Study</h1>
+<div class="hero-subtitle">Building Search Visibility From Scratch for a Natural Diamond Jewellery Brand</div>
+<div class="hero-copy">
+<p>Jewelite was one of the most blank-slate SEO projects I had taken ownership of.</p>
+<p>When I started working on the website shortly after launch, the store already had products, collections, diamond-shape pages, education pages, and supporting pages, but most of the SEO layer did not yet exist.</p>
+<p>Instead of improving an existing SEO strategy, I had to create one.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot">
+<div class="container">
+<div class="snapshot-top">
+<div>
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">Building the organic-search system shortly after launch.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">Natural Diamond Jewellery / E-commerce</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Platform</span>
+<div class="meta-value">Shopify</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Project Stage</span>
+<div class="meta-value">SEO Started Shortly After Launch</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role / Status</span>
+<div class="meta-value">SEO Lead / Ongoing</div>
+</div>
+</div>
+</div>
+<div aria-label="Early SEO results" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">Organic Clicks</div>
+<div><div class="kpi-value">89</div><div class="kpi-detail">Google Search Console</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Search Impressions</div>
+<div><div class="kpi-value">3.14K</div><div class="kpi-detail">Google Search Console</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Average Position</div>
+<div><div class="kpi-value">23.7</div><div class="kpi-detail">Early search visibility</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Indexed Pages</div>
+<div><div class="kpi-value">170</div><div class="kpi-detail">Reported project footprint</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Ranking Keywords</div>
+<div><div class="kpi-value">428</div><div class="kpi-detail">Reported keyword footprint</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Organic Users</div>
+<div><div class="kpi-value">71</div><div class="kpi-detail">GA4 Organic Search</div></div>
+</article>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-the-technical-foundation">Technical Foundation</a></li>
+<li><a href="#positioning-jewelite-around-natural-diamond-jewellery">Positioning</a></li>
+<li><a href="#building-the-keyword-strategy-from-zero">Keyword Strategy</a></li>
+<li><a href="#turning-collections-into-search-landing-pages">Collection SEO</a></li>
+<li><a href="#creating-diamond-shape-search-architecture">Shape SEO</a></li>
+<li><a href="#building-product-seo-at-scale">Product SEO</a></li>
+<li><a href="#rebuilding-the-product-url-structure">URL Migration</a></li>
+<li><a href="#building-education-seo-instead-of-a-traditional-blog">Education SEO</a></li>
+<li><a href="#building-a-strong-internal-linking-structure">Internal Linking</a></li>
+<li><a href="#building-local-seo-from-zero">Local SEO</a></li>
+<li><a href="#preparing-jewelite-for-ai-search">AI Search</a></li>
+<li><a href="#overall-seo-results">Overall Results</a></li>
+<li><a href="#establishing-the-brand-query">Brand Query</a></li>
+<li><a href="#building-non-branded-visibility">Non-Branded</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>Jewelite did not have an old SEO strategy that needed repairing. It barely had an SEO strategy at all.</p>
+<p>The website was visually live, but many important pages contained very little useful search-focused content beyond jewellery imagery and product listings.</p>
+<p>At the same time, Jewelite was entering one of the most competitive ecommerce search categories: natural diamond jewellery.</p>
+<p>As a completely new domain, the site had:</p>
+<ul>
+<li>No established search authority</li>
+<li>No meaningful ranking history</li>
+<li>Almost no backlink profile</li>
+<li>Limited brand awareness</li>
+<li>Weak search-engine trust</li>
+<li>Very little SEO-focused content</li>
+<li>Generic Shopify structured data</li>
+<li>Technical issues that needed to be handled early</li>
+</ul>
+<p>The challenge therefore was not simply:</p>
+<div class="flow-statement">How do I improve this website's SEO?</div>
+<p>It was:</p>
+<div class="flow-statement">How do I build the SEO layer of a natural diamond jewellery brand almost from scratch?</div>
+</section>
+<section class="case-section case-section--structured" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>The website needed work across nearly every major SEO layer.</p>
+<h3>Technical SEO</h3>
+<ul>
+<li>Crawling</li><li>Indexing</li><li>Sitemap</li><li>Robots.txt</li>
+<li>Canonicals</li><li>Redirects</li><li>Core Web Vitals</li><li>Mobile speed</li>
+<li>Heading hierarchy</li><li>Image optimization</li><li>Product URL structure</li><li>Structured data</li>
+</ul>
+<p>One of the most important issues was that product URLs used non-descriptive numerical slugs, creating a weak long-term URL structure.</p>
+<h3>On-Page SEO</h3>
+<ul>
+<li>Very little SEO-focused page content</li>
+<li>Weak keyword targeting</li>
+<li>Limited metadata optimization</li>
+<li>Minimal internal linking</li>
+<li>Generic page structures</li>
+<li>Product names with limited search differentiation</li>
+<li>Collections functioning mainly as product grids</li>
+<li>No clear page-level keyword architecture</li>
+</ul>
+<h3>Content</h3>
+<p>Jewelite did not have a mature blog or informational-content strategy to clean up. The larger issue was that useful search-focused content needed to be created.</p>
+<ul class="keyword-list"><li>Natural diamonds</li><li>Certification</li><li>Hallmarking</li><li>Diamond shapes</li><li>Ring sizing</li><li>Bracelet sizing</li><li>Jewellery care</li><li>Gold purity</li><li>Engagement decisions</li><li>Product buying questions</li></ul>
+<p>This informational layer also needed to support the commercial side of the website.</p>
+<h3>Off-Page SEO</h3>
+<p>As a new domain, Jewelite had almost no backlink profile. The initial authority strategy therefore needed to begin carefully.</p>
+<p>The goal was not backlink volume. It was to establish the first relevant external signals while the website built its own search history.</p>
+</section>
+<section class="case-section case-section--structured" id="my-role"><h2 class="section-title">My Role</h2>
+<p>I own Jewelite's SEO strategy end to end.</p>
+<p>My responsibilities include:</p>
+<ul>
+<li>SEO strategy</li><li>Technical audits</li><li>Keyword research</li><li>Competitor research</li>
+<li>Website architecture</li><li>Homepage SEO</li><li>Collection-page SEO</li><li>Diamond-shape landing pages</li>
+<li>Product SEO</li><li>Education-page strategy</li><li>Content planning</li><li>Internal linking</li>
+<li>Metadata</li><li>Schema creation</li><li>Local SEO</li><li>AI-search optimization</li>
+<li>Developer coordination</li><li>Content-writer direction</li><li>Designer and UX coordination</li><li>Monthly SEO reporting</li>
+</ul>
+<p>The project team includes:</p>
+<div class="team-grid">
+<div class="team-card"><h4>SEO Lead</h4><p>Me</p></div>
+<div class="team-card"><h4>Content</h4><p>1 Content Writer</p></div>
+<div class="team-card"><h4>Development</h4><p>2 Developers</p></div>
+<div class="team-card"><h4>Design</h4><p>1 Designer</p></div>
+</div>
+<p>I decide the SEO priorities and coordinate with the team to execute technical, content, and UX improvements.</p>
+</section>
+<section class="case-section" id="starting-with-the-technical-foundation"><h2 class="section-title">Starting With the Technical Foundation</h2>
+<p>Because Jewelite was a new website, I wanted technical problems solved before the site accumulated more pages and search history.</p>
+<p>The initial execution sequence was:</p>
+<div aria-label="Initial SEO execution sequence" class="horizontal-flow"><span>Technical SEO</span><span aria-hidden="true" class="flow-arrow">→</span><span>Homepage</span><span aria-hidden="true" class="flow-arrow">→</span><span>Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Products</span><span aria-hidden="true" class="flow-arrow">→</span><span>Education</span><span aria-hidden="true" class="flow-arrow">→</span><span>Off-Page SEO</span></div>
+<p>The technical review covered:</p>
+<ul>
+<li>Crawlability</li><li>Indexability</li><li>XML sitemap</li><li>Robots.txt</li><li>Canonicals</li>
+<li>Redirects</li><li>Core Web Vitals</li><li>Mobile performance</li><li>Heading hierarchy</li>
+<li>Image optimization</li><li>Product URL structure</li><li>Structured data</li>
+</ul>
+<p>The objective was to create a cleaner foundation before scaling the website's commercial and informational SEO.</p>
+</section>
+<section class="case-section" id="positioning-jewelite-around-natural-diamond-jewellery"><h2 class="section-title">Positioning Jewelite Around Natural Diamond Jewellery</h2>
+<p>One of the first strategic decisions was defining what Jewelite should represent in search.</p>
+<p>The core positioning became:</p>
+<h4>Primary Keyword</h4>
+<ul class="keyword-list keyword-list--primary">
+<li><strong>Natural Diamond Jewellery</strong></li>
+</ul>
+<h4>Secondary Keywords</h4>
+<ul class="keyword-list">
+<li><strong>Natural Diamond Engagement Rings</strong></li>
+<li><strong>Custom Diamond Jewellery</strong></li>
+</ul>
+<p>Supporting content across the site reinforces:</p>
+<ul class="keyword-list">
+<li>Natural diamonds</li><li>Fine gold</li><li>Customisation</li><li>Craftsmanship</li>
+<li>Diamond expertise</li><li>Certification</li><li>Hallmarking</li>
+</ul>
+<p>The objective was to make Jewelite's identity clear to both search engines and users from the beginning.</p>
+<p>The live website now prominently organizes discovery around natural diamond rings, categories, diamond shapes, bespoke jewellery, and education content.</p>
+</section>
+<section class="case-section" id="building-trust-into-the-seo-strategy"><h2 class="section-title">Building Trust Into the SEO Strategy</h2>
+<p>Natural diamond jewellery is a high-consideration purchase. Search visibility alone is not enough.</p>
+<p>Users also need confidence in:</p>
+<ul class="keyword-list">
+<li>Diamond authenticity</li><li>Certification</li><li>Gold quality</li><li>Craftsmanship</li>
+<li>Business credibility</li><li>Policies</li><li>Product knowledge</li>
+</ul>
+<p>I therefore made sure important SEO pages also incorporated relevant trust information around:</p>
+<div class="trust-grid">
+<div class="trust-card"><h4>Product Trust</h4><p>Natural diamond authenticity, GIA-certified quality information, BIS hallmark information, gold purity.</p></div>
+<div class="trust-card"><h4>Expertise</h4><p>75 years of diamond knowledge, founder and family expertise, craftsmanship, customisation.</p></div>
+<div class="trust-card"><h4>Education</h4><p>Jewellery care, size guides, certification, hallmarking and diamond education.</p></div>
+<div class="trust-card"><h4>Business Clarity</h4><p>About Us, shipping, returns, exchanges, buyback, contact and business information.</p></div>
+</div>
+<p>These were not treated as disconnected branding elements. They became part of how the website communicated expertise, trust, and entity clarity.</p>
+</section>
+<section class="case-section" id="understanding-the-competitive-search-market"><h2 class="section-title">Understanding the Competitive Search Market</h2>
+<p>Because Jewelite had very little historical search data, competitor research played an important role.</p>
+<p>I studied established jewellery brands including:</p>
+<ul class="keyword-list">
+<li>Tanishq</li><li>Miscaro</li><li>Angara</li><li>CaratLane</li>
+<li>BlueStone</li><li>Joyalukkas</li><li>ORRA</li><li>Kalyan Jewellers</li>
+</ul>
+<p>I analyzed:</p>
+<ul>
+<li>Homepage positioning</li><li>Collection architecture</li><li>Diamond-shape pages</li><li>Product names</li>
+<li>Product descriptions</li><li>Engagement pages</li><li>Education content</li><li>Metadata</li>
+<li>Internal linking</li><li>FAQs</li><li>Trust signals</li><li>Structured data</li><li>Ranking keywords</li>
+</ul>
+<p>The purpose was not to reproduce competitor pages. It was to understand what users search for, how strong jewellery websites structure those searches, and where Jewelite could create clearer or more useful pages.</p>
+</section>
+<section class="case-section" id="building-the-keyword-strategy-from-zero"><h2 class="section-title">Building the Keyword Strategy From Zero</h2>
+<p>Without meaningful historical Google Search Console data, I used:</p>
+<ul class="keyword-list">
+<li>Semrush</li><li>Ubersuggest</li><li>Google SERPs</li><li>Competitor rankings</li><li>Search intent</li>
+</ul>
+<p>The website was then divided into several keyword layers.</p>
+<h4>Homepage</h4>
+<ul class="keyword-list keyword-list--primary"><li><strong>Natural Diamond Jewellery</strong></li></ul>
+<h4>Main Collections</h4>
+<ul class="keyword-list">
+<li>Diamond Solitaire Rings</li><li>Diamond Pendants</li><li>Diamond Necklaces</li><li>Diamond Bracelets</li>
+<li>Diamond Earrings</li><li>Diamond Rings</li><li>Diamond Halo Rings</li><li>Side Stone Engagement Rings</li>
+<li>Eternity Rings</li><li>Toi et Moi Rings</li><li>Diamond Studs</li><li>Diamond Hoop Earrings</li><li>Diamond Drop Earrings</li>
+</ul>
+<h4>Diamond-Shape Pages</h4>
+<ul class="keyword-list">
+<li>Round Diamond Jewellery</li><li>Oval Diamond Shape</li><li>Princess Cut Diamond Jewellery</li>
+<li>Emerald Cut Diamond Jewellery</li><li>Radiant Cut Diamond Jewellery</li><li>Pear Shaped Diamond Jewellery</li>
+<li>Heart Shape Diamond Jewellery</li><li>Asscher Cut Diamond Jewellery</li><li>Marquise Shape Diamond Jewellery</li>
+</ul>
+<h4>Product Pages</h4>
+<div class="flow-statement">Diamond Shape + Jewellery Type + Setting + Fine Gold</div>
+<p>Where relevant, additional engagement or design intent is used to distinguish similar products. This hierarchy helped give different page types clearer search roles and reduced the risk of dozens of pages competing for identical terms.</p>
+</section>
+<section class="case-section" id="rebuilding-the-homepage-around-search-intent"><h2 class="section-title">Rebuilding the Homepage Around Search Intent</h2>
+<p>The homepage was not simply refreshed. Most of its SEO content needed to be built.</p>
+<ul>
+<li>H1 and H2 structure</li><li>Primary keyword targeting</li><li>Metadata</li><li>Collection links</li>
+<li>Diamond-shape links</li><li>FAQs</li><li>Trust content</li><li>Internal linking</li>
+<li>Calls to action</li><li>Structured data</li><li>Image alt text</li>
+</ul>
+<p>The content was developed using keyword research, competitor analysis, and the perspective of an actual jewellery shopper.</p>
+<div class="flow-statement">Premium Brand First. Search Relevance Built Naturally Around It.</div>
+<p>The live homepage now combines product discovery with category navigation, nine diamond shapes, the Jewelite Promise, FAQs, consultation/customisation content, and education resources.</p>
+</section>
+<section class="case-section" id="turning-collections-into-search-landing-pages"><h2 class="section-title">Turning Collections Into Search Landing Pages</h2>
+<p>Many collection pages originally functioned mainly as product grids.</p>
+<p>I developed a more complete SEO structure around:</p>
+<ul class="keyword-list">
+<li>H1</li><li>Product Grid</li><li>SEO-Focused Content</li><li>Buying Guidance</li>
+<li>FAQs</li><li>Related Category Links</li><li>Contextual Internal Links</li>
+</ul>
+<p>Across approximately:</p>
+<h3>14 Collection Pages</h3>
+<p>I personally worked on keyword mapping, collection content, heading hierarchy, metadata, FAQs, internal linking, image optimization, and schema recommendations.</p>
+<p>The objective was to make each important collection useful as a commercial search landing page rather than simply a catalogue view.</p>
+</section>
+<section class="case-section case-section--proof" id="early-collection-visibility"><h2 class="section-title">Early Collection Visibility</h2>
+<p>One early example was:</p>
+<h3>Solitaires With Side Stones</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>2</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>289</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>0.7%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>30.2</strong></p></div></div>
+<p>The numbers are still early. I do not treat this as mature SEO performance.</p>
+<p>What matters is that a commercial collection on a new domain had started gaining non-branded visibility.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the Solitaires With Side Stones collection showing 2 clicks, 289 impressions, 0.7 percent CTR and 30.2 average position." decoding="async" height="761" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/01-google-search-console-early-collection-page-visibility.webp" width="1595"/>
+</div>
+<figcaption>Google Search Console, early collection-page visibility</figcaption>
+</figure></section>
+<section class="case-section" id="creating-diamond-shape-search-architecture"><h2 class="section-title">Creating Diamond-Shape Search Architecture</h2>
+<p>Diamond shape is one of the major ways users discover and evaluate jewellery.</p>
+<p>Instead of relying only on broad categories such as Rings or Earrings, Jewelite also uses dedicated landing pages for:</p>
+<ul class="keyword-list">
+<li>Round</li><li>Oval</li><li>Princess</li><li>Emerald</li><li>Radiant</li>
+<li>Pear</li><li>Heart</li><li>Asscher</li><li>Marquise</li>
+</ul>
+<p>These pages support both search intent and product discovery.</p>
+</section>
+<section class="case-section" id="preventing-shape-page-duplication"><h2 class="section-title">Preventing Shape-Page Duplication</h2>
+<p>Nine shape pages can easily become nine near-identical pages. That would create weak differentiation.</p>
+<p>Instead, each shape page uses its own keyword focus and relevant page relationships.</p>
+<p>Shape pages connect with:</p>
+<div aria-label="Shape page internal linking flow" class="horizontal-flow"><span>Products</span><span aria-hidden="true" class="flow-arrow">→</span><span>Main Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Education</span><span aria-hidden="true" class="flow-arrow">→</span><span>Homepage</span></div>
+<p>This gives each page a clearer reason to exist while strengthening the wider site's diamond-shape architecture.</p>
+</section>
+<section class="case-section case-section--proof" id="early-shape-page-visibility"><h2 class="section-title">Early Shape-Page Visibility</h2>
+<p>One early example was:</p>
+<h3>Oval Shape</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>1</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>163</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>0.6%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>36.9</strong></p></div></div>
+<p>Again, these are early-stage figures rather than a mature ranking result. What they show is that the new shape architecture had begun entering search.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the Oval shape page showing 1 click, 163 impressions, 0.6 percent CTR and 36.9 average position." decoding="async" height="765" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/02-google-search-console-oval-shape-page-visibility.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, Oval shape page visibility</figcaption>
+</figure></section>
+<section class="case-section" id="building-product-seo-at-scale"><h2 class="section-title">Building Product SEO at Scale</h2>
+<p>Jewelite's product catalogue introduced another challenge. Many fine-jewellery products naturally share diamond shapes, settings, jewellery types, gold options, and design characteristics.</p>
+<p>Without careful naming, product pages could become repetitive.</p>
+<p>I developed product naming around:</p>
+<div class="flow-statement">Diamond Shape + Jewellery Type + Setting + Fine Gold</div>
+<p>Examples included:</p>
+<ul class="keyword-list">
+<li>Marquise Cut Diamond Ring with U Cut Pave in Fine Gold</li>
+<li>Cushion Cut Diamond Stud Earrings in Fine Gold</li>
+<li>Natural Round Shape Diamond Necklace in Fine Gold</li>
+</ul>
+<p>Additional intent such as engagement or design style is used where it helps distinguish similar products.</p>
+</section>
+<section class="case-section" id="optimizing-product-pages"><h2 class="section-title">Optimizing Product Pages</h2>
+<p>I have personally optimized approximately:</p>
+<h3>70 Product Pages</h3>
+<p>The process includes:</p>
+<ul>
+<li>SEO-focused product name and H1</li><li>Product description</li><li>Meta title</li><li>Meta description</li>
+<li>Image alt text</li><li>Internal links</li><li>Product structured data</li><li>Related products or categories</li>
+</ul>
+<p>Descriptions combine search relevance, jewellery details, natural diamond positioning, fine gold information, occasion or use, and related jewellery discovery.</p>
+</section>
+<section class="case-section case-section--proof" id="early-product-search-visibility"><h2 class="section-title">Early Product Search Visibility</h2>
+<p>One early product example was:</p>
+<h3>Oval Natural Diamond Engagement Ring in Fine Gold</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>1</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>4</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>25%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>9.8</strong></p></div></div>
+<p>The dataset is extremely small. For that reason, I treat this only as an early visibility signal rather than a proven ranking win.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the Oval Natural Diamond Engagement Ring in Fine Gold showing 1 click, 4 impressions, 25 percent CTR and 9.8 average position." decoding="async" height="764" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/03-google-search-console-early-product-visibility.webp" width="1597"/>
+</div>
+<figcaption>Google Search Console, early product visibility</figcaption>
+</figure></section>
+<section class="case-section" id="rebuilding-the-product-url-structure"><h2 class="section-title">Rebuilding the Product URL Structure</h2>
+<p>One of the most significant technical changes involved product URLs.</p>
+<p>The initial URLs used non-descriptive numerical slugs such as:</p>
+<div class="code-sample">/products/237</div>
+<p>I developed descriptive product URLs instead. For example:</p>
+<div class="code-sample">/products/emerald-cut-diamond-ring-in-fine-gold-with-tapered-band</div>
+<p>This change was implemented across approximately:</p>
+<h3>70 Product URLs</h3>
+<p>Changing live URLs incorrectly can create broken pages, lost links, duplicate URLs, redirect problems, and lost search signals.</p>
+<p>So the migration process also included:</p>
+<div aria-label="Product URL migration workflow" class="horizontal-flow"><span>New URL</span><span aria-hidden="true" class="flow-arrow">→</span><span>301 Redirect</span><span aria-hidden="true" class="flow-arrow">→</span><span>Internal Link Update</span><span aria-hidden="true" class="flow-arrow">→</span><span>Sitemap Update</span><span aria-hidden="true" class="flow-arrow">→</span><span>Validation</span></div>
+<p>This became one of the project's most important technical SEO changes.</p>
+</section>
+<section class="case-section" id="solving-crawling-and-indexing-problems"><h2 class="section-title">Solving Crawling and Indexing Problems</h2>
+<p>Some pages initially appeared in Google Search Console under:</p>
+<ul class="status-list">
+<li><strong>Crawled, currently not indexed</strong></li>
+<li><strong>Discovered, currently not indexed</strong></li>
+</ul>
+<p>Rather than treating indexing as a standalone Search Console problem, I worked on the pages themselves.</p>
+<ul>
+<li>Adding useful content</li><li>Improving keyword targeting</li><li>Building stronger internal links</li>
+<li>Improving page relationships</li><li>Fixing technical signals</li>
+</ul>
+<p>As these improvements were implemented, index coverage increased.</p>
+<h3>170 Indexed Pages</h3>
+<p>Internal linking was especially useful in helping search engines discover deeper products, collections, shape pages, and education pages.</p>
+</section>
+<section class="case-section" id="improving-technical-seo"><h2 class="section-title">Improving Technical SEO</h2>
+<h3>Sitemap</h3><p>Unnecessary URLs were removed.</p>
+<h3>Canonicals</h3><p>Canonical implementation was added where missing.</p>
+<h3>Redirects</h3><p>Old product URLs were mapped through 301 redirects after the migration.</p>
+<h3>Core Web Vitals</h3><p>Performance issues were identified and improved with the development team.</p>
+<h3>Mobile Speed</h3><p>Mobile performance became an important priority.</p>
+<h3>Heading Hierarchy</h3><p>Incorrect heading structures were corrected.</p>
+<h3>Image Optimization</h3><p>Images were improved for both search and performance.</p>
+<p>The objective was to create a cleaner technical foundation before the website accumulated more years of search history.</p>
+</section>
+<section class="case-section" id="building-a-custom-structured-data-strategy"><h2 class="section-title">Building a Custom Structured Data Strategy</h2>
+<p>Shopify's default structured data was too generic for the page architecture I wanted to establish.</p>
+<p>I created more page-specific schema recommendations and coordinated implementation with developers.</p>
+<div class="schema-grid">
+<div class="schema-card"><h4>Homepage</h4><p>Organization · WebSite · FAQ · Breadcrumb</p></div>
+<div class="schema-card"><h4>Collection Pages</h4><p>Collection · ItemList · FAQ · Breadcrumb</p></div>
+<div class="schema-card"><h4>Product Pages</h4><p>Product · Offer · Breadcrumb</p></div>
+<div class="schema-card"><h4>Education Pages</h4><p>FAQ · Breadcrumb</p></div>
+</div>
+<p>Structured data was then validated using Google's Rich Results Test.</p>
+</section>
+<section class="case-section" id="building-education-seo-instead-of-a-traditional-blog"><h2 class="section-title">Building Education SEO Instead of a Traditional Blog</h2>
+<p>Jewelite does not currently rely on a traditional blog-first SEO strategy.</p>
+<p>Instead, informational search intent is being developed through dedicated education pages.</p>
+<p>This supports customer education, search visibility, topical relevance, trust, conversion support, and AI-search accessibility.</p>
+<p>Education topics include:</p>
+<ul class="keyword-list">
+<li>Diamond Certification</li><li>The 4Cs</li><li>Hallmarked Jewellery</li><li>Diamond Jewellery Care</li>
+<li>Diamond Shapes</li><li>Ring Size</li><li>Bracelet Size</li><li>Gold Purity</li><li>Natural Diamond Education</li>
+</ul>
+<p>Keyword volume and competition are considered when deciding which topics to prioritize.</p>
+</section>
+<section class="case-section" id="connecting-education-with-commercial-seo"><h2 class="section-title">Connecting Education With Commercial SEO</h2>
+<p>Education content is not isolated from the store.</p>
+<p>The internal-linking model connects:</p>
+<div class="link-flow-grid">
+<div class="link-flow-card">
+<h4>Education Pages</h4>
+<div class="link-flow-steps">
+<span>Relevant Collections</span><span class="flow-arrow">→</span><span>Relevant Products</span><span class="flow-arrow">→</span><span>Other Education Content</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Collections &amp; Products</h4>
+<div class="link-flow-steps">
+<span>Relevant Education Guides</span>
+</div>
+</div>
+</div>
+<p>This gives informational users a natural path toward commercial pages while also helping search engines understand the relationship between Jewelite's expertise and products.</p>
+</section>
+<section class="case-section case-section--proof" id="early-education-visibility"><h2 class="section-title">Early Education Visibility</h2>
+<p>Approximately:</p>
+<h3>12 Education Pages</h3>
+<p>have been created or optimized.</p>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Ring Size Chart</h4><p><strong>3 clicks · 473 impressions · 0.6% CTR · 20.7 position</strong></p></div>
+<div class="result-mini-card"><h4>Diamond Certification Guide</h4><p><strong>1 click · 82 impressions · 1.2% CTR · 25.1 position</strong></p></div>
+<div class="result-mini-card"><h4>What Is Hallmarked Jewellery?</h4><p><strong>202 impressions · 39.6 position</strong></p></div>
+<div class="result-mini-card"><h4>Diamond Jewellery Care Guide</h4><p><strong>129 impressions · 45.7 position</strong></p></div>
+</div>
+<p>These pages are still early in their ranking lifecycle. The important point is that the informational architecture has begun building visibility.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console table showing education and supporting page visibility, including Ring Size Chart, Diamond Certification Guide, Hallmarked Jewellery and Diamond Jewellery Care Guide." decoding="async" height="758" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/04-google-search-console-early-education-page-visibility.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early education-page visibility</figcaption>
+</figure></section>
+<section class="case-section" id="building-a-strong-internal-linking-structure"><h2 class="section-title">Building a Strong Internal Linking Structure</h2>
+<p>Because I took ownership shortly after launch, I was able to design the internal-linking structure before the website became significantly larger.</p>
+<div class="link-flow-grid">
+<div class="link-flow-card"><h4>Homepage</h4><div class="link-flow-steps"><span>Collections</span><span class="flow-arrow">→</span><span>Diamond Shapes</span><span class="flow-arrow">→</span><span>Education</span><span class="flow-arrow">→</span><span>Products</span></div></div>
+<div class="link-flow-card"><h4>Collections</h4><div class="link-flow-steps"><span>Products</span><span class="flow-arrow">→</span><span>Shapes</span><span class="flow-arrow">→</span><span>Other Collections</span><span class="flow-arrow">→</span><span>Homepage</span></div></div>
+<div class="link-flow-card"><h4>Shape Pages</h4><div class="link-flow-steps"><span>Products</span><span class="flow-arrow">→</span><span>Main Collections</span><span class="flow-arrow">→</span><span>Education</span><span class="flow-arrow">→</span><span>Homepage</span></div></div>
+<div class="link-flow-card"><h4>Products</h4><div class="link-flow-steps"><span>Collections</span><span class="flow-arrow">→</span><span>Shape Pages</span><span class="flow-arrow">→</span><span>Education</span><span class="flow-arrow">→</span><span>Homepage</span></div></div>
+<div class="link-flow-card"><h4>Education</h4><div class="link-flow-steps"><span>Collections</span><span class="flow-arrow">→</span><span>Products</span><span class="flow-arrow">→</span><span>Other Education Pages</span><span class="flow-arrow">→</span><span>Homepage</span></div></div>
+</div>
+<p>Relevant collection keywords are used as anchors where they naturally fit. Different variations are used to avoid excessive repetition or over-optimization.</p>
+<p>This structure also supports discovery and indexing across deeper pages.</p>
+</section>
+<section class="case-section case-section--proof" id="building-local-seo-from-zero"><h2 class="section-title">Building Local SEO From Zero</h2>
+<p>Jewelite's Google Business Profile was also created and optimized as part of the initial foundation.</p>
+<p>The objective was to establish:</p>
+<ul class="keyword-list">
+<li>Brand identity</li><li>Business information</li><li>Local trust</li><li>Branded search visibility</li>
+</ul>
+<p>As the website became indexed and branded search activity developed, the Business Profile also began appearing more consistently for relevant brand searches.</p>
+<p>Local SEO remains an ongoing area rather than a completed campaign.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google search results for "jewelite mumbai" showing Jewelite organic results and a visible local business profile panel.' decoding="async" height="764" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/05-google-search-jewelite-local-branded-visibility-for-jewelite-mumbai.webp" width="1599"/>
+</div>
+<figcaption>Google Search, Jewelite local branded visibility for “jewelite mumbai”</figcaption>
+</figure></section>
+<section class="case-section" id="building-an-initial-backlink-profile"><h2 class="section-title">Building an Initial Backlink Profile</h2>
+<p>Because Jewelite is still a new domain, off-page SEO remains in the foundation stage.</p>
+<p>Approximately:</p>
+<h3>5–6 Initial Backlinks</h3>
+<p>were created through websites within the broader business ecosystem, including properties such as Earthly Jewels, Tinyfacets, and IQONIC Design.</p>
+<p>Early anchor-text work focused primarily on brand establishment, homepage relevance, and main natural-diamond positioning.</p>
+<p>The objective is not to chase backlink volume. It is to establish the first relevant authority signals while the website develops its own search history.</p>
+</section>
+<section class="case-section case-section--proof" id="preparing-jewelite-for-ai-search"><h2 class="section-title">Preparing Jewelite for AI Search</h2>
+<p>AI-search accessibility was included from the beginning.</p>
+<p>The strategy includes:</p>
+<ul>
+<li>AI crawler accessibility</li><li>Structured data</li><li>FAQs</li><li>Concise answer-focused sections</li>
+<li>Education content</li><li>Clear brand/entity information</li><li>Natural diamond information</li><li>Structured headings</li>
+</ul>
+<p>According to third-party Semrush AI Visibility reporting:</p>
+<ul class="keyword-list">
+<li><strong>0 AI Mentions</strong></li>
+<li><strong>39 AI Citations</strong></li>
+<li><strong>23 Cited Pages</strong></li>
+<li><strong>AI Visibility: n/a</strong></li>
+</ul>
+<p>These are third-party AI visibility figures rather than Google Search Console measurements. The report currently shows no measured brand mentions, while citations and cited pages have started appearing.</p>
+<p>For a new domain, I treat these as early visibility signals rather than mature AI-search performance.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Semrush AI Visibility overview for jewelite.co showing 0 mentions, 39 citations, 23 cited pages and AI Visibility marked n/a." decoding="async" height="763" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/06-semrush-ai-visibility-third-party-ai-search-visibility-reporting.webp" width="1599"/>
+</div>
+<figcaption>Semrush AI Visibility, third-party AI-search visibility reporting</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="overall-seo-results"><h2 class="section-title">Overall SEO Results</h2>
+<p>Jewelite is still in the early stage of organic growth. This case study is therefore not intended to present mature traffic numbers.</p>
+<p>It shows how quickly a complete search foundation was established.</p>
+<p>Within the first few months, Google Search Console recorded:</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Organic Clicks</h4><p><strong>89</strong></p></div><div class="result-mini-card"><h4>Search Impressions</h4><p><strong>3.14K</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>2.8%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>23.7</strong></p></div></div>
+<h3>Additional SEO Footprint</h3>
+<ul class="keyword-list">
+<li><strong>170 Indexed Pages</strong></li>
+<li><strong>428 Ranking Keywords Reported</strong></li>
+<li><strong>400+ Non-Branded Keywords Showing Visibility</strong></li>
+<li><strong>71 Organic Users</strong></li>
+</ul>
+<p class="metric-note">The four Search Console metrics above are directly supported by the supplied GSC screenshot. Indexed pages, reported ranking-keyword footprint, non-branded keyword visibility, and Organic Search users are additional project metrics tracked separately.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console overall Jewelite performance showing 89 clicks, 3.14K impressions, 2.8 percent CTR and 23.7 average position." decoding="async" height="768" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/07-google-search-console-early-organic-search-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early organic search performance</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="establishing-the-brand-query"><h2 class="section-title">Establishing the Brand Query</h2>
+<p>For:</p>
+<h3>“jewelite”</h3>
+<p>Google Search Console recorded:</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>58</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>175</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>33.1%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>1.7</strong></p></div></div>
+<p>This showed that Jewelite's primary brand property became clearly established relatively early.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console performance for the query "jewelite" showing 58 clicks, 175 impressions, 33.1 percent CTR and 1.7 average position.' decoding="async" height="760" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/08-google-search-console-jewelite-branded-query-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, Jewelite branded-query performance</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="building-non-branded-visibility"><h2 class="section-title">Building Non-Branded Visibility</h2>
+<p>The more important long-term objective is helping Jewelite reach people who have never searched for the brand before.</p>
+<p>One early example was:</p>
+<h3>“side stone rings”</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>1</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>63</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>1.6%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>20.9</strong></p></div></div>
+<p>This is not yet a strong ranking. What makes it useful is that Google has begun testing the domain around a broader commercial jewellery term.</p>
+<p>The related <strong>Solitaires With Side Stones</strong> collection also generated <strong>289 impressions</strong> and began developing its own non-branded search footprint.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console performance for the query "side stone rings" showing 1 click, 63 impressions, 1.6 percent CTR and 20.9 average position.' decoding="async" height="764" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/09-google-search-console-early-commercial-keyword-visibility.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early commercial keyword visibility</figcaption>
+</figure></section>
+<section class="case-section" id="pages-starting-from-zero"><h2 class="section-title">Pages Starting From Zero</h2>
+<p>Because the entire domain was new, almost every URL effectively began with no organic visibility.</p>
+<p>Pages such as the:</p>
+<h3>Ring Size Chart</h3>
+<p>have started gaining search visibility after the education architecture, content, technical SEO, and internal-linking work were introduced.</p>
+<p>The live ring-size page now contains a dedicated Indian ring-size chart, measurement instructions, and supporting guidance rather than functioning as a thin utility page.</p>
+<p>The education section remains one of the areas I expect to become increasingly important as the domain develops more authority.</p>
+</section>
+<section class="case-section" id="business-impact"><h2 class="section-title">Business Impact</h2>
+<p>Organic search has already contributed to business performance.</p>
+<p>However, sales and conversion figures are confidential and are intentionally excluded from this portfolio.</p>
+</section>
+<section class="case-section case-section--proof" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<p>The strongest proof is placed directly beside the claim it supports throughout the case study. This section acts as a compact evidence recap rather than repeating every screenshot again.</p>
+<div class="proof-list">
+<div class="proof-item"><strong>Overall Search Footprint</strong>89 clicks · 3.14K impressions · 2.8% CTR · 23.7 average position</div>
+<div class="proof-item"><strong>Brand Establishment</strong>“jewelite” · 58 clicks · 175 impressions · 1.7 average position</div>
+<div class="proof-item"><strong>Collection SEO</strong>Solitaires With Side Stones · 2 clicks · 289 impressions</div>
+<div class="proof-item"><strong>Diamond-Shape SEO</strong>Oval Shape · 1 click · 163 impressions</div>
+<div class="proof-item"><strong>Product SEO</strong>Oval Natural Diamond Engagement Ring · 1 click · 4 impressions</div>
+<div class="proof-item"><strong>Education SEO</strong>Ring Size Chart · 3 clicks · 473 impressions</div>
+<div class="proof-item"><strong>Local Visibility</strong>Google search results for “jewelite mumbai” show Jewelite organic results and a local business profile panel.</div>
+<div class="proof-item"><strong>AI Search Visibility</strong>0 mentions · 39 citations · 23 cited pages</div>
+</div>
+<h3>Organic Search Traffic</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Sessions</h4><p><strong>357</strong></p></div><div class="result-mini-card"><h4>Engaged Sessions</h4><p><strong>231</strong></p></div><div class="result-mini-card"><h4>Engagement Rate</h4><p><strong>64.71%</strong></p></div><div class="result-mini-card"><h4>Avg. Engagement Time / Session</h4><p><strong>1m 24s</strong></p></div><div class="result-mini-card"><h4>Events / Session</h4><p><strong>15.50</strong></p></div><div class="result-mini-card"><h4>Total Users</h4><p><strong>71</strong></p></div></div>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Analytics 4 Traffic Acquisition report filtered to Organic Search showing 357 sessions, 231 engaged sessions, 64.71 percent engagement rate, 1 minute 24 seconds average engagement time per session and 71 users." decoding="async" height="722" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/jewelite/10-google-analytics-4-organic-search-traffic-performance.webp" width="1389"/>
+</div>
+<figcaption>Google Analytics 4, Organic Search traffic performance</figcaption>
+</figure>
+<p>This makes the early-stage SEO story directly verifiable rather than relying only on written claims.</p>
+</section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Google Analytics</li>
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Screaming Frog</li>
+<li>PageSpeed Insights</li>
+<li>Google Rich Results Test</li>
+<li>Google Business Profile</li>
+<li>Shopify</li>
+</ul>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The most technically sensitive part of the project was rebuilding the product URL structure.</p>
+<p>Changing approximately 70 live product URLs was not simply a matter of adding keywords to slugs.</p>
+<p>Every URL change needed to preserve the path between the old and new page.</p>
+<p>The workflow required:</p>
+<div aria-label="URL migration workflow" class="horizontal-flow"><span>New URL</span><span aria-hidden="true" class="flow-arrow">→</span><span>301 Redirect</span><span aria-hidden="true" class="flow-arrow">→</span><span>Internal Link Update</span><span aria-hidden="true" class="flow-arrow">→</span><span>Sitemap Update</span><span aria-hidden="true" class="flow-arrow">→</span><span>Validation</span></div>
+<p>If handled incorrectly, this could have created:</p>
+<ul>
+<li>Broken URLs</li><li>Duplicate pages</li><li>Redirect problems</li><li>Lost search signals</li><li>Poor internal links</li>
+</ul>
+<p>Handled correctly, it created a much cleaner long-term product URL structure before the domain accumulated years of SEO history.</p>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>Jewelite taught me that a website does not need to arrive with an established SEO foundation for me to begin building one.</p>
+<div class="learning-grid">
+<div class="learning-item">The content did not always need improvement. <strong>It needed to be created.</strong></div>
+<div class="learning-item">The keyword architecture did not need a minor adjustment. <strong>It needed to be built.</strong></div>
+<div class="learning-item">The internal-link structure did not need cleanup. <strong>It needed to be designed.</strong></div>
+<div class="learning-item">The product URLs did not need small optimization. <strong>They needed a controlled migration.</strong></div>
+</div>
+<p>That gave me experience working at a much earlier SEO stage than simply optimizing an established website.</p>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>Jewelite started as a visually live natural-diamond store with very little search infrastructure behind it.</p>
+<p>My role has been to build that missing layer.</p>
+<p>From keyword research and content architecture to technical SEO, product URLs, collections, diamond-shape pages, education content, schema, internal linking, Local SEO, and AI-search accessibility, the project required SEO to be created almost from the ground up.</p>
+<p>The project is still early. That is exactly why it is useful in my portfolio.</p>
+<p>It demonstrates that I do not need to inherit a mature SEO system before I can create a strategy.</p>
+<p><strong>Take a live website with minimal search infrastructure, build the SEO foundation end to end, coordinate execution across development, content, and design, and turn it into a structured search ecosystem that is beginning to gain both branded and non-branded visibility.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="tinyfacets.html"><span class="case-pagination-label">Previous Case Study</span><strong>Tinyfacets</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="iqonic-tech.html"><span class="case-pagination-label">Next Case Study</span><strong>IQONIC Tech</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a aria-current="page" href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

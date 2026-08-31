@@ -1,0 +1,357 @@
+
+html{scroll-behavior:smooth;background:#000}
+body{background:#000!important;color:#fff!important;font-family:var(--font)!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body,button,input,textarea,select{font-family:var(--font)!important}
+a{color:inherit}
+.container{width:min(var(--max),calc(100% - 48px))!important}
+::selection{background:#fff;color:#000}
+
+/* Remove decorative visual effects and gradients. */
+.hero::before,.hero::after{display:none!important}
+.case-card,.service-card,.project-card,.proof-card,.tool-card,.kpi,.meta-item,.snapshot,.evidence-frame,.process-step,.proud-card,.feature-card,.focus-card,.content-goal-card,.learning-item,.outcome-card,.dual-domain-block,.proof-plain,.historical-note,.historical-outcome,.keyword-objective,.keyword-list li,.result-mini-card,.evidence-placeholder,#my-biggest-takeaway{background:#161616!important;background-image:none!important;box-shadow:none!important}
+
+/* Controlled typography */
+h1,h2,h3,h4,h5,h6{font-family:var(--font)!important;color:#fff!important;font-weight:800!important;letter-spacing:-.04em!important;text-wrap:balance}
+p,li{color:var(--text-soft)}
+
+/* Homepage */
+body[data-page="home"] .hero{padding:clamp(72px,8vw,116px) 0 clamp(88px,10vw,132px)!important;min-height:auto!important}
+body[data-page="home"] .hero-title{max-width:none!important;font-size:clamp(4rem,8.2vw,7.4rem)!important;line-height:.86!important;letter-spacing:-.065em!important}
+body[data-page="home"] .hero-role{margin-top:24px!important;color:#fff!important;font-size:clamp(1rem,1.5vw,1.22rem)!important;font-weight:700!important;letter-spacing:.02em!important}
+body[data-page="home"] .hero-copy h2,body[data-page="home"] .hero-copy>strong{font-size:clamp(2.35rem,4.2vw,4.35rem)!important;line-height:1!important;letter-spacing:-.055em!important}
+body[data-page="home"] .hero-copy p{max-width:780px!important;color:#bcbcbc!important;font-size:clamp(1rem,1.35vw,1.16rem)!important;line-height:1.72!important}
+body[data-page="home"] .section{padding:clamp(78px,8vw,112px) 0!important;border-top:1px solid var(--line)!important}
+body[data-page="home"] .section-heading{font-size:clamp(2.6rem,5vw,4.8rem)!important;line-height:.98!important;letter-spacing:-.055em!important}
+body[data-page="home"] .service-card,body[data-page="home"] .project-card,body[data-page="home"] .proof-card,body[data-page="home"] .tool-card{border:1px solid var(--line)!important;border-radius:12px!important}
+body[data-page="home"] .service-card:hover,body[data-page="home"] .project-card:hover,body[data-page="home"] .proof-card:hover,body[data-page="home"] .tool-card:hover{transform:translateY(-2px)!important;border-color:var(--line-strong)!important}
+body[data-page="home"] .btn{border-radius:999px!important}
+body[data-page="home"] .btn-primary{background:#fff!important;color:#000!important;border-color:#fff!important}
+body[data-page="home"] .btn-secondary{background:transparent!important;color:#fff!important;border-color:var(--line-strong)!important}
+body[data-page="home"] .project-card h3{font-size:clamp(1.8rem,3vw,2.65rem)!important}
+body[data-page="home"] .project-label,body[data-page="home"] .industry{color:var(--muted-2)!important}
+
+/* Case studies listing */
+body[data-page="case-list"] .hero{padding:clamp(72px,8vw,104px) 0 clamp(62px,7vw,90px)!important}
+body[data-page="case-list"] .hero h1{font-size:clamp(3.3rem,6.5vw,6.3rem)!important;line-height:.9!important;letter-spacing:-.06em!important}
+body[data-page="case-list"] .hero p{max-width:820px!important;color:#bdbdbd!important;font-size:clamp(1rem,1.35vw,1.16rem)!important;line-height:1.72!important}
+body[data-page="case-list"] .case-studies{padding:clamp(68px,7vw,100px) 0 clamp(92px,10vw,132px)!important;border-top:1px solid var(--line)}
+body[data-page="case-list"] .case-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+body[data-page="case-list"] .case-card{padding:clamp(24px,2.7vw,32px)!important;border:1px solid var(--line)!important;border-radius:12px!important;transition:transform var(--ease),border-color var(--ease)!important}
+body[data-page="case-list"] .case-card:hover{transform:translateY(-2px)!important;border-color:var(--line-strong)!important}
+body[data-page="case-list"] .case-card header{padding-bottom:20px!important;border-bottom:0!important}
+body[data-page="case-list"] .case-card h2{font-size:clamp(2rem,3.2vw,2.9rem)!important;line-height:.98!important;letter-spacing:-.05em!important}
+body[data-page="case-list"] .case-industry{margin-top:15px!important}.label{color:var(--muted-2)!important}
+body[data-page="case-list"] .case-impact{padding:18px 0 22px!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+body[data-page="case-list"] .case-impact .label{margin-bottom:12px!important}
+body[data-page="case-list"] .impact-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}body[data-page="case-list"] .impact-list li:last-child:nth-child(odd){grid-column:1/-1}
+body[data-page="case-list"] .impact-list li{display:flex!important;align-items:center!important;min-height:74px!important;padding:12px 13px!important;border:1px solid var(--line)!important;border-radius:9px!important;background:#000!important;color:#fff!important;font-size:clamp(.9rem,1.2vw,1.02rem)!important;font-weight:750!important;line-height:1.3!important}
+body[data-page="case-list"] .case-section{padding-top:21px!important}.case-industry p,.case-section p{color:#c5c5c5!important}.scope{color:#a6a6a6!important}
+body[data-page="case-list"] .case-footer{margin-top:24px!important;padding-top:20px!important;border-top:1px solid var(--line)!important}
+body[data-page="case-list"] .case-link{font-weight:700!important}
+
+/* Long-form case studies */
+body[data-page="case-study"] .hero{padding:clamp(70px,8vw,108px) 0 clamp(64px,7vw,88px)!important}
+body[data-page="case-study"] .eyebrow{color:var(--muted-2)!important}
+body[data-page="case-study"] .hero h1{max-width:950px!important;font-size:clamp(3.15rem,6vw,5.8rem)!important;line-height:.91!important;letter-spacing:-.06em!important}
+body[data-page="case-study"] .hero-subtitle{max-width:970px!important;margin-top:20px!important;font-size:clamp(1.35rem,2.5vw,2.25rem)!important;line-height:1.12!important;letter-spacing:-.035em!important;color:#fff!important}
+body[data-page="case-study"] .hero-copy{max-width:880px!important;margin-top:30px!important}
+body[data-page="case-study"] .hero-copy p{color:#bcbcbc!important;font-size:clamp(1rem,1.2vw,1.08rem)!important;line-height:1.78!important}
+body[data-page="case-study"] .snapshot{padding:clamp(58px,7vw,86px) 0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;background:#161616!important}
+body[data-page="case-study"] .snapshot-heading h2{font-size:clamp(2.5rem,4.6vw,4.4rem)!important;line-height:.98!important}
+body[data-page="case-study"] .meta-item,body[data-page="case-study"] .kpi{border:1px solid #303030!important;border-radius:10px!important;background:#0b0b0b!important}
+body[data-page="case-study"] .article{padding-top:clamp(66px,7vw,96px)!important}
+body[data-page="case-study"] .article-layout{grid-template-columns:210px minmax(0,860px)!important;gap:clamp(48px,6vw,78px)!important;justify-content:center!important}
+body[data-page="case-study"] .article-rail{top:106px!important}
+body[data-page="case-study"] .rail-title{color:#fff!important}.rail-links a{color:var(--muted-2)!important}.rail-links a:hover{color:#fff!important}
+body[data-page="case-study"] .case-section{padding:0 0 clamp(66px,7vw,92px)!important;margin:0 0 clamp(66px,7vw,92px)!important;border-bottom:1px solid var(--line)!important}
+body[data-page="case-study"] .case-section:last-child{border-bottom:0!important}
+body[data-page="case-study"] .case-section>h2.section-title,body[data-page="case-study"] .case-section>h2{font-size:clamp(2.25rem,4vw,3.8rem)!important;line-height:1!important;margin-bottom:24px!important}
+body[data-page="case-study"] .case-section h3{font-size:clamp(1.45rem,2.2vw,2rem)!important;line-height:1.13!important;margin-top:34px!important;margin-bottom:14px!important;letter-spacing:-.035em!important}
+body[data-page="case-study"] .case-section h4{font-size:1.02rem!important;line-height:1.35!important;letter-spacing:-.01em!important}
+body[data-page="case-study"] .article-content p,body[data-page="case-study"] .article-content li{color:#c1c1c1!important;font-size:1rem!important;line-height:1.8!important}
+body[data-page="case-study"] .article-content strong{color:#fff!important}
+body[data-page="case-study"] .evidence{margin:30px 0 36px!important}
+body[data-page="case-study"] .evidence-frame{padding:0!important;border:1px solid var(--line)!important;border-radius:12px!important;background:#161616!important;overflow:hidden!important}
+body[data-page="case-study"] .evidence img{display:block!important;width:100%!important;height:auto!important;border-radius:11px!important}
+body[data-page="case-study"] .evidence figcaption{margin-top:10px!important;color:var(--muted-2)!important;font-size:12px!important;line-height:1.45!important}
+body[data-page="case-study"] .tools-list,body[data-page="case-study"] .keyword-list{gap:8px!important}
+body[data-page="case-study"] .tools-list li,body[data-page="case-study"] .keyword-list li{border:1px solid var(--line)!important;border-radius:8px!important;background:#161616!important;color:#d4d4d4!important}
+body[data-page="case-study"] .case-pagination-link,body[data-page="case-study"] .case-pagination-all{background:#161616!important;border-color:var(--line)!important;border-radius:10px!important}
+
+
+body[data-page="case-study"] .case-pagination{width:min(860px,calc(100% - 48px));margin:0 auto clamp(72px,8vw,110px);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch}
+body[data-page="case-study"] .case-pagination-link,body[data-page="case-study"] .case-pagination-all{display:flex;min-height:86px;padding:16px 18px;border:1px solid var(--line)!important;border-radius:10px!important;background:#161616!important;text-decoration:none!important;transition:border-color var(--ease),transform var(--ease)}
+body[data-page="case-study"] .case-pagination-link{flex-direction:column;justify-content:center}
+body[data-page="case-study"] .case-pagination-next{text-align:right;align-items:flex-end}
+body[data-page="case-study"] .case-pagination-label{color:var(--muted-2);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+body[data-page="case-study"] .case-pagination-link strong{margin-top:5px;color:#fff;font-size:15px}
+body[data-page="case-study"] .case-pagination-all{min-width:170px;align-items:center;justify-content:center;color:#d2d2d2;font-size:13px;font-weight:700}
+body[data-page="case-study"] .case-pagination-link:hover,body[data-page="case-study"] .case-pagination-all:hover{border-color:var(--line-strong)!important;transform:translateY(-1px)}
+
+@media(max-width:980px){body[data-page="case-list"] .case-grid{grid-template-columns:1fr!important}body[data-page="case-study"] .article-layout{grid-template-columns:1fr!important;max-width:900px!important}body[data-page="case-study"] .article-rail{display:none!important}}
+@media(max-width:760px){body[data-page="case-study"] .case-pagination{width:min(100% - 28px,860px);grid-template-columns:1fr}body[data-page="case-study"] .case-pagination-next{text-align:left;align-items:flex-start}body[data-page="case-study"] .case-pagination-all{min-height:58px;min-width:0;order:3}}
+@media(max-width:680px){.container{width:min(var(--max),calc(100% - 28px))!important}body[data-page="home"] .hero{padding-top:58px!important}body[data-page="home"] .hero-title{font-size:clamp(3.7rem,18vw,5.1rem)!important}body[data-page="home"] .hero-copy h2,body[data-page="home"] .hero-copy>strong{font-size:clamp(2.1rem,10vw,3.15rem)!important}body[data-page="case-list"] .impact-list{grid-template-columns:1fr!important}body[data-page="case-study"] .hero h1{font-size:clamp(2.75rem,14vw,4.25rem)!important}body[data-page="case-study"] .hero-subtitle{font-size:clamp(1.25rem,7vw,1.8rem)!important}.global-shell{width:min(var(--max),calc(100% - 28px))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+
+/* ==========================================================
+   FINAL LAUNCH POLISH
+   Screenshot review fixes applied site-wide
+   ========================================================== */
+
+/* 1. Homepage hero: controlled premium scale, not oversized. */
+body[data-page="home"] .hero-title{
+  max-width:1050px!important;
+  font-size:clamp(3.7rem,6.9vw,6.15rem)!important;
+  line-height:.91!important;
+  letter-spacing:-.058em!important;
+}
+
+/* 2. Homepage SEO process: remove duplicate 01–05 side numbers. */
+body[data-page="home"] .process-number{
+  display:none!important;
+}
+body[data-page="home"] .process-step{
+  grid-template-columns:minmax(190px,230px) minmax(0,1fr)!important;
+  gap:clamp(26px,4vw,52px)!important;
+  padding:30px 0!important;
+}
+body[data-page="home"] .process-step h3{
+  margin:0!important;
+  padding-inline-start:18px!important;
+  font-size:clamp(1.28rem,1.8vw,1.58rem)!important;
+  line-height:1.18!important;
+}
+body[data-page="home"] .process-step p{
+  margin:0!important;
+  max-width:720px!important;
+  line-height:1.72!important;
+}
+
+/* 3 / 9 / 10. Project snapshot titles: smaller, wider and calmer. */
+body[data-page="case-study"] .snapshot-top{
+  grid-template-columns:minmax(0,1.08fr) minmax(400px,.92fr)!important;
+  gap:clamp(48px,6vw,76px)!important;
+  align-items:start!important;
+}
+body[data-page="case-study"] .snapshot-heading h2,
+body[data-page="case-study"] .snapshot h2{
+  max-width:760px!important;
+  font-size:clamp(2.15rem,3.65vw,3.45rem)!important;
+  line-height:1.01!important;
+  letter-spacing:-.048em!important;
+  text-wrap:balance!important;
+}
+
+/* Other long-form section titles were also slightly too loud. */
+body[data-page="case-study"] .case-section>h2.section-title,
+body[data-page="case-study"] .case-section>h2{
+  max-width:820px!important;
+  font-size:clamp(2rem,3.35vw,3.15rem)!important;
+  line-height:1.03!important;
+  letter-spacing:-.047em!important;
+  margin-bottom:25px!important;
+}
+
+/* 4 / 5. Card-style lists: remove floating pseudo bullets completely.
+   Normal article lists keep their bullets. */
+body[data-page="case-study"] .keyword-list,
+body[data-page="case-study"] .tools-list,
+body[data-page="case-study"] .status-list,
+body[data-page="case-study"] .compact-keyword-list,
+body[data-page="case-study"] .two-column-list{
+  list-style:none!important;
+  padding-left:0!important;
+}
+body[data-page="case-study"] .keyword-list li,
+body[data-page="case-study"] .tools-list li,
+body[data-page="case-study"] .status-list li,
+body[data-page="case-study"] .compact-keyword-list li,
+body[data-page="case-study"] .two-column-list li{
+  padding-left:18px!important;
+}
+body[data-page="case-study"] .keyword-list li::before,
+body[data-page="case-study"] .keyword-list li::marker,
+body[data-page="case-study"] .tools-list li::before,
+body[data-page="case-study"] .tools-list li::marker,
+body[data-page="case-study"] .status-list li::before,
+body[data-page="case-study"] .status-list li::marker,
+body[data-page="case-study"] .compact-keyword-list li::before,
+body[data-page="case-study"] .compact-keyword-list li::marker,
+body[data-page="case-study"] .two-column-list li::before,
+body[data-page="case-study"] .two-column-list li::marker{
+  content:none!important;
+  display:none!important;
+}
+
+/* Make boxed lists feel intentional rather than like bullets inside cards. */
+body[data-page="case-study"] .status-list li,
+body[data-page="case-study"] .compact-keyword-list li,
+body[data-page="case-study"] .keyword-list li,
+body[data-page="case-study"] .tools-list li{
+  min-height:58px!important;
+  display:flex!important;
+  align-items:center!important;
+  padding:15px 18px!important;
+  line-height:1.5!important;
+}
+
+/* 6 / 7. Biggest Takeaway: more breathing room on every case study. */
+body[data-page="case-study"] #my-biggest-takeaway{
+  padding:clamp(36px,4.8vw,56px)!important;
+  border-radius:18px!important;
+}
+body[data-page="case-study"] #my-biggest-takeaway>h2.section-title,
+body[data-page="case-study"] #my-biggest-takeaway>h2{
+  max-width:720px!important;
+  margin:0 0 26px!important;
+  font-size:clamp(2.2rem,3.55vw,3.25rem)!important;
+  line-height:1.02!important;
+}
+body[data-page="case-study"] #my-biggest-takeaway p{
+  max-width:780px!important;
+  margin:0!important;
+  color:#c8c8c8!important;
+  font-size:1rem!important;
+  line-height:1.88!important;
+}
+body[data-page="case-study"] #my-biggest-takeaway p:last-child strong{
+  display:block!important;
+  max-width:760px!important;
+  margin-top:30px!important;
+  padding-top:4px!important;
+  font-size:clamp(1.2rem,2vw,1.55rem)!important;
+  line-height:1.48!important;
+  letter-spacing:-.018em!important;
+}
+body[data-page="case-study"] #my-biggest-takeaway .takeaway-bridge{
+  margin:28px auto 2px!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* 8. Numbered problem cards: 0 on top, 1/2/3/etc below. */
+body[data-page="case-study"] .proud-card{
+  grid-template-columns:76px minmax(0,1fr)!important;
+  gap:24px!important;
+  padding:22px!important;
+  align-items:start!important;
+}
+body[data-page="case-study"] .proud-number{
+  width:64px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  color:#fff!important;
+  font-size:clamp(2.35rem,4.2vw,3.9rem)!important;
+  line-height:.72!important;
+  font-weight:900!important;
+  letter-spacing:-.055em!important;
+}
+body[data-page="case-study"] .proud-number span{
+  display:block!important;
+  line-height:.72!important;
+}
+body[data-page="case-study"] .proud-copy{
+  min-width:0!important;
+  padding-top:1px!important;
+}
+body[data-page="case-study"] .proud-copy h3{
+  margin:0 0 12px!important;
+  font-size:clamp(1rem,1.5vw,1.2rem)!important;
+  line-height:1.28!important;
+}
+body[data-page="case-study"] .proud-copy p{
+  margin:0 0 10px!important;
+  font-size:.95rem!important;
+  line-height:1.7!important;
+}
+
+/* General card rhythm for long case studies. */
+body[data-page="case-study"] .process-step,
+body[data-page="case-study"] .feature-card,
+body[data-page="case-study"] .focus-card,
+body[data-page="case-study"] .content-goal-card,
+body[data-page="case-study"] .learning-item,
+body[data-page="case-study"] .outcome-card,
+body[data-page="case-study"] .problem-card,
+body[data-page="case-study"] .taxonomy-card,
+body[data-page="case-study"] .content-example-card{
+  padding:20px!important;
+}
+body[data-page="case-study"] .process-step strong,
+body[data-page="case-study"] .feature-card h3,
+body[data-page="case-study"] .focus-card h3{
+  line-height:1.35!important;
+}
+
+/* Screenshots stay substantial, but not visually oversized inside the article. */
+body[data-page="case-study"] .evidence{
+  width:min(100%,820px)!important;
+  margin:30px auto 38px!important;
+}
+body[data-page="case-study"] .evidence-frame{
+  border-radius:12px!important;
+}
+body[data-page="case-study"] .evidence img{
+  border-radius:11px!important;
+}
+
+/* Responsive final polish */
+@media(max-width:1100px){
+  body[data-page="case-study"] .snapshot-top{
+    grid-template-columns:1fr!important;
+    gap:34px!important;
+  }
+  body[data-page="case-study"] .snapshot-heading h2,
+  body[data-page="case-study"] .snapshot h2{
+    max-width:800px!important;
+  }
+}
+@media(max-width:680px){
+  body[data-page="home"] .hero-title{
+    max-width:100%!important;
+    font-size:clamp(3.2rem,15vw,4.55rem)!important;
+    line-height:.92!important;
+  }
+  body[data-page="home"] .process-step{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+    padding:24px 0!important;
+  }
+  body[data-page="home"] .process-step h3{
+    padding-inline-start:14px!important;
+  }
+  body[data-page="case-study"] .snapshot-heading h2,
+  body[data-page="case-study"] .snapshot h2{
+    font-size:clamp(2rem,10.5vw,2.85rem)!important;
+    line-height:1.02!important;
+  }
+  body[data-page="case-study"] .case-section>h2.section-title,
+  body[data-page="case-study"] .case-section>h2{
+    font-size:clamp(1.9rem,9vw,2.65rem)!important;
+  }
+  body[data-page="case-study"] #my-biggest-takeaway{
+    padding:28px 22px!important;
+  }
+  body[data-page="case-study"] #my-biggest-takeaway>h2.section-title,
+  body[data-page="case-study"] #my-biggest-takeaway>h2{
+    font-size:clamp(2rem,10vw,2.65rem)!important;
+  }
+  body[data-page="case-study"] #my-biggest-takeaway p{
+    line-height:1.78!important;
+  }
+  body[data-page="case-study"] .proud-card{
+    grid-template-columns:58px minmax(0,1fr)!important;
+    gap:17px!important;
+    padding:18px!important;
+  }
+  body[data-page="case-study"] .proud-number{
+    width:48px!important;
+    font-size:clamp(2.15rem,12vw,3rem)!important;
+  }
+  body[data-page="case-study"] .evidence{
+    width:100%!important;
+  }
+}

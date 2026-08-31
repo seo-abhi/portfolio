@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bitrix Theme SEO Case Study | Abhi Patel</title>
+<meta content="Bitrix Theme SEO case study by Abhi Patel, covering marketplace keyword architecture, product SEO, technical SEO, crawl management, content, and backlinks." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Tinyfacets structured keyword architecture */
+    .keyword-architecture {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .keyword-architecture-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .keyword-architecture-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .keyword-architecture-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Search-result mini cards */
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .result-mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .result-mini-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .result-mini-card p {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    /* Screenshot placeholders, ready for future proof images */
+    .evidence-placeholder {
+      margin: 34px 0 44px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+        var(--surface);
+      text-align: center;
+    }
+
+    .evidence-placeholder .placeholder-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-placeholder .placeholder-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evidence-placeholder figcaption {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Learnings */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .learning-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 620px) {
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Final indexing-status card fix */
+    .status-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .status-list li {
+      list-style: none !important;
+      padding: 16px 18px !important;
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+    }
+
+    .status-list li::before,
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+
+  
+    /* Jewelite specific structured blocks */
+    .team-grid,
+    .schema-grid,
+    .trust-grid,
+    .keyword-architecture,
+    .result-mini-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .team-card,
+    .schema-card,
+    .trust-card,
+    .keyword-architecture-card,
+    .result-mini-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .team-card h3,
+    .schema-card h3,
+    .trust-card h3,
+    .keyword-architecture-card h3,
+    .result-mini-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .team-card p,
+    .schema-card p,
+    .trust-card p,
+    .keyword-architecture-card p,
+    .result-mini-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .learning-item {
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .metric-note {
+      margin: 18px 0 28px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e8e8e8;
+    }
+
+    .code-sample {
+      margin: 16px 0 24px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #050505;
+      color: #f0f0f0;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 620px) {
+      .team-grid,
+      .schema-grid,
+      .trust-grid,
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Tech focused-scope additions */
+    .scope-grid,
+    .page-result-grid,
+    .query-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .page-result-card,
+    .query-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .page-result-card h3,
+    .query-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .scope-card p,
+    .page-result-card p,
+    .query-card p {
+      margin: 0 0 7px;
+      font-size: 14px;
+    }
+
+    .query-card .query-name {
+      margin-bottom: 14px;
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .query-card .query-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .query-card .query-metrics span {
+      display: block;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #dcdcdc;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .landing-page-callout {
+      margin: 22px 0 30px;
+      padding: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .landing-page-callout h3 {
+      margin: 0 0 10px;
+    }
+
+    .landing-page-callout p {
+      margin: 0;
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .page-result-grid,
+      .query-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .query-card .query-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .scope-grid,
+    .foundation-grid,
+    .future-grid,
+    .learning-grid,
+    .reported-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .foundation-card,
+    .future-card,
+    .learning-item,
+    .reported-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .foundation-card h3,
+    .future-card h3,
+    .reported-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .scope-card p,
+    .foundation-card p,
+    .future-card p,
+    .reported-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-card {
+      min-height: 148px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-number {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .outcome-stack {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .outcome-stack .outcome-item {
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 860px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .foundation-grid,
+      .future-grid,
+      .learning-grid,
+      .reported-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Agency Project Snapshot polish */
+    .snapshot--agency {
+      padding: clamp(72px, 8vw, 108px) 0;
+    }
+
+    .snapshot--agency .snapshot-top {
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      gap: clamp(58px, 7vw, 92px);
+      align-items: start;
+    }
+
+    .snapshot--agency .snapshot-heading {
+      max-width: 690px;
+      padding-top: 4px;
+    }
+
+    .snapshot--agency .snapshot-heading h2 {
+      max-width: 680px;
+      margin-top: 16px;
+      font-size: clamp(2.85rem, 4.6vw, 4.35rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+
+    .snapshot--agency .snapshot-meta {
+      align-self: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      min-width: 0;
+    }
+
+    .snapshot--agency .meta-item {
+      min-height: 118px;
+      padding: 24px 25px;
+    }
+
+    .snapshot--agency .meta-value {
+      font-size: 15px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .snapshot--agency .snapshot-lower {
+      display: grid;
+      grid-template-columns: minmax(270px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(48px, 6vw, 82px);
+      align-items: start;
+      margin-top: clamp(52px, 6vw, 76px);
+      padding-top: clamp(32px, 4vw, 44px);
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot--agency .snapshot-scope-block,
+    .snapshot--agency .snapshot-signals-block {
+      min-width: 0;
+    }
+
+    .snapshot--agency .snapshot-lower h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .snapshot-pages-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot-pages-list li {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      color: #f4f4f4;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .snapshot-pages-list li span {
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .snapshot--agency .snapshot-signals-block .kpi-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .snapshot--agency .snapshot-signals-block .kpi {
+      min-height: 148px;
+      padding: 21px 22px;
+    }
+
+    .snapshot--agency .snapshot-note {
+      margin-top: clamp(38px, 5vw, 56px);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1180px) {
+      .snapshot--agency .snapshot-top {
+        grid-template-columns: minmax(0, .95fr) minmax(380px, 1.05fr);
+        gap: 46px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        font-size: clamp(2.75rem, 4.3vw, 3.8rem);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .snapshot--agency .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .snapshot--agency .snapshot-heading {
+        max-width: 780px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        max-width: 760px;
+        font-size: clamp(2.8rem, 7vw, 4.25rem);
+      }
+
+      .snapshot--agency .snapshot-meta {
+        width: 100%;
+      }
+
+      .snapshot--agency .snapshot-lower {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .snapshot--agency .snapshot-scope-block {
+        max-width: 640px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .snapshot--agency {
+        padding: 60px 0 68px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        margin-top: 12px;
+        font-size: clamp(2.45rem, 12vw, 3.65rem);
+        line-height: 1;
+      }
+
+      .snapshot--agency .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--agency .meta-item {
+        min-height: auto;
+        padding: 19px 20px;
+      }
+
+      .snapshot--agency .snapshot-lower {
+        margin-top: 44px;
+        padding-top: 28px;
+        gap: 38px;
+      }
+
+      .snapshot--agency .snapshot-signals-block .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--agency .snapshot-signals-block .kpi {
+        min-height: 132px;
+      }
+    }
+
+  
+    /* Bitrix Theme marketplace case-study additions */
+    .scale-grid,
+    .problem-grid,
+    .taxonomy-grid,
+    .content-example-grid,
+    .proud-grid,
+    .learning-grid,
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scale-card,
+    .problem-card,
+    .taxonomy-card,
+    .content-example-card,
+    .proud-card,
+    .learning-item,
+    .outcome-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scale-card h3,
+    .problem-card h3,
+    .taxonomy-card h3,
+    .content-example-card h3,
+    .proud-card h3,
+    .outcome-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .scale-card p,
+    .problem-card p,
+    .taxonomy-card p,
+    .content-example-card p,
+    .proud-card p,
+    .outcome-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .scale-card .big-number {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: .95;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .problem-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .proud-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .proud-card {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .proud-number {
+      color: #fff;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+
+    .proud-copy h3 {
+      margin-top: 0;
+    }
+
+    .proud-copy p + p {
+      margin-top: 10px;
+    }
+
+    .architecture-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .architecture-flow .arch-card {
+      position: relative;
+      padding: 18px 17px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      min-height: 116px;
+    }
+
+    .architecture-flow .arch-card h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .architecture-flow .arch-card p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .launch-process,
+    .technical-process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-card {
+      min-height: 146px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-number {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .proof-plain {
+      margin: 20px 0 0;
+      padding: 24px 26px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .proof-plain p {
+      margin: 0;
+      max-width: 880px;
+    }
+
+    .scope-note,
+    .metric-note,
+    .historical-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .seo-system {
+      margin: 24px 0 30px;
+      padding: 22px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .seo-system .system-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      line-height: 1.5;
+    }
+
+    .seo-system .system-line span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .seo-system .system-line .arrow {
+      padding: 0;
+      border: 0;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .two-column-list {
+      columns: 2;
+      column-gap: 36px;
+      margin: 18px 0 28px;
+      padding-left: 22px;
+    }
+
+    .two-column-list li {
+      break-inside: avoid;
+      margin-bottom: 9px;
+    }
+
+    .historical-outcomes {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .historical-outcome {
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface);
+      color: #ededed;
+      font-weight: 700;
+    }
+
+    .snapshot--bitrix .snapshot-top {
+      grid-template-columns: minmax(0, 1.08fr) minmax(400px, .92fr);
+      gap: clamp(54px, 7vw, 86px);
+      align-items: start;
+    }
+
+    .snapshot--bitrix .snapshot-heading h2 {
+      max-width: 720px;
+      font-size: clamp(2.9rem, 4.7vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+
+    .snapshot--bitrix .snapshot-meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .snapshot--bitrix .meta-item {
+      min-height: 116px;
+      padding: 23px 24px;
+    }
+
+    .snapshot--bitrix .snapshot-scale {
+      margin-top: clamp(50px, 6vw, 74px);
+      padding-top: clamp(30px, 4vw, 42px);
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot--bitrix .snapshot-scale h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+    }
+
+    .snapshot--bitrix .kpi-grid {
+      margin-top: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .problem-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .architecture-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .snapshot--bitrix .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .launch-process,
+      .technical-process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .snapshot--bitrix .snapshot-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scale-grid,
+      .problem-grid,
+      .taxonomy-grid,
+      .content-example-grid,
+      .learning-grid,
+      .outcome-grid,
+      .architecture-flow,
+      .launch-process,
+      .technical-process {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--bitrix .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .proud-card {
+        grid-template-columns: 1fr;
+      }
+
+      .two-column-list {
+        columns: 1;
+      }
+
+      .snapshot--bitrix .snapshot-heading h2 {
+        font-size: clamp(2.45rem, 12vw, 3.7rem);
+      }
+    }
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building and Scaling SEO for a Growing Digital Product Marketplace",
+    "about": "SEO case study for Bitrix Theme",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="Bitrix Theme SEO Case Study | Abhi Patel" property="og:title"/><meta content="Bitrix Theme SEO case study by Abhi Patel, covering marketplace keyword architecture, product SEO, technical SEO, crawl management, content, and backlinks." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Bitrix Theme SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="Bitrix Theme SEO case study by Abhi Patel, covering marketplace keyword architecture, product SEO, technical SEO, crawl management, content, and backlinks." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a aria-current="page" href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>Bitrix Theme</span>
+</nav>
+<div class="eyebrow">SEO Case Study / Bitrix Theme</div>
+<h1>Bitrix Theme SEO Case Study</h1>
+<div class="hero-subtitle">Building and Scaling SEO for a Growing Digital Product Marketplace</div>
+<div class="hero-copy">
+<p>When I started working on Bitrix Theme in March 2024, it was a relatively new digital-product marketplace with hundreds of commercial pages but no established SEO strategy behind them.</p>
+<p>The website sold website templates, UI kits, complete scripts, and digital services across competitive categories such as crypto, meme coins, ecommerce, casino, WordPress, and mobile applications.</p>
+<p>The challenge was much bigger than optimizing a few important landing pages.</p>
+<p>Bitrix Theme needed an SEO system capable of handling <strong>hundreds of closely related products, new product launches, categories, tags, blogs, and technical URLs</strong> without creating uncontrolled keyword overlap, duplicate content, crawl problems, or weak search targeting.</p>
+<p>I became the main SEO owner for the website and managed its SEO from <strong>March 2024 to November 2025</strong>.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot snapshot--bitrix">
+<div class="container">
+<div class="snapshot-top">
+<div class="snapshot-heading">
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">End-to-end SEO ownership for a growing digital-product marketplace.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">Digital Products / Website Templates &amp; UI Kits</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Website Type</span>
+<div class="meta-value">Digital Product Marketplace</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">SEO Duration</span>
+<div class="meta-value">March 2024 to November 2025</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role</span>
+<div class="meta-value">SEO Executive / Main SEO Owner</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Starting Stage</span>
+<div class="meta-value">Relatively New Website</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Primary Responsibility</span>
+<div class="meta-value">End-to-End SEO Strategy and Execution Coordination</div>
+</div>
+</div>
+</div>
+<div class="snapshot-scale">
+<div class="section-kicker">Website Scale During My Work</div>
+<h3>A large commercial ecosystem with hundreds of related URLs.</h3>
+<div aria-label="Website scale during project" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">Products</div>
+<div><div class="kpi-value">~300</div><div class="kpi-detail">Initial product library</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Tag Pages</div>
+<div><div class="kpi-value">~200</div><div class="kpi-detail">Taxonomy footprint</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Service Pages</div>
+<div><div class="kpi-value">~20</div><div class="kpi-detail">Commercial service pages</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Major Categories</div>
+<div><div class="kpi-value">5</div><div class="kpi-detail">Core category pages</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Existing Blogs</div>
+<div><div class="kpi-value">12</div><div class="kpi-detail">At the starting point</div></div>
+</article>
+</div>
+<h3 style="margin-top:34px;">My Scope</h3>
+<ul class="tools-list">
+<li>SEO Strategy</li>
+<li>SEO Audits</li>
+<li>Keyword Research</li>
+<li>Competitor Research</li>
+<li>Keyword Mapping</li>
+<li>Product SEO</li>
+<li>Category SEO</li>
+<li>Blog SEO</li>
+<li>Technical SEO</li>
+<li>Schema</li>
+<li>Internal Linking</li>
+<li>Content Strategy</li>
+<li>Off-Page SEO</li>
+<li>Search Console &amp; GA4 Monitoring</li>
+<li>Reporting</li>
+<li>Developer &amp; Content-Team Coordination</li>
+</ul>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-the-keyword-architecture">Keyword Architecture</a></li>
+<li><a href="#mapping-keywords-by-search-intent">Search Intent</a></li>
+<li><a href="#managing-keyword-cannibalization">Cannibalization</a></li>
+<li><a href="#manually-optimizing-product-pages">Product SEO</a></li>
+<li><a href="#making-seo-part-of-the-product-launch-process">Launch Process</a></li>
+<li><a href="#strengthening-category-pages">Category SEO</a></li>
+<li><a href="#managing-200-tag-pages">Tag Pages</a></li>
+<li><a href="#building-the-blog-strategy">Blog Strategy</a></li>
+<li><a href="#building-internal-linking-from-scratch">Internal Linking</a></li>
+<li><a href="#starting-the-technical-seo-overhaul">Technical SEO</a></li>
+<li><a href="#solving-crawlability-and-indexing-problems">Crawl &amp; Indexing</a></li>
+<li><a href="#building-the-structured-data-layer">Structured Data</a></li>
+<li><a href="#strengthening-the-backlink-profile">Off-Page SEO</a></li>
+<li><a href="#historical-seo-outcomes">Historical Outcomes</a></li>
+<li><a href="#the-five-problems-i-am-most-proud-of-solving">5 Key Problems</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#tools-platforms-used">Tools</a></li>
+<li><a href="#the-most-difficult-part">Difficult Part</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>Bitrix Theme was not a mature marketplace with an established search strategy.</p>
+<p>The product catalogue had grown much faster than the SEO foundation behind it. Hundreds of pages existed, but many of them were not clearly differentiated for search.</p>
+<p>The website contained products across similar niches such as:</p>
+<ul class="keyword-list"><li>Crypto</li><li>Meme Coins</li><li>Casino</li><li>Ecommerce</li><li>WordPress</li><li>Mobile Applications</li><li>UI Design</li><li>Website Templates</li></ul>
+<p>This created a major SEO challenge.</p>
+<p>A marketplace could contain several <strong>crypto website templates</strong>, <strong>casino UI kits</strong>, or <strong>meme coin designs</strong> that all appeared relevant to the same keyword.</p>
+<p>If every page targeted the biggest obvious term, Bitrix Theme would begin competing against itself.</p>
+<p>At the same time, the website had crawl, indexing, internal-linking, content, performance, structured-data, and backlink problems.</p>
+<p>The challenge therefore was not:</p>
+<div class="flow-statement">How do I optimize 300 product pages?</div>
+<p>It was:</p>
+<div class="flow-statement">How do I build a scalable search system where hundreds of related URLs have clear roles, clear keywords, useful content, clean crawl paths, and enough internal and external signals to compete?</div>
+</section>
+<section class="case-section case-section--structured" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>My early work identified problems across almost every major SEO area.</p>
+<div class="problem-grid">
+<div class="problem-card">
+<h4>On-Page SEO</h4>
+<p>Weak keyword targeting, thin product descriptions, poor or missing metadata, near-duplicate content, weak category targeting, cannibalization, and limited page differentiation.</p>
+</div>
+<div class="problem-card">
+<h4>Technical SEO</h4>
+<p>Crawlability, indexing, tag pages, filters, parameters, pagination, duplicate URLs, canonical signals, sitemap quality, robots.txt, page speed, Core Web Vitals, schema, and images.</p>
+</div>
+<div class="problem-card">
+<h4>Content</h4>
+<p>Only around 12 blogs existed at the starting point, while many product descriptions contained only around two lines of copy.</p>
+</div>
+<div class="problem-card">
+<h4>Internal Linking</h4>
+<p>Products, categories, and blogs behaved like separate page groups instead of one connected search ecosystem.</p>
+</div>
+<div class="problem-card">
+<h4>Off-Page SEO</h4>
+<p>The relatively new marketplace had a weak backlink profile and needed stronger external authority.</p>
+</div>
+</div>
+<h3>On-Page SEO</h3>
+<ul>
+<li>Weak keyword targeting</li>
+<li>Poor or missing metadata</li>
+<li>Thin product descriptions</li>
+<li>Duplicate and near-duplicate content</li>
+<li>Similar products targeting similar searches</li>
+<li>Weak category targeting</li>
+<li>Keyword cannibalization</li>
+<li>Limited content depth</li>
+<li>Weak page differentiation</li>
+</ul>
+<p>Many commercial pages technically existed but did not yet function as strong search landing pages.</p>
+<h3>Technical SEO</h3>
+<ul class="two-column-list">
+<li>Crawlability problems</li>
+<li>Indexing problems</li>
+<li>Unnecessary URLs being discovered</li>
+<li>Large numbers of tag pages</li>
+<li>Filter URLs</li>
+<li>Parameter URLs</li>
+<li>Pagination</li>
+<li>Duplicate URLs</li>
+<li>Missing or weak canonical signals</li>
+<li>Sitemap problems</li>
+<li>Basic robots.txt configuration</li>
+<li>Page-speed problems</li>
+<li>Core Web Vitals issues</li>
+<li>Missing structured data</li>
+<li>Image optimization problems</li>
+</ul>
+<p>The technical challenge was deciding which URLs genuinely deserved search visibility and which existed only for website functionality.</p>
+<h3>Content</h3>
+<p>The site had only around <strong>12 existing blogs</strong> when I started, with no strong SEO-led content strategy connecting informational demand to commercial pages.</p>
+<p>Many product descriptions contained only around <strong>two lines of copy</strong>, which was not enough to explain the product, differentiate it, or target meaningful searches.</p>
+<h3>Internal Linking</h3>
+<p>There was almost no structured SEO-led internal-linking system. This weakened page discovery, search-engine understanding, deep-page authority flow, and commercial-content support.</p>
+<h3>Off-Page SEO</h3>
+<p>The backlink profile was also very weak. A relatively new marketplace competing against established template and digital-product websites needed stronger external authority.</p>
+</section>
+<section class="case-section" id="my-role"><h2 class="section-title">My Role</h2>
+<p>I became the main SEO owner for Bitrix Theme.</p>
+<p>My responsibilities included:</p>
+<ul class="two-column-list">
+<li>SEO strategy</li>
+<li>SEO audits</li>
+<li>Keyword research</li>
+<li>Competitor research</li>
+<li>Keyword mapping</li>
+<li>Product SEO</li>
+<li>Category SEO</li>
+<li>Blog SEO</li>
+<li>Technical SEO</li>
+<li>Schema strategy</li>
+<li>Internal linking</li>
+<li>Content planning</li>
+<li>Content briefs</li>
+<li>Content review</li>
+<li>Off-page strategy</li>
+<li>Backlink prospecting</li>
+<li>Outreach</li>
+<li>Backlink approval</li>
+<li>Anchor-text planning</li>
+<li>Google Search Console monitoring</li>
+<li>GA4 monitoring</li>
+<li>Reporting</li>
+<li>Developer coordination</li>
+</ul>
+<p>I prepared SEO recommendations and implementation requirements, then coordinated with developers and content writers for execution.</p>
+<p>This meant I was responsible not only for identifying problems but also for deciding:</p>
+<ul class="keyword-list"><li>What Should Be Fixed</li><li>Which Pages Should Be Prioritized</li><li>What Each Page Should Target</li><li>How the Changes Should Be Implemented</li><li>How Performance Should Be Monitored Afterwards</li></ul>
+</section>
+<section class="case-section case-section--structured" id="starting-with-the-keyword-architecture"><h2 class="section-title">Starting With the Keyword Architecture</h2>
+<p>One of the first major tasks was understanding how people searched for the products Bitrix Theme actually sold.</p>
+<p>I used Semrush, Ubersuggest, competitor analysis, search intent, product relevance, and commercial opportunity to research several layers of keywords.</p>
+<p>These included:</p>
+<ul class="keyword-list"><li>Product Keywords</li><li>Category Keywords</li><li>Technology Keywords</li><li>Industry-Specific Keywords</li><li>Commercial Keywords</li><li>Transactional Keywords</li><li>Informational Keywords</li></ul>
+<h3>Meme Coin Templates &amp; UI Kits</h3>
+<ul class="keyword-list"><li>meme coin website template</li><li>meme coin Figma UI kit</li><li>meme coin website UI kit</li><li>meme coin app UI kit</li></ul>
+<h3>Crypto Templates &amp; UI Kits</h3>
+<ul class="keyword-list"><li>crypto website template</li><li>crypto website UI kit</li><li>crypto Figma UI kit</li><li>crypto app UI kit</li><li>crypto app template</li></ul>
+<h3>Ecommerce Templates &amp; UI Kits</h3>
+<ul class="keyword-list"><li>ecommerce website template</li><li>ecommerce website UI kit</li><li>ecommerce Figma UI kit</li><li>ecommerce app UI kit</li></ul>
+<h3>Casino Templates &amp; UI Kits</h3>
+<ul class="keyword-list"><li>casino website template</li><li>casino website UI kit</li><li>casino Figma UI kit</li><li>casino app UI kit</li></ul>
+<h3>WordPress</h3>
+<ul class="keyword-list"><li>WordPress themes</li><li>WordPress templates</li></ul>
+<p>The live marketplace still prominently features meme-coin, crypto, ecommerce, and similar template/UI-kit categories. As of the current live site, Bitrix Theme states <strong>549+ products</strong>, and the marketplace reports <strong>151 templates</strong>.</p>
+</section>
+<section class="case-section" id="mapping-keywords-by-search-intent"><h2 class="section-title">Mapping Keywords by Search Intent</h2>
+<p>Keyword research alone would not solve the problem. Every keyword needed an appropriate destination.</p>
+<div class="taxonomy-grid">
+<div class="taxonomy-card">
+<h4>Informational Intent</h4>
+<p>Primarily targeted through blog articles, supporting informational content, selected category content, and valuable tag pages.</p>
+</div>
+<div class="taxonomy-card">
+<h4>Commercial &amp; Transactional Intent</h4>
+<p>Primarily targeted through the homepage, product pages, category pages, and important commercial pages.</p>
+</div>
+</div>
+<p>This created clearer page roles.</p>
+<p>Instead of publishing a blog and a product page targeting the exact same query, each URL could serve the search intent it was best suited to satisfy.</p>
+</section>
+<section class="case-section" id="managing-keyword-cannibalization"><h2 class="section-title">Managing Keyword Cannibalization</h2>
+<p>Keyword cannibalization became one of the most important SEO challenges in the project because many products were naturally similar.</p>
+<p>Bitrix Theme might contain several pages that could all logically target:</p>
+<ul class="keyword-list"><li>meme coin UI kit</li><li>casino website UI kit</li></ul>
+<p>Assigning the same main keyword across every similar product would make the marketplace compete against itself.</p>
+<p>Instead, I manually reviewed similar products and distributed:</p>
+<ul class="keyword-list"><li>Primary Keywords</li><li>Secondary Keywords</li><li>Long-Tail Variations</li><li>Technology-Specific Terms</li><li>Design-Specific Terms</li></ul>
+<p>If one product was already performing strongly for an important keyword, I avoided making unnecessary targeting changes. A weaker similar page could instead target a more specific variation.</p>
+<p>This allowed Bitrix Theme to expand its search footprint while reducing unnecessary internal competition.</p>
+</section>
+<section class="case-section" id="manually-optimizing-product-pages"><h2 class="section-title">Manually Optimizing Product Pages</h2>
+<p>Product SEO became one of the largest parts of my responsibility.</p>
+<p>I deliberately avoided using one generic SEO template across hundreds of pages because that could have created repetitive metadata, duplicate descriptions, cannibalization, weak differentiation, and near-identical search landing pages.</p>
+<p>Instead, product pages were optimized individually.</p>
+<p>The elements I worked on included:</p>
+<ul class="two-column-list">
+<li>Product title</li>
+<li>Meta title</li>
+<li>Meta description</li>
+<li>H1</li>
+<li>Product description</li>
+<li>Keyword placement</li>
+<li>URL</li>
+<li>Image alt text</li>
+<li>Product tags</li>
+<li>Internal links</li>
+<li>Related products</li>
+<li>Structured data</li>
+<li>Content expansion</li>
+</ul>
+<p>The current marketplace still reflects the complexity of this product library, with hundreds of UI kits, templates, and complete scripts.</p>
+</section>
+<section class="case-section" id="turning-thin-product-pages-into-search-assets"><h2 class="section-title">Turning Thin Product Pages Into Search Assets</h2>
+<p>One of the clearest problems at the beginning was product content.</p>
+<p>Many pages contained only around:</p>
+<h3>Two Lines of Product Description</h3>
+<p>That gave search engines and users very little context around what the product was, which industry it served, which platform or technology it used, which features it included, who might use it, and which searches it should satisfy.</p>
+<p>I worked with the content team to expand product pages into deeper commercial resources.</p>
+<div class="flow-statement">What the Product Is → What It Includes → Who It Is For → Why It Is Useful</div>
+<p>The objective was not to insert keywords into longer paragraphs. The content needed to explain the product while naturally incorporating relevant search terms.</p>
+<p>The current <strong>Casino Live Game UI Kit</strong> page is a good example of this expanded direction. It now includes a detailed overview, feature explanations, use cases, and FAQs rather than a minimal two-line description.</p>
+</section>
+<section class="case-section" id="making-seo-part-of-the-product-launch-process"><h2 class="section-title">Making SEO Part of the Product Launch Process</h2>
+<p>SEO eventually became part of the workflow before products were published.</p>
+<p>For many new launches, I received the product design or Figma information before the page went live.</p>
+<p>The workflow became:</p>
+<div class="launch-process"><div class="process-card"><div class="process-number">Step 01</div><h4>Product Review</h4><p>Understand the product, industry, technology, and commercial use case.</p></div><div class="process-card"><div class="process-number">Step 02</div><h4>Keyword Research</h4><p>Identify realistic search opportunities before the page is published.</p></div><div class="process-card"><div class="process-number">Step 03</div><h4>Search Intent</h4><p>Match the product to the right commercial or transactional intent.</p></div><div class="process-card"><div class="process-number">Step 04</div><h4>SEO Product Title</h4><p>Create a title that balances product clarity with search relevance.</p></div><div class="process-card"><div class="process-number">Step 05</div><h4>Content Direction</h4><p>Define what the product description needs to explain and differentiate.</p></div><div class="process-card"><div class="process-number">Step 06</div><h4>Metadata</h4><p>Prepare search-focused title and description signals.</p></div><div class="process-card"><div class="process-number">Step 07</div><h4>Tags</h4><p>Use taxonomy carefully without creating unnecessary overlap.</p></div><div class="process-card"><div class="process-number">Step 08</div><h4>Internal Linking</h4><p>Connect the launch to relevant products, categories, and content.</p></div><div class="process-card"><div class="process-number">Step 09</div><h4>Publish &amp; Monitor</h4><p>Publish, then monitor discovery and indexation.</p></div></div>
+<p>This was important because SEO stopped being something added weeks after a product launched. New products could enter the marketplace with a clearer search strategy from day one.</p>
+</section>
+<section class="case-section" id="strengthening-category-pages"><h2 class="section-title">Strengthening Category Pages</h2>
+<p>I also optimized the main category and commercial-listing pages.</p>
+<p>The work was lighter than individual product SEO, but important elements included:</p>
+<ul class="keyword-list"><li>H1 Structure</li><li>Introductory Content</li><li>Metadata</li><li>Structured Data</li></ul>
+<div class="taxonomy-grid">
+<div class="taxonomy-card">
+<h4>Category Pages</h4>
+<p>Target broader commercial themes.</p>
+</div>
+<div class="taxonomy-card">
+<h4>Product Pages</h4>
+<p>Target more specific product intent.</p>
+</div>
+</div>
+<p>This prevented categories and products from unnecessarily fighting for identical searches.</p>
+</section>
+<section class="case-section" id="managing-200-tag-pages"><h2 class="section-title">Managing 200 Tag Pages</h2>
+<p>Bitrix Theme contained approximately:</p>
+<h3>200 Tag Pages</h3>
+<p>This created both opportunity and risk.</p>
+<p>Some tags could potentially satisfy real search demand. Others were thin, duplicative, or too similar to existing category pages.</p>
+<p>I therefore did not treat every tag page equally.</p>
+<h3>Improving Valuable Tag Pages</h3>
+<p>Where a tag page had genuine search potential, I worked on:</p>
+<ul class="keyword-list"><li>Unique Content</li><li>Keyword Targeting</li><li>Metadata</li><li>Internal Linking</li></ul>
+<p>This allowed selected taxonomy pages to become useful search destinations rather than automatically blocking the entire tag system.</p>
+<h3>Handling Duplicate and Low-Value URLs</h3>
+<p>Where pages had little independent search value, the response depended on the problem:</p>
+<ul class="keyword-list"><li>Content Differentiation</li><li>Canonicalization</li><li>Noindex</li><li>Crawl-Path Restrictions</li></ul>
+<div class="flow-statement">Pages That Deserve Search Visibility vs. URLs That Exist Only for Website Functionality</div>
+</section>
+<section class="case-section" id="managing-filters-parameters-and-pagination"><h2 class="section-title">Managing Filters, Parameters and Pagination</h2>
+<p>The marketplace also generated filter URLs, parameter URLs, pagination URLs, and similar taxonomy variations.</p>
+<p>These created unnecessary crawl paths.</p>
+<p>I worked with developers to restrict unnecessary discovery where independent search visibility was not required.</p>
+<p>The goal was not:</p>
+<div class="flow-statement">Block Everything</div>
+<p>It was:</p>
+<div class="flow-statement">Create a Cleaner Crawl Architecture Around URLs That Genuinely Matter</div>
+</section>
+<section class="case-section" id="building-the-blog-strategy"><h2 class="section-title">Building the Blog Strategy</h2>
+<p>When I started, Bitrix Theme had only around 12 existing blogs and no strong search-driven content system.</p>
+<p>During the project, I personally worked on approximately:</p>
+<h3>80 Blog Articles</h3>
+<p>My involvement included:</p>
+<ul class="two-column-list">
+<li>Topic research</li>
+<li>Keyword research</li>
+<li>Competitor analysis</li>
+<li>Content calendar planning</li>
+<li>Content briefs</li>
+<li>Writer instructions</li>
+<li>SEO review</li>
+<li>Publishing</li>
+<li>Internal linking</li>
+<li>Updating existing blogs</li>
+</ul>
+<p>The blog strategy had several goals:</p>
+<ul class="keyword-list"><li>Capture Informational Demand</li><li>Build Topical Relevance</li><li>Target Long-Tail Searches</li><li>Support Categories</li><li>Support Products</li><li>Strengthen Internal Linking</li><li>Cover Trending Opportunities</li></ul>
+<div class="flow-statement">Blog → Search Visibility → Internal Discovery → Commercial Pages</div>
+</section>
+<section class="case-section" id="building-content-around-commercial-opportunities"><h2 class="section-title">Building Content Around Commercial Opportunities</h2>
+<p>Some content examples included:</p>
+<div class="content-example-grid">
+<div class="content-example-card"><h4>Top Premium Website Templates</h4><p>Informational template discovery connected to relevant commercial products.</p></div>
+<div class="content-example-card"><h4>Pre-Built Flutter App Templates</h4><p>Search-led content around application-template demand.</p></div>
+<div class="content-example-card"><h4>Best Card Game UI Kits in Figma</h4><p>Informational content connected to gaming and UI-kit products.</p></div>
+</div>
+<p>Each article supported a broader commercial topic while creating contextual paths into the product ecosystem.</p>
+<p>The live <strong>Top 10 Premium Website Templates</strong> article still connects informational template discovery with commercial products, including meme-coin and ecommerce templates.</p>
+<div class="flow-statement">Informational Search Should Strengthen Commercial Discovery</div>
+</section>
+<section class="case-section" id="building-internal-linking-from-scratch"><h2 class="section-title">Building Internal Linking From Scratch</h2>
+<p>Internal linking was another area where the website had little existing SEO structure.</p>
+<p>I created relationships between major page types.</p>
+<div class="architecture-flow">
+<div class="arch-card"><h4>Blogs</h4><p>Relevant Categories → Relevant Products → Homepage</p></div>
+<div class="arch-card"><h4>Products</h4><p>Related Products → Relevant Categories → Homepage</p></div>
+<div class="arch-card"><h4>Categories</h4><p>Important Products → Homepage</p></div>
+<div class="arch-card"><h4>Homepage</h4><p>Categories → Important Products → Blogs</p></div>
+</div>
+<p>This changed the site from a large collection of relatively isolated URLs into a more connected search architecture.</p>
+<p>Internal linking supported discovery, indexing, page relationships, commercial-page support, and authority flow.</p>
+</section>
+<section class="case-section" id="starting-the-technical-seo-overhaul"><h2 class="section-title">Starting the Technical SEO Overhaul</h2>
+<p>Technical SEO required continuous work throughout the project because of the size and structure of the marketplace.</p>
+<p>I audited and worked on:</p>
+<ul class="two-column-list">
+<li>Google Search Console</li>
+<li>GA4</li>
+<li>XML sitemap</li>
+<li>Robots.txt</li>
+<li>Crawlability</li>
+<li>Indexability</li>
+<li>Canonicals</li>
+<li>Duplicate URLs</li>
+<li>Pagination</li>
+<li>Parameter URLs</li>
+<li>Filter URLs</li>
+<li>Redirects</li>
+<li>404s</li>
+<li>Broken links</li>
+<li>Page speed</li>
+<li>Core Web Vitals</li>
+<li>Mobile SEO</li>
+<li>Structured data</li>
+<li>Image optimization</li>
+</ul>
+<p>Many improvements required coordination with developers.</p>
+</section>
+<section class="case-section" id="cleaning-the-xml-sitemap"><h2 class="section-title">Cleaning the XML Sitemap</h2>
+<p>One early issue was that the sitemap included many URLs that did not need to be prioritized for organic search.</p>
+<p>I reviewed the sitemap strategy and focused it around page types we actually wanted search engines to discover and evaluate.</p>
+<ul class="keyword-list"><li>Homepage</li><li>Categories</li><li>Products</li><li>Services</li><li>Blogs</li></ul>
+<p>Low-value URL types were removed from the preferred sitemap set.</p>
+<p>I did not treat sitemap cleanup as a magical indexing fix. A sitemap does not guarantee indexing.</p>
+<p>The purpose was to give search engines clearer signals about:</p>
+<div class="flow-statement">Which URLs Matter Most</div>
+<p>as one part of the wider indexing strategy.</p>
+</section>
+<section class="case-section" id="improving-robots-and-crawl-paths"><h2 class="section-title">Improving Robots.txt and Crawl Paths</h2>
+<p>The original robots.txt was very basic.</p>
+<p>That meant search crawlers could continue discovering filter combinations, parameters, pagination, and utility URLs as the marketplace expanded.</p>
+<p>I reviewed these patterns with the development team and restricted unnecessary crawl paths where appropriate.</p>
+<div class="flow-statement">Cleaner Crawl Discovery, Not Maximum Blocking</div>
+<p>because valuable pages still needed to remain accessible.</p>
+</section>
+<section class="case-section" id="solving-crawlability-and-indexing-problems"><h2 class="section-title">Solving Crawlability and Indexing Problems</h2>
+<p>The website experienced several indexing problems, including:</p>
+<ul class="keyword-list"><li>Important Products Not Indexed</li><li>New Products Taking Time to Appear</li><li>Unwanted URLs Appearing in Search</li><li>Duplicate Pages</li><li>Crawled, Currently Not Indexed</li><li>Discovered, Currently Not Indexed</li></ul>
+<p>Several of these issues shared the same underlying causes: thin content, weak internal linking, duplicate URLs, too many low-value crawl paths, and weak page differentiation.</p>
+<div class="seo-system">
+<div class="system-line">
+<span>Better Product Content</span><span class="arrow">→</span>
+<span>Internal Linking</span><span class="arrow">→</span>
+<span>Cleaner Sitemap Signals</span><span class="arrow">→</span>
+<span>Crawl Controls</span><span class="arrow">→</span>
+<span>Duplicate URL Handling</span><span class="arrow">→</span>
+<span>Clearer Keyword Targeting</span>
+</div>
+</div>
+<p>During the project, I observed better discovery and index coverage across important commercial and content pages.</p>
+</section>
+<section class="case-section" id="fixing-canonicalization-and-duplicate-content"><h2 class="section-title">Fixing Canonicalization and Duplicate Content</h2>
+<p>Canonicalization became another recurring area of work.</p>
+<p>Some important page types either lacked clear canonical signals or had similar URL and content variations.</p>
+<p>The correct solution depended on the page.</p>
+<p>In different cases, I:</p>
+<ul class="keyword-list"><li>Differentiated Page Content</li><li>Added Canonical Signals Toward Preferred URLs</li><li>Used Noindex Where Independent Search Visibility Was Unnecessary</li></ul>
+<div class="flow-statement">More Intentional + More Distinct + Easier to Understand</div>
+<p>The objective was not simply to add canonical tags everywhere. It was to make the indexable page set clearer.</p>
+</section>
+<section class="case-section" id="improving-page-speed-and-core-web-vitals"><h2 class="section-title">Improving Page Speed and Core Web Vitals</h2>
+<p>Performance was another significant issue.</p>
+<p>The marketplace contained many image-heavy product pages, and factors such as large images, heavy JavaScript, heavy CSS, and server-side performance affected speed and user experience.</p>
+<h3>Image Optimization</h3>
+<ul class="keyword-list"><li>Image Compression</li><li>WebP Conversion</li><li>Lazy Loading</li><li>Alt-Text Optimization</li></ul>
+<h3>Front-End Optimization</h3>
+<ul class="keyword-list"><li>JavaScript Minification</li><li>CSS Minification</li><li>Reduction of Unnecessary File Weight</li></ul>
+<h3>Server-Side Performance</h3>
+<p>I identified performance concerns through SEO and performance audits and coordinated them with the development team.</p>
+<p>The deeper infrastructure implementation was handled by developers, so I do not claim server engineering work that was outside my role.</p>
+<p>The combined changes improved the browsing experience across the product-heavy marketplace.</p>
+</section>
+<section class="case-section" id="building-the-structured-data-layer"><h2 class="section-title">Building the Structured Data Layer</h2>
+<p>Bitrix Theme initially had no meaningful structured-data implementation.</p>
+<p>I created relevant schema and coordinated implementation with developers.</p>
+<p>Schema types included:</p>
+<ul class="keyword-list"><li>Product</li><li>Offer</li><li>AggregateRating</li><li>Review</li><li>BreadcrumbList</li><li>Article</li><li>Organization</li><li>FAQPage</li><li>WebSite</li></ul>
+<div class="flow-statement">Products + Offers + Reviews + Content + Website Structure + Business Entity</div>
+<p>The objective was to provide clearer machine-readable information rather than relying only on visible page copy.</p>
+</section>
+<section class="case-section" id="strengthening-the-backlink-profile"><h2 class="section-title">Strengthening the Backlink Profile</h2>
+<p>Bitrix Theme started with a weak backlink profile.</p>
+<p>I handled the off-page strategy, including:</p>
+<ul class="keyword-list"><li>Backlink Prospecting</li><li>Website Selection</li><li>Target-Page Selection</li><li>Anchor-Text Planning</li><li>Outreach</li><li>Backlink Approval</li></ul>
+<p>The main tactics included guest posts, relevant profile placements, and product submissions.</p>
+<p>Most links supported the homepage and important individual product pages.</p>
+<p>Anchor text remained predominantly branded rather than relying heavily on aggressive exact-match commercial terms.</p>
+<p>I also rejected backlink opportunities where websites were irrelevant, low quality, high spam, or poor fits for the product ecosystem.</p>
+<p>The objective was to strengthen authority gradually rather than optimize for backlink count alone.</p>
+</section>
+<section class="case-section" id="using-competitor-research-throughout-the-project"><h2 class="section-title">Using Competitor Research Throughout the Project</h2>
+<p>Competitor research was not a one-time task.</p>
+<p>I regularly studied websites including:</p>
+<ul class="keyword-list"><li>ThemeForest</li><li>TemplateMonster</li><li>Astra</li><li>OceanWP</li><li>ThemeHunk</li><li>VWThemes</li></ul>
+<p>Competitor research helped uncover opportunities around new keywords, product-content depth, blog ideas, backlink opportunities, internal-linking structures, page structure, metadata, and search positioning.</p>
+<p>The goal was never to copy competing websites.</p>
+<p>It was to understand:</p>
+<div class="flow-statement">Where Search Demand Already Exists</div>
+<p>and:</p>
+<div class="flow-statement">How Bitrix Theme Could Build a More Specific or Useful Page Around It</div>
+</section>
+<section class="case-section" id="historical-seo-outcomes"><h2 class="section-title">Historical SEO Outcomes</h2>
+<p>I no longer have access to the original Google Search Console or GA4 property because Bitrix Theme was a project from my previous company.</p>
+<p>For that reason, I do not use reconstructed third-party traffic estimates or attach exact growth percentages that I cannot verify today.</p>
+<p>While actively managing the project, I regularly monitored organic clicks, search impressions, average position, ranking products, ranking blogs, new keyword movement, existing keyword movement, and page-level performance.</p>
+<p>I also prepared monthly SEO reports using first-party data at the time.</p>
+<div class="historical-outcomes">
+<div class="historical-outcome">More products entering search</div>
+<div class="historical-outcome">More keywords gaining visibility</div>
+<div class="historical-outcome">Better positions for important commercial terms</div>
+<div class="historical-outcome">More blogs beginning to rank</div>
+<div class="historical-outcome">Improved index coverage</div>
+<div class="historical-outcome">Higher Search Console impressions and clicks</div>
+<div class="historical-outcome">A stronger backlink profile</div>
+<div class="historical-outcome">Cleaner crawl and index coverage</div>
+</div>
+<p class="historical-note">These are historical observations from when I actively managed the project, not numbers reconstructed later from third-party tools.</p>
+</section>
+<section class="case-section" id="commercial-search-visibility-i-remember-clearly"><h2 class="section-title">Commercial Search Visibility I Remember Clearly</h2>
+<p>Three commercial keyword themes that improved substantially during my tenure were:</p>
+<ul class="keyword-list keyword-list--primary"><li>crypto website template</li><li>meme coin website template</li><li>casino website template</li></ul>
+<p>These were important because they directly matched the commercial products the marketplace was selling.</p>
+<p>The current live marketplace still prominently includes meme-coin and crypto-related templates, reinforcing how central these search themes remain to the catalogue.</p>
+</section>
+<section class="case-section" id="content-examples-that-performed-well"><h2 class="section-title">Content Examples That Performed Well</h2>
+<p>Some content I remember performing particularly well included:</p>
+<div class="content-example-grid">
+<div class="content-example-card"><h4>Top Premium Website Templates</h4><p>Part of the informational-to-commercial discovery strategy.</p></div>
+<div class="content-example-card"><h4>Best Card Game UI Kits in Figma</h4><p>Search-focused content supporting relevant gaming/UI-kit discovery.</p></div>
+</div>
+<p>The <strong>Top 10 Premium Website Templates</strong> article remains live and currently links users into multiple commercial template categories and products.</p>
+</section>
+<section class="case-section" id="product-pages-that-performed-well"><h2 class="section-title">Product Pages That Performed Well</h2>
+<p>Two product examples I remember performing well were:</p>
+<div class="content-example-grid">
+<div class="content-example-card"><h4>Casino Live Game UI Kit</h4><p>A commercial product page with detailed overview, feature sections, use cases, and FAQs.</p></div>
+<div class="content-example-card"><h4>Street Bull Casino UI Kit</h4><p>Another casino-focused product page built around a specific commercial search theme.</p></div>
+</div>
+<p>These product pages demonstrated the broader principle behind the project:</p>
+<div class="flow-statement">Individual Marketplace Products Can Function as Serious Commercial Search Landing Pages When They Have Clear Targeting, Useful Content, and Enough Supporting Signals</div>
+</section>
+<section class="case-section" id="the-five-problems-i-am-most-proud-of-solving"><h2 class="section-title">The Five Problems I Am Most Proud of Solving</h2>
+<div class="proud-grid">
+<div class="proud-card">
+<div class="proud-number"><span>0</span><span>1</span></div>
+<div class="proud-copy">
+<h4>Weak Content and Limited Blog Coverage</h4>
+<p><strong>Problem:</strong> The site had very few blogs and much of the existing content lacked strong search targeting.</p>
+<p><strong>What I Did:</strong> Built a keyword-led content strategy, worked on approximately 80 articles, improved older content, and connected blogs with relevant commercial pages.</p>
+<p><strong>Why It Mattered:</strong> The blog became another source of search discovery while strengthening internal linking throughout the marketplace.</p>
+</div>
+</div>
+<div class="proud-card">
+<div class="proud-number"><span>0</span><span>2</span></div>
+<div class="proud-copy">
+<h4>Important Pages Struggling With Discovery and Indexing</h4>
+<p><strong>Problem:</strong> Thin content, weak internal discovery, duplicate URLs, and unnecessary crawl paths made important pages harder to discover and index.</p>
+<p><strong>What I Did:</strong> Expanded content, built internal links, cleaned sitemap signals, refined crawl controls, and improved duplicate-URL handling.</p>
+<p><strong>Why It Mattered:</strong> Important products gained clearer discovery paths and a stronger technical foundation for search.</p>
+</div>
+</div>
+<div class="proud-card">
+<div class="proud-number"><span>0</span><span>3</span></div>
+<div class="proud-copy">
+<h4>Weak Backlink Profile</h4>
+<p><strong>Problem:</strong> The relatively new marketplace had limited relevant external authority.</p>
+<p><strong>What I Did:</strong> Built backlinks through guest posts, relevant profile placements, and product submissions while controlling website quality, target URLs, and anchor text.</p>
+<p><strong>Why It Mattered:</strong> The site developed a stronger and more relevant backlink profile to support commercial pages.</p>
+</div>
+</div>
+<div class="proud-card">
+<div class="proud-number"><span>0</span><span>4</span></div>
+<div class="proud-copy">
+<h4>Poor Website Performance</h4>
+<p><strong>Problem:</strong> Large images, heavy assets, and additional performance issues affected UX and load speed.</p>
+<p><strong>What I Did:</strong> Worked with developers on image optimization, WebP, lazy loading, JS minification, CSS minification, and additional performance improvements.</p>
+<p><strong>Why It Mattered:</strong> The marketplace became faster and provided a better experience across image-heavy pages.</p>
+</div>
+</div>
+<div class="proud-card">
+<div class="proud-number"><span>0</span><span>5</span></div>
+<div class="proud-copy">
+<h4>No Structured Data</h4>
+<p><strong>Problem:</strong> Important page types had no meaningful structured-data layer.</p>
+<p><strong>What I Did:</strong> Created Product, Offer, Review, AggregateRating, Breadcrumb, Article, Organization, FAQ, and WebSite schema and coordinated implementation.</p>
+<p><strong>Why It Mattered:</strong> Search engines received clearer structured information about products, content, and website entities.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="case-section case-section--proof" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<div class="proof-plain">
+<p>Original Search Console and Analytics screenshots from this project are no longer available. The case study therefore focuses on the SEO work I directly handled, the strategies implemented, and the project outcomes that can be accurately documented from my work during the period.</p>
+</div>
+</section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Google Analytics 4</li>
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Screaming Frog</li>
+<li>PageSpeed Insights</li>
+<li>Google Rich Results Test</li>
+<li>Backlink Research Tools</li>
+</ul>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The hardest part of Bitrix Theme was not one isolated technical problem.</p>
+<p>It was managing SEO across:</p>
+<h3>Hundreds of Closely Related Commercial URLs</h3>
+<p>A single product was easy to optimize in isolation.</p>
+<p>The real difficulty was making sure that:</p>
+<ul>
+<li>Product A had a clear keyword</li>
+<li>Product B did not unnecessarily compete with it</li>
+<li>Category pages targeted broader intent</li>
+<li>Blogs targeted informational intent</li>
+<li>Tag pages existed only where useful</li>
+<li>Filter pages did not create unnecessary search clutter</li>
+<li>New products entered with their own keyword strategy</li>
+<li>Internal links connected the ecosystem</li>
+<li>Search engines could discover important URLs efficiently</li>
+</ul>
+<p>That required thinking beyond individual pages.</p>
+<p>The real unit of SEO was:</p>
+<div class="flow-statement">The Marketplace Architecture</div>
+<p>not simply:</p>
+<div class="flow-statement">The Product Page</div>
+<p>That became one of the most valuable parts of the project for me.</p>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>Bitrix Theme taught me that large-site SEO cannot be managed effectively through mass optimization.</p>
+<p>With hundreds of similar products, using the same keyword, metadata pattern, description structure, and anchor strategy across everything would have made the website less differentiated, not more optimized.</p>
+<div class="learning-grid">
+<div class="learning-item"><strong>Every Important Page Needs a Clear Search Role</strong></div>
+<div class="learning-item"><strong>Similar Products Need Different Keyword Opportunities</strong></div>
+<div class="learning-item"><strong>Not Every Generated URL Deserves Indexation</strong></div>
+<div class="learning-item"><strong>Internal Linking Matters More as a Website Scales</strong></div>
+<div class="learning-item"><strong>SEO Should Become Part of the Product-Launch Process</strong></div>
+<div class="learning-item"><strong>Technical SEO and Content Strategy Need to Support the Same Architecture</strong></div>
+</div>
+<p>The current site has since grown even larger and now states <strong>549+ products</strong>, which illustrates why scalable page roles and crawl architecture matter so much for this type of marketplace.</p>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>From March 2024 to November 2025, I built and executed the SEO strategy for Bitrix Theme as its main SEO owner.</p>
+<p>I helped take a relatively new digital-product marketplace with weak search foundations and build a more structured SEO ecosystem across:</p>
+<ul class="keyword-list"><li>Products</li><li>Categories</li><li>Tags</li><li>Services</li><li>Blogs</li><li>Technical URLs</li></ul>
+<p>The work covered the complete SEO lifecycle:</p>
+<div class="seo-system">
+<div class="system-line">
+<span>Research</span><span class="arrow">→</span>
+<span>Keyword Mapping</span><span class="arrow">→</span>
+<span>Product SEO</span><span class="arrow">→</span>
+<span>Content</span><span class="arrow">→</span>
+<span>Internal Linking</span><span class="arrow">→</span>
+<span>Technical SEO</span><span class="arrow">→</span>
+<span>Crawl &amp; Index Management</span><span class="arrow">→</span>
+<span>Structured Data</span><span class="arrow">→</span>
+<span>Performance</span><span class="arrow">→</span>
+<span>Backlinks</span><span class="arrow">→</span>
+<span>Monitoring</span>
+</div>
+</div>
+<p>I no longer have access to the original first-party analytics, so I intentionally do not attach unverified traffic-growth percentages to this case study.</p>
+<p>The value of the project is better demonstrated by the complexity I managed and the SEO system I helped build.</p>
+<p>For me, Bitrix Theme demonstrates that I can:</p>
+<p><strong>Take ownership of SEO for a large digital-product marketplace, differentiate hundreds of related commercial pages, solve crawl and indexing problems, coordinate content and technical execution, and build a scalable search foundation designed to grow alongside the product catalogue.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="iqonic-agency.html"><span class="case-pagination-label">Previous Case Study</span><strong>IQONIC Agency</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="allclonescript.html"><span class="case-pagination-label">Next Case Study</span><strong>AllCloneScript</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a aria-current="page" href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

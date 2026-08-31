@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CoinRemitter SEO Case Study | Abhi Patel</title>
+<meta content="CoinRemitter SEO case study by Abhi Patel, covering commercial page SEO, Core Web Vitals, content strategy, internal linking, and off-page SEO." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Tinyfacets structured keyword architecture */
+    .keyword-architecture {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .keyword-architecture-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .keyword-architecture-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .keyword-architecture-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Search-result mini cards */
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .result-mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .result-mini-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .result-mini-card p {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    /* Screenshot placeholders, ready for future proof images */
+    .evidence-placeholder {
+      margin: 34px 0 44px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+        var(--surface);
+      text-align: center;
+    }
+
+    .evidence-placeholder .placeholder-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-placeholder .placeholder-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evidence-placeholder figcaption {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Learnings */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .learning-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 620px) {
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Final indexing-status card fix */
+    .status-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .status-list li {
+      list-style: none !important;
+      padding: 16px 18px !important;
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+    }
+
+    .status-list li::before,
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+
+  
+    /* Jewelite specific structured blocks */
+    .team-grid,
+    .schema-grid,
+    .trust-grid,
+    .keyword-architecture,
+    .result-mini-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .team-card,
+    .schema-card,
+    .trust-card,
+    .keyword-architecture-card,
+    .result-mini-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .team-card h3,
+    .schema-card h3,
+    .trust-card h3,
+    .keyword-architecture-card h3,
+    .result-mini-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .team-card p,
+    .schema-card p,
+    .trust-card p,
+    .keyword-architecture-card p,
+    .result-mini-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .learning-item {
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .metric-note {
+      margin: 18px 0 28px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e8e8e8;
+    }
+
+    .code-sample {
+      margin: 16px 0 24px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #050505;
+      color: #f0f0f0;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 620px) {
+      .team-grid,
+      .schema-grid,
+      .trust-grid,
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Tech focused-scope additions */
+    .scope-grid,
+    .page-result-grid,
+    .query-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .page-result-card,
+    .query-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .page-result-card h3,
+    .query-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .scope-card p,
+    .page-result-card p,
+    .query-card p {
+      margin: 0 0 7px;
+      font-size: 14px;
+    }
+
+    .query-card .query-name {
+      margin-bottom: 14px;
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .query-card .query-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .query-card .query-metrics span {
+      display: block;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #dcdcdc;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .landing-page-callout {
+      margin: 22px 0 30px;
+      padding: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .landing-page-callout h3 {
+      margin: 0 0 10px;
+    }
+
+    .landing-page-callout p {
+      margin: 0;
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .page-result-grid,
+      .query-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .query-card .query-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .scope-grid,
+    .foundation-grid,
+    .future-grid,
+    .learning-grid,
+    .reported-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .foundation-card,
+    .future-card,
+    .learning-item,
+    .reported-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .foundation-card h3,
+    .future-card h3,
+    .reported-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .scope-card p,
+    .foundation-card p,
+    .future-card p,
+    .reported-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-card {
+      min-height: 148px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-number {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .outcome-stack {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .outcome-stack .outcome-item {
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 860px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .foundation-grid,
+      .future-grid,
+      .learning-grid,
+      .reported-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Agency Project Snapshot polish */
+    .snapshot--agency {
+      padding: clamp(72px, 8vw, 108px) 0;
+    }
+
+    .snapshot--agency .snapshot-top {
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      gap: clamp(58px, 7vw, 92px);
+      align-items: start;
+    }
+
+    .snapshot--agency .snapshot-heading {
+      max-width: 690px;
+      padding-top: 4px;
+    }
+
+    .snapshot--agency .snapshot-heading h2 {
+      max-width: 680px;
+      margin-top: 16px;
+      font-size: clamp(2.85rem, 4.6vw, 4.35rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+
+    .snapshot--agency .snapshot-meta {
+      align-self: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      min-width: 0;
+    }
+
+    .snapshot--agency .meta-item {
+      min-height: 118px;
+      padding: 24px 25px;
+    }
+
+    .snapshot--agency .meta-value {
+      font-size: 15px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .snapshot--agency .snapshot-lower {
+      display: grid;
+      grid-template-columns: minmax(270px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(48px, 6vw, 82px);
+      align-items: start;
+      margin-top: clamp(52px, 6vw, 76px);
+      padding-top: clamp(32px, 4vw, 44px);
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot--agency .snapshot-scope-block,
+    .snapshot--agency .snapshot-signals-block {
+      min-width: 0;
+    }
+
+    .snapshot--agency .snapshot-lower h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .snapshot-pages-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot-pages-list li {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      color: #f4f4f4;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .snapshot-pages-list li span {
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .snapshot--agency .snapshot-signals-block .kpi-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .snapshot--agency .snapshot-signals-block .kpi {
+      min-height: 148px;
+      padding: 21px 22px;
+    }
+
+    .snapshot--agency .snapshot-note {
+      margin-top: clamp(38px, 5vw, 56px);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1180px) {
+      .snapshot--agency .snapshot-top {
+        grid-template-columns: minmax(0, .95fr) minmax(380px, 1.05fr);
+        gap: 46px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        font-size: clamp(2.75rem, 4.3vw, 3.8rem);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .snapshot--agency .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .snapshot--agency .snapshot-heading {
+        max-width: 780px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        max-width: 760px;
+        font-size: clamp(2.8rem, 7vw, 4.25rem);
+      }
+
+      .snapshot--agency .snapshot-meta {
+        width: 100%;
+      }
+
+      .snapshot--agency .snapshot-lower {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .snapshot--agency .snapshot-scope-block {
+        max-width: 640px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .snapshot--agency {
+        padding: 60px 0 68px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        margin-top: 12px;
+        font-size: clamp(2.45rem, 12vw, 3.65rem);
+        line-height: 1;
+      }
+
+      .snapshot--agency .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--agency .meta-item {
+        min-height: auto;
+        padding: 19px 20px;
+      }
+
+      .snapshot--agency .snapshot-lower {
+        margin-top: 44px;
+        padding-top: 28px;
+        gap: 38px;
+      }
+
+      .snapshot--agency .snapshot-signals-block .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--agency .snapshot-signals-block .kpi {
+        min-height: 132px;
+      }
+    }
+
+  
+    /* Bitrix Theme marketplace case-study additions */
+    .scale-grid,
+    .problem-grid,
+    .taxonomy-grid,
+    .content-example-grid,
+    .proud-grid,
+    .learning-grid,
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scale-card,
+    .problem-card,
+    .taxonomy-card,
+    .content-example-card,
+    .proud-card,
+    .learning-item,
+    .outcome-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scale-card h3,
+    .problem-card h3,
+    .taxonomy-card h3,
+    .content-example-card h3,
+    .proud-card h3,
+    .outcome-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .scale-card p,
+    .problem-card p,
+    .taxonomy-card p,
+    .content-example-card p,
+    .proud-card p,
+    .outcome-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .scale-card .big-number {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: .95;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .problem-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .proud-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .proud-card {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .proud-number {
+      color: #fff;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+
+    .proud-copy h3 {
+      margin-top: 0;
+    }
+
+    .proud-copy p + p {
+      margin-top: 10px;
+    }
+
+    .architecture-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .architecture-flow .arch-card {
+      position: relative;
+      padding: 18px 17px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      min-height: 116px;
+    }
+
+    .architecture-flow .arch-card h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .architecture-flow .arch-card p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .launch-process,
+    .technical-process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-card {
+      min-height: 146px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-number {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .proof-plain {
+      margin: 20px 0 0;
+      padding: 24px 26px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .proof-plain p {
+      margin: 0;
+      max-width: 880px;
+    }
+
+    .scope-note,
+    .metric-note,
+    .historical-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .seo-system {
+      margin: 24px 0 30px;
+      padding: 22px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .seo-system .system-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      line-height: 1.5;
+    }
+
+    .seo-system .system-line span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .seo-system .system-line .arrow {
+      padding: 0;
+      border: 0;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .two-column-list {
+      columns: 2;
+      column-gap: 36px;
+      margin: 18px 0 28px;
+      padding-left: 22px;
+    }
+
+    .two-column-list li {
+      break-inside: avoid;
+      margin-bottom: 9px;
+    }
+
+    .historical-outcomes {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .historical-outcome {
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface);
+      color: #ededed;
+      font-weight: 700;
+    }
+
+    .snapshot--bitrix .snapshot-top {
+      grid-template-columns: minmax(0, 1.08fr) minmax(400px, .92fr);
+      gap: clamp(54px, 7vw, 86px);
+      align-items: start;
+    }
+
+    .snapshot--bitrix .snapshot-heading h2 {
+      max-width: 720px;
+      font-size: clamp(2.9rem, 4.7vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+
+    .snapshot--bitrix .snapshot-meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .snapshot--bitrix .meta-item {
+      min-height: 116px;
+      padding: 23px 24px;
+    }
+
+    .snapshot--bitrix .snapshot-scale {
+      margin-top: clamp(50px, 6vw, 74px);
+      padding-top: clamp(30px, 4vw, 42px);
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot--bitrix .snapshot-scale h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+    }
+
+    .snapshot--bitrix .kpi-grid {
+      margin-top: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .problem-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .architecture-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .snapshot--bitrix .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .launch-process,
+      .technical-process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .snapshot--bitrix .snapshot-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scale-grid,
+      .problem-grid,
+      .taxonomy-grid,
+      .content-example-grid,
+      .learning-grid,
+      .outcome-grid,
+      .architecture-flow,
+      .launch-process,
+      .technical-process {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--bitrix .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .proud-card {
+        grid-template-columns: 1fr;
+      }
+
+      .two-column-list {
+        columns: 1;
+      }
+
+      .snapshot--bitrix .snapshot-heading h2 {
+        font-size: clamp(2.45rem, 12vw, 3.7rem);
+      }
+    }
+
+    /* AllCloneScript additions */
+    .snapshot--allclone .snapshot-top {
+      grid-template-columns: minmax(0, 1.08fr) minmax(410px, .92fr);
+      gap: clamp(56px, 7vw, 88px);
+      align-items: start;
+    }
+    .snapshot--allclone .snapshot-heading h2 {
+      max-width: 740px;
+      font-size: clamp(2.9rem, 4.7vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+    .snapshot--allclone .snapshot-meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .snapshot--allclone .meta-item {
+      min-height: 116px;
+      padding: 23px 24px;
+    }
+    .snapshot--allclone .snapshot-scale {
+      margin-top: clamp(50px, 6vw, 74px);
+      padding-top: clamp(30px, 4vw, 42px);
+      border-top: 1px solid var(--line);
+    }
+    .snapshot--allclone .snapshot-scale h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+    }
+    .snapshot--allclone .kpi-grid { margin-top: 24px; }
+
+    .dual-domain-block,
+    .proof-plain,
+    .historical-note {
+      margin: 20px 0 30px;
+      padding: 22px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .dual-domain-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .dual-domain-row:last-child { border-bottom: 0; }
+    .dual-domain-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .dual-domain-value { color: #fff; font-weight: 800; }
+
+    .process-sequence {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+    .process-step {
+      min-height: 136px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .process-step .step-no {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .process-step strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .proud-grid {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+    .proud-card {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 22px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+    .proud-number {
+      color: #fff;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+    .proud-copy > h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+    }
+    .proud-copy h3 {
+      margin: 18px 0 7px;
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .historical-outcomes {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+    .historical-outcome {
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface);
+      color: #ededed;
+      font-weight: 700;
+    }
+
+    .article-content .case-section code {
+      padding: 2px 6px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #080808;
+      color: #fff;
+      font-size: .9em;
+    }
+
+    @media (max-width: 1100px) {
+      .snapshot--allclone .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+    }
+    @media (max-width: 860px) {
+      .process-sequence { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .snapshot--allclone .snapshot-meta { grid-template-columns: 1fr; }
+      .process-sequence { grid-template-columns: 1fr; }
+      .proud-card { grid-template-columns: 1fr; }
+      .dual-domain-row { grid-template-columns: 1fr; gap: 7px; }
+      .snapshot--allclone .snapshot-heading h2 {
+        font-size: clamp(2.45rem, 12vw, 3.7rem);
+      }
+    }
+
+    /* CoinRemitter case-study additions */
+    .snapshot--coinremitter .snapshot-top {
+      grid-template-columns: minmax(0, 1.06fr) minmax(410px, .94fr);
+      gap: clamp(56px, 7vw, 88px);
+      align-items: start;
+    }
+
+    .snapshot--coinremitter .snapshot-heading h2 {
+      max-width: 740px;
+      font-size: clamp(2.9rem, 4.7vw, 4.45rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+
+    .snapshot--coinremitter .snapshot-meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .snapshot--coinremitter .meta-item {
+      min-height: 116px;
+      padding: 23px 24px;
+    }
+
+    .snapshot--coinremitter .snapshot-scope {
+      margin-top: clamp(50px, 6vw, 74px);
+      padding-top: clamp(30px, 4vw, 42px);
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot--coinremitter .snapshot-scope h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+    }
+
+    .focus-grid,
+    .feature-grid,
+    .content-goal-grid,
+    .learning-grid,
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .focus-card,
+    .feature-card,
+    .content-goal-card,
+    .learning-item,
+    .outcome-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .focus-card h3,
+    .feature-card h3,
+    .content-goal-card h3,
+    .outcome-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .focus-card p,
+    .feature-card p,
+    .content-goal-card p,
+    .outcome-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card {
+      min-height: 150px;
+    }
+
+    .feature-card .feature-type {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .process-sequence {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-step {
+      min-height: 138px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-step .step-no {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-step strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .proof-plain {
+      margin: 20px 0 0;
+      padding: 24px 26px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .proof-plain p {
+      margin: 0;
+      max-width: 920px;
+    }
+
+    .historical-note,
+    .scope-note,
+    .performance-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .historical-outcomes {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .historical-outcome {
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface);
+      color: #ededed;
+      font-weight: 700;
+    }
+
+    .proud-grid {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .proud-card {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 22px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .proud-number {
+      color: #fff;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+
+    .proud-copy > h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+    }
+
+    .proud-copy h3 {
+      margin: 18px 0 7px;
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .ecosystem-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin: 22px 0 30px;
+      padding: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .ecosystem-flow span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .ecosystem-flow .arrow {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1100px) {
+      .snapshot--coinremitter .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .process-sequence {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .snapshot--coinremitter .snapshot-meta,
+      .focus-grid,
+      .feature-grid,
+      .content-goal-grid,
+      .learning-grid,
+      .outcome-grid,
+      .process-sequence {
+        grid-template-columns: 1fr;
+      }
+
+      .proud-card {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--coinremitter .snapshot-heading h2 {
+        font-size: clamp(2.45rem, 12vw, 3.7rem);
+      }
+    }
+
+    #my-biggest-takeaway .takeaway-bridge {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 34px auto 4px;
+      padding: 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    @media (max-width: 620px) {
+      #my-biggest-takeaway .takeaway-bridge {
+        width: 100%;
+        margin-top: 28px;
+        padding: 0;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Strengthening SEO for an Established Crypto Payment Platform",
+    "about": "SEO case study for CoinRemitter",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="CoinRemitter SEO Case Study | Abhi Patel" property="og:title"/><meta content="CoinRemitter SEO case study by Abhi Patel, covering commercial page SEO, Core Web Vitals, content strategy, internal linking, and off-page SEO." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="CoinRemitter SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="CoinRemitter SEO case study by Abhi Patel, covering commercial page SEO, Core Web Vitals, content strategy, internal linking, and off-page SEO." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a aria-current="page" href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>CoinRemitter</span>
+</nav>
+<div class="eyebrow">SEO Case Study / CoinRemitter</div>
+<h1>CoinRemitter SEO Case Study</h1>
+<div class="hero-subtitle">Strengthening SEO for an Established Crypto Payment Platform</div>
+<div class="hero-copy">
+<p>When I started working on CoinRemitter in March 2024, I was entering a very different SEO situation from most of the newer websites in my portfolio.</p>
+<p>CoinRemitter was already an established cryptocurrency payment platform with an existing SEO strategy that was performing well.</p>
+<p>There was no reason to rebuild everything simply for the sake of creating a new strategy.</p>
+<p>Instead, as part of the SEO team, my responsibility was to identify the parts of the existing search ecosystem where focused improvements could create additional value.</p>
+<p>My work concentrated around <strong>high-intent commercial pages, on-page SEO, page speed and Core Web Vitals, content, internal linking, and off-page SEO.</strong></p>
+<p>I worked on the project from <strong>March 2024 to November 2025</strong> as an SEO Executive.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot snapshot--coinremitter">
+<div class="container">
+<div class="snapshot-top">
+<div class="snapshot-heading">
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">Focused SEO improvements inside an already established crypto-payment ecosystem.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item"><span class="meta-label">Industry</span><div class="meta-value">Cryptocurrency / FinTech / Payment Technology</div></div>
+<div class="meta-item"><span class="meta-label">Website Type</span><div class="meta-value">Crypto Payment Gateway</div></div>
+<div class="meta-item"><span class="meta-label">SEO Duration</span><div class="meta-value">March 2024 to November 2025</div></div>
+<div class="meta-item"><span class="meta-label">Role</span><div class="meta-value">SEO Executive</div></div>
+<div class="meta-item"><span class="meta-label">Project Stage</span><div class="meta-value">Established Website With an Existing SEO Strategy</div></div>
+<div class="meta-item"><span class="meta-label">Primary Focus</span><div class="meta-value">Selected Commercial Pages, Performance, Content, Internal Linking &amp; Backlinks</div></div>
+</div>
+</div>
+<div class="snapshot-scope">
+<div class="section-kicker">My Responsibilities</div>
+<h3>Focused contributions across page-level, technical, content and off-page SEO.</h3>
+<ul class="tools-list">
+<li>Keyword Research</li>
+<li>On-Page SEO</li>
+<li>Technical SEO Audits</li>
+<li>Blog &amp; Content Strategy</li>
+<li>Off-Page SEO</li>
+<li>Google Search Console Monitoring</li>
+<li>GA4 Monitoring</li>
+<li>Content-Team Coordination</li>
+<li>Developer Coordination</li>
+</ul>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-high-impact-opportunities">High-Impact Opportunities</a></li>
+<li><a href="#focusing-on-high-intent-widget-and-service-pages">Widget &amp; Service Pages</a></li>
+<li><a href="#understanding-feature-level-search-intent">Search Intent</a></li>
+<li><a href="#building-the-keyword-strategy">Keyword Strategy</a></li>
+<li><a href="#improving-on-page-seo">On-Page SEO</a></li>
+<li><a href="#improving-commercial-page-content">Commercial Content</a></li>
+<li><a href="#making-page-speed-a-major-seo-priority">Page Speed</a></li>
+<li><a href="#building-a-stronger-internal-linking-structure">Internal Linking</a></li>
+<li><a href="#building-a-more-focused-content-strategy">Content Strategy</a></li>
+<li><a href="#strengthening-the-backlink-profile">Off-Page SEO</a></li>
+<li><a href="#monitoring-search-performance">Monitoring</a></li>
+<li><a href="#historical-seo-outcomes">Historical Outcomes</a></li>
+<li><a href="#commercial-page-i-remember-performing-well">Presale Widget</a></li>
+<li><a href="#content-i-remember-performing-well">Content Example</a></li>
+<li><a href="#the-three-problems-i-am-most-proud-of-improving">3 Key Problems</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#tools-platforms-used">Tools</a></li>
+<li><a href="#the-most-difficult-part">Difficult Part</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>CoinRemitter was not an SEO project starting from zero. The website already had:</p>
+<ul>
+<li>Existing search visibility</li>
+<li>An established product</li>
+<li>Existing SEO activity</li>
+<li>Commercial pages</li>
+<li>Informational content</li>
+<li>A functioning SEO strategy</li>
+</ul>
+<p>That completely changed how I approached the project. The objective was not: <strong>Replace What Already Works</strong> It was: <strong>Identify the Gaps → Strengthen Them → Support the Existing SEO Ecosystem</strong> The main areas where I saw opportunities included:</p>
+<ul>
+<li>Page-speed and Core Web Vitals problems</li>
+<li>Weak or inconsistent metadata on selected pages</li>
+<li>Commercial pages that needed stronger keyword-focused content</li>
+<li>Weak keyword placement on some pages</li>
+<li>Limited content coverage around valuable search opportunities</li>
+<li>Weak internal connections between blogs and commercial pages</li>
+<li>A backlink profile with room to grow</li>
+</ul>
+<p>This became a project about <strong>improving specific parts of an established SEO system rather than rebuilding the entire system.</strong></p>
+</section>
+<section class="case-section" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>Unlike a new marketplace or fresh ecommerce store, CoinRemitter did not have SEO problems across every part of the website. The opportunities were more focused.</p>
+<h3>On-Page SEO</h3>
+<p>Selected pages needed improvement around:</p>
+<ul>
+<li>Meta titles</li>
+<li>Meta descriptions</li>
+<li>Page content</li>
+<li>Keyword targeting</li>
+<li>Keyword placement</li>
+<li>Heading hierarchy</li>
+<li>FAQs</li>
+<li>Internal links</li>
+<li>Anchor text</li>
+<li>Image alt text</li>
+<li>Canonicals</li>
+<li>Content freshness</li>
+</ul>
+<p>The most recurring issues I personally worked on were: <strong>Metadata + Page Content + Keyword Placement</strong></p>
+<h3>Technical SEO</h3>
+<p>The biggest technical area I personally focused on was:</p>
+<h3>Page Speed &amp; Core Web Vitals</h3>
+<p>Performance issues were connected to:</p>
+<ul>
+<li>Heavy images</li>
+<li>Fonts</li>
+<li>Visual assets</li>
+<li>Large CSS files</li>
+<li>Large JavaScript files</li>
+<li>Third-party scripts</li>
+<li>Some server-side factors</li>
+</ul>
+<p>This required regular coordination with the development team.</p>
+<h3>Content</h3>
+<p>CoinRemitter already had content, but there were opportunities to create more search-focused articles around:</p>
+<ul>
+<li>Crypto payment problems</li>
+<li>Widget integrations</li>
+<li>Business use cases</li>
+<li>Long-tail questions</li>
+<li>Commercial features</li>
+</ul>
+<p>There was also room to connect informational content more deliberately with CoinRemitter's product ecosystem.</p>
+<h3>Internal Linking</h3>
+<p>Useful blog content existed, but stronger contextual relationships could be built between: <strong>Blogs → Gateways → Plugins → APIs → Widgets → Homepage</strong> This would help both users and search engines move more naturally through the website.</p>
+<h3>Off-Page SEO</h3>
+<p>The backlink profile also had room to grow relative to the competitiveness of the cryptocurrency payment market. My off-page focus therefore included:</p>
+<ul>
+<li>Guest posts</li>
+<li>PR</li>
+<li>Website selection</li>
+<li>Target-page planning</li>
+<li>Anchor-text decisions</li>
+<li>Placement coordination</li>
+</ul>
+</section>
+<section class="case-section" id="my-role"><h2 class="section-title">My Role</h2>
+<p>I worked as part of the SEO team rather than acting as the sole owner of CoinRemitter's complete SEO strategy. My direct responsibilities included:</p>
+<ul>
+<li>Keyword research</li>
+<li>On-page SEO</li>
+<li>Technical SEO audits</li>
+<li>Content and blog strategy</li>
+<li>Off-page SEO</li>
+<li>Google Search Console</li>
+<li>GA4 monitoring</li>
+<li>Content coordination</li>
+<li>Developer coordination</li>
+</ul>
+<p>I worked particularly closely on: <strong>Commercial Widget Pages</strong> <strong>Page Speed &amp; Core Web Vitals</strong> <strong>Content Strategy</strong> <strong>Internal Linking</strong> <strong>Backlink Profile Improvement</strong> This scope distinction matters because CoinRemitter already had a functioning SEO strategy before I joined. My contribution was to strengthen selected areas of that strategy, not claim ownership of work that was already being successfully managed by the wider SEO team.</p>
+</section>
+<section class="case-section" id="starting-with-high-impact-opportunities"><h2 class="section-title">Starting With High-Impact Opportunities</h2>
+<p>Because the existing SEO strategy was already functioning, I did not begin by creating a completely new site-wide plan. Instead, I looked for opportunities where focused work could add value. The process became: <strong>Identify Important Pages</strong></p>
+<div class="process-sequence"><div class="process-step"><span class="step-no">Step 01</span><strong>Research Search Intent</strong></div><div class="process-step"><span class="step-no">Step 02</span><strong>Improve Keyword Targeting</strong></div><div class="process-step"><span class="step-no">Step 03</span><strong>Strengthen Content and On-Page SEO</strong></div><div class="process-step"><span class="step-no">Step 04</span><strong>Improve Internal Connections</strong></div><div class="process-step"><span class="step-no">Step 05</span><strong>Support Technical Performance</strong></div><div class="process-step"><span class="step-no">Step 06</span><strong>Strengthen External Authority</strong></div></div>
+<p><strong>Monitor Search Behaviour</strong> This made the project more selective than several of my other SEO projects.</p>
+</section>
+<section class="case-section" id="focusing-on-high-intent-widget-and-service-pages"><h2 class="section-title">Focusing on High-Intent Widget and Service Pages</h2>
+<p>One of my main areas of responsibility was CoinRemitter's newer widget and service pages. The pages I worked on most included:</p>
+<div class="feature-grid"><div class="feature-card"><span class="feature-type">Commercial Page</span><h4>Invoice Services</h4><p>High-intent crypto-payment functionality with a dedicated search and conversion role.</p></div><div class="feature-card"><span class="feature-type">Commercial Page</span><h4>Pricing Widget</h4><p>High-intent crypto-payment functionality with a dedicated search and conversion role.</p></div><div class="feature-card"><span class="feature-type">Commercial Page</span><h4>Presale Widget</h4><p>High-intent crypto-payment functionality with a dedicated search and conversion role.</p></div><div class="feature-card"><span class="feature-type">Commercial Page</span><h4>Payment Button Widget</h4><p>High-intent crypto-payment functionality with a dedicated search and conversion role.</p></div><div class="feature-card"><span class="feature-type">Commercial Page</span><h4>Payment Page Widget</h4><p>High-intent crypto-payment functionality with a dedicated search and conversion role.</p></div></div>
+<p>These were valuable because their users were not simply researching cryptocurrency. They were looking for specific methods of accepting crypto payments. The current CoinRemitter Services section still presents these exact products as core crypto-payment integration options.</p>
+</section>
+<section class="case-section" id="understanding-feature-level-search-intent"><h2 class="section-title">Understanding Feature-Level Search Intent</h2>
+<p>A broad keyword such as:</p>
+<h3>“crypto payment gateway”</h3>
+<p>is extremely relevant to CoinRemitter. But it is also broad and competitive. The widget ecosystem created more specific opportunities around actual product functionality. Examples included:</p>
+<ul class="keyword-list">
+<li>pricing widget</li>
+<li>presale widget</li>
+<li>payment button widget</li>
+<li>payment page widget</li>
+<li>invoice services</li>
+</ul>
+<p>These searches could be matched much more directly with dedicated product pages. For example, the current Pricing Widget page is specifically built around accepting cryptocurrency through tiered pricing plans, while the Presale Widget targets crypto payments for ICO and token-presale use cases.</p>
+</section>
+<section class="case-section" id="building-the-keyword-strategy"><h2 class="section-title">Building the Keyword Strategy</h2>
+<p>I carried out keyword research using tools such as:</p>
+<ul class="keyword-list">
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Competitor SERPs</li>
+<li>Search intent</li>
+<li>Existing product relevance</li>
+</ul>
+<p>The broader page mapping was straightforward.</p>
+<h3>Feature and Service Searches</h3>
+<p>→ Widget and Service Landing Pages</p>
+<h3>Informational Searches</h3>
+<p>→ Blog Content This prevented informational articles from unnecessarily competing with product pages while making each URL more aligned with what the searcher actually wanted.</p>
+</section>
+<section class="case-section" id="improving-on-page-seo"><h2 class="section-title">Improving On-Page SEO</h2>
+<p>On-page optimization was one of my regular responsibilities. I worked on:</p>
+<ul class="keyword-list">
+<li>Meta titles</li>
+<li>Meta descriptions</li>
+<li>H1</li>
+<li>H2 and H3 hierarchy</li>
+<li>Page content</li>
+<li>Keyword placement</li>
+<li>URLs</li>
+<li>Image alt text</li>
+<li>Internal linking</li>
+<li>Anchor text</li>
+<li>Canonicals</li>
+<li>FAQs</li>
+<li>Content refreshes</li>
+</ul>
+<p>The objective was not simply to add more keywords. It was to make each page clearer around: <strong>What the Feature Is</strong> <strong>Who It Is For</strong> <strong>What Problem It Solves</strong> <strong>How It Helps Someone Accept Crypto Payments</strong></p>
+</section>
+<section class="case-section" id="strengthening-metadata"><h2 class="section-title">Strengthening Metadata</h2>
+<p>Some selected pages needed metadata that more accurately represented:</p>
+<ul class="keyword-list">
+<li>Page functionality</li>
+<li>Search intent</li>
+<li>Main keyword focus</li>
+<li>User expectation</li>
+</ul>
+<p>I optimized titles and descriptions around the relationship: <strong>Search Query → Search Snippet → Landing-Page Experience</strong> The goal was not to maximize keyword density. It was to make the snippet accurately communicate what the user would find after clicking.</p>
+</section>
+<section class="case-section" id="improving-commercial-page-content"><h2 class="section-title">Improving Commercial Page Content</h2>
+<p>Selected widget and service pages also needed stronger supporting content. I worked on areas such as:</p>
+<ul class="keyword-list">
+<li>Keyword coverage</li>
+<li>Heading structure</li>
+<li>Product explanations</li>
+<li>Feature descriptions</li>
+<li>Supporting information</li>
+<li>FAQs</li>
+<li>Internal links</li>
+<li>Search-intent alignment</li>
+</ul>
+<p>A feature page needs to explain more than the product name. For example, CoinRemitter's current Payment Button page now explains fixed crypto payments, customization, wallet linking, fiat pricing, integration steps, use cases and FAQs. The Payment Page similarly explains its page-based payment experience, fixed and custom payments, branding, goal tracking, pricing options, integrations and use cases. That is the broader search-page principle I was working toward: <strong>Feature Name → Functionality → Use Cases → Implementation → Questions</strong></p>
+</section>
+<section class="case-section" id="supporting-new-widget-pages-from-launch"><h2 class="section-title">Supporting New Widget Pages From Launch</h2>
+<p>New widget pages were particularly useful because SEO could be considered early rather than added much later. For these pages, the workflow included: <strong>Keyword Research</strong></p>
+<div class="process-sequence"><div class="process-step"><span class="step-no">Step 01</span><strong>Page Targeting</strong></div><div class="process-step"><span class="step-no">Step 02</span><strong>Content Optimization</strong></div><div class="process-step"><span class="step-no">Step 03</span><strong>Metadata</strong></div><div class="process-step"><span class="step-no">Step 04</span><strong>Internal Linking</strong></div><div class="process-step"><span class="step-no">Step 05</span><strong>Manual Indexing</strong></div></div>
+<p><strong>Monitoring</strong> I manually requested indexing where needed after the pages were ready. There was no major site-wide indexing problem that I needed to solve. My indexing work was focused mainly on helping newly optimized widget pages enter Google's discovery and indexing process.</p>
+</section>
+<section class="case-section" id="making-page-speed-a-major-seo-priority"><h2 class="section-title">Making Page Speed a Major SEO Priority</h2>
+<p>The largest technical SEO issue I personally focused on was website performance. CoinRemitter had page-speed and Core Web Vitals problems caused by a combination of:</p>
+<ul class="keyword-list">
+<li>Heavy images</li>
+<li>Fonts</li>
+<li>Design assets</li>
+<li>Large CSS files</li>
+<li>Large JavaScript files</li>
+<li>Third-party scripts</li>
+<li>Server-side performance factors</li>
+</ul>
+<p>I audited the issues from the SEO and performance side and coordinated recommendations with developers. This became one of the most technically important parts of my contribution.</p>
+</section>
+<section class="case-section" id="improving-images-and-visual-assets"><h2 class="section-title">Improving Images and Visual Assets</h2>
+<p>Large images and visual resources were adding unnecessary page weight. I recommended improvements around:</p>
+<ul class="keyword-list">
+<li>Image compression</li>
+<li>Reducing unnecessary image size</li>
+<li>Optimizing visual assets</li>
+<li>Reviewing fonts</li>
+<li>Reducing avoidable front-end weight</li>
+</ul>
+<p>The objective was straightforward: <strong>Less Data to Load → Faster User Experience</strong> particularly on important commercial pages.</p>
+</section>
+<section class="case-section" id="improving-css-and-javascript"><h2 class="section-title">Improving CSS and JavaScript</h2>
+<p>Large front-end files were another recurring performance factor. I coordinated with developers around:</p>
+<ul class="keyword-list">
+<li>CSS minification</li>
+<li>JavaScript minification</li>
+<li>Reducing unnecessary file weight</li>
+<li>Reviewing scripts affecting loading performance</li>
+</ul>
+<p>My role was to identify the performance issue, define the SEO and UX concern, and coordinate the appropriate development work.</p>
+</section>
+<section class="case-section" id="handling-third-party-and-server-side-performance-factors"><h2 class="section-title">Handling Third-Party and Server-Side Performance Factors</h2>
+<p>Some performance issues were deeper than normal on-page optimization. Where third-party scripts or server-side factors were involved, I:</p>
+<ul>
+<li>Identified the issue</li>
+<li>Documented the performance concern</li>
+<li>Coordinated with developers</li>
+<li>Reviewed the performance after implementation</li>
+</ul>
+<p>The deeper engineering work was handled by the development team. I do not claim server-level implementation that was outside my SEO role.</p>
+</section>
+<section class="case-section" id="performance-outcome"><h2 class="section-title">Performance Outcome</h2>
+<p>After the combined optimization work, I observed an improvement in website performance compared with the earlier state. This supported:</p>
+<ul>
+<li>Faster page experiences</li>
+<li>Better usability</li>
+<li>Stronger Core Web Vitals performance</li>
+<li>A cleaner technical foundation</li>
+</ul>
+<p class="performance-note">I no longer have the historical first-party performance dataset required to attach exact percentage improvements. For that reason, I do not claim: <strong>X% Speed Increase</strong> or: <strong>X% Ranking Increase Caused by Performance</strong> The result is presented at the level I can genuinely support: <strong>Website performance and Core Web Vitals improved after the coordinated optimization work.</strong></p>
+</section>
+<section class="case-section" id="building-a-stronger-internal-linking-structure"><h2 class="section-title">Building a Stronger Internal Linking Structure</h2>
+<p>Another recurring opportunity was connecting informational content with CoinRemitter's commercial ecosystem. I improved contextual relationships such as:</p>
+<div aria-label="CoinRemitter internal linking ecosystem" class="ecosystem-flow">
+<span>Blogs</span><span class="arrow">→</span>
+<span>Crypto Payment Gateway Pages</span><span class="arrow">→</span>
+<span>Plugins</span><span class="arrow">→</span>
+<span>APIs</span><span class="arrow">→</span>
+<span>Widget &amp; Feature Pages</span><span class="arrow">→</span>
+<span>Homepage</span>
+</div><h3>Blogs</h3>
+<p>→ Crypto Payment Gateway Pages → Plugins → APIs → Widget and Feature Pages → Homepage The principle was: <strong>A Useful Article Should Not Become a Dead End</strong> If someone was already researching a crypto-payment problem, there should be a logical route toward the CoinRemitter product or feature capable of helping them. This supported:</p>
+<ul>
+<li>User discovery</li>
+<li>Commercial discovery</li>
+<li>Page relationships</li>
+<li>Crawl paths</li>
+<li>Internal relevance</li>
+</ul>
+</section>
+<section class="case-section" id="building-a-more-focused-content-strategy"><h2 class="section-title">Building a More Focused Content Strategy</h2>
+<p>I was also involved in CoinRemitter's content SEO. During the project, I worked on approximately:</p>
+<h3>30 Blog Articles</h3>
+<p>My responsibilities included:</p>
+<ul class="keyword-list">
+<li>Topic research</li>
+<li>Keyword research</li>
+<li>Competitor analysis</li>
+<li>Content briefs</li>
+<li>Writer coordination</li>
+<li>SEO review</li>
+<li>Updating older articles</li>
+<li>Internal linking</li>
+</ul>
+<p>The objective was not simply: <strong>Publish More Crypto Content</strong> The content needed to support the wider payment ecosystem.</p>
+</section>
+<section class="case-section" id="how-i-selected-content-opportunities"><h2 class="section-title">How I Selected Content Opportunities</h2>
+<p>Blog opportunities were primarily evaluated around four goals.</p>
+<h3>1. Organic Search Demand</h3>
+<p>Find questions and topics potential crypto-payment users were already searching for.</p>
+<h3>2. Commercial-Page Support</h3>
+<p>Create articles that could naturally connect users to:</p>
+<ul>
+<li>Payment gateway pages</li>
+<li>Widgets</li>
+<li>Plugins</li>
+<li>APIs</li>
+<li>Related services</li>
+</ul>
+<h3>3. Topical Relevance</h3>
+<p>Build deeper content around cryptocurrency payments and business use cases.</p>
+<h3>4. Long-Tail Search Opportunities</h3>
+<p>Target narrower problems and integration questions rather than depending only on highly competitive head terms.</p>
+</section>
+<section class="case-section" id="building-content-around-product-features"><h2 class="section-title">Building Content Around Product Features</h2>
+<p>One useful content direction involved CoinRemitter's:</p>
+<h3>Pricing Widget</h3>
+<p>Supporting guides were developed around integrating the widget with platforms such as:</p>
+<ul>
+<li>Joomla</li>
+<li>Wix</li>
+<li>Shopify</li>
+</ul>
+<p>The strategy was: <strong>Platform-Specific Problem</strong></p>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<div class="flow-statement">Educational Guide</div>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<p><strong>CoinRemitter Pricing Widget</strong> CoinRemitter's blog still contains platform-specific Pricing Widget integration content, including Shopify guidance, showing how this feature became part of the informational content ecosystem as well as the commercial site. This gave informational content a direct relationship with the product it supported.</p>
+</section>
+<section class="case-section" id="improving-existing-content"><h2 class="section-title">Improving Existing Content</h2>
+<p>Content SEO was not limited to creating new URLs. I also reviewed older articles and looked for opportunities to improve:</p>
+<ul>
+<li>Keyword targeting</li>
+<li>Search intent</li>
+<li>Content structure</li>
+<li>Internal links</li>
+<li>Search relevance</li>
+<li>Overall usefulness</li>
+</ul>
+<p>Where an existing article already had relevance or search potential, improving that asset was often more useful than publishing another page targeting the same intent. This also helped reduce unnecessary content overlap.</p>
+</section>
+<section class="case-section" id="strengthening-the-backlink-profile"><h2 class="section-title">Strengthening the Backlink Profile</h2>
+<p>CoinRemitter's backlink profile was another area where I saw opportunity. My off-page work focused primarily on:</p>
+<h3>Guest Posts</h3>
+<p>and:</p>
+<h3>PR Placements</h3>
+<p>My responsibilities included:</p>
+<ul class="keyword-list">
+<li>Selecting backlink websites</li>
+<li>Reviewing website quality</li>
+<li>Choosing target URLs</li>
+<li>Planning anchor text</li>
+<li>Coordinating placements</li>
+</ul>
+<p>The homepage received much of the backlink focus because it represented the core CoinRemitter brand and broad crypto-payment proposition.</p>
+</section>
+<section class="case-section" id="focusing-on-backlink-quality"><h2 class="section-title">Focusing on Backlink Quality</h2>
+<p>I did not treat link building as a volume exercise. For backlink and PR opportunities, I considered:</p>
+<ul class="keyword-list">
+<li>Website relevance</li>
+<li>Overall website quality</li>
+<li>Content context</li>
+<li>Target page</li>
+<li>Anchor-text suitability</li>
+</ul>
+<p>The goal was: <strong>Better External Relevance</strong> not simply: <strong>More Backlinks</strong> This was particularly important in a competitive FinTech and crypto-payment market, where weak or unrelated placements would add little strategic value.</p>
+</section>
+<section class="case-section" id="monitoring-search-performance"><h2 class="section-title">Monitoring Search Performance</h2>
+<p>Google Search Console and GA4 were part of my regular workflow. During the project, I monitored:</p>
+<ul>
+<li>Search queries</li>
+<li>Organic clicks</li>
+<li>Impressions</li>
+<li>Keyword movement</li>
+<li>Landing-page visibility</li>
+<li>Commercial-page performance</li>
+<li>Blog performance</li>
+</ul>
+<p>I no longer have access to the historical CoinRemitter GSC or GA4 properties because the project was completed while I worked at my previous company. For that reason, I do not use present-day third-party traffic estimators to reconstruct historical performance. I also do not attach exact growth percentages that I can no longer verify.</p>
+</section>
+<section class="case-section" id="historical-seo-outcomes"><h2 class="section-title">Historical SEO Outcomes</h2>
+<p>While actively working on the project, I observed:</p>
+<div class="historical-outcomes"><div class="historical-outcome">More keywords gaining visibility</div><div class="historical-outcome">Commercial keywords moving higher</div><div class="historical-outcome">More landing pages appearing in search</div><div class="historical-outcome">Blogs gaining visibility</div><div class="historical-outcome">Higher Search Console clicks and impressions</div><div class="historical-outcome">A stronger backlink profile</div></div>
+<p class="historical-note">These are historical observations from the period when I had access to the first-party data. They are not reconstructed modern estimates.</p>
+</section>
+<section class="case-section" id="commercial-search-themes-i-remember-clearly"><h2 class="section-title">Commercial Search Themes I Remember Clearly</h2>
+<p>Some of the broader search themes I remember performing well included:</p>
+<h3>“crypto payment gateway”</h3>
+<h3>“crypto payment processor”</h3>
+<h3>“CoinRemitter”</h3>
+<p>These terms were closely connected to the core commercial product. The current homepage still positions CoinRemitter directly around helping businesses accept cryptocurrency payments and surfaces its payment gateway, plugins, widgets and API infrastructure.</p>
+</section>
+<section class="case-section" id="commercial-page-i-remember-performing-well"><h2 class="section-title">Commercial Page I Remember Performing Well</h2>
+<p>One commercial page I particularly remember was:</p>
+<h3>Presale Widget</h3>
+<p>This page was built around a very specific crypto-payment use case: <strong>Helping ICO and token-presale projects accept cryptocurrency payments.</strong> The live Presale Widget page currently covers token details, distribution rounds, pricing strategies, bonuses, progress tracking, branding, integration steps and ICO-focused use cases. This is a good example of the type of feature-level commercial page I worked on.</p>
+</section>
+<section class="case-section" id="content-i-remember-performing-well"><h2 class="section-title">Content I Remember Performing Well</h2>
+<p>One article I particularly remember was:</p>
+<h3>Top 5 Cryptocurrencies to Accept Payments in 2025</h3>
+<p>The topic connected broad cryptocurrency interest with CoinRemitter's core commercial use case: <strong>Accepting Cryptocurrency Payments</strong> The article remains live and is specifically framed around cryptocurrencies businesses can accept for payments. The strategy behind this type of content was: <strong>Useful Search Topic → Relevant Crypto-Payment Context → Natural Product Relationship</strong> rather than producing cryptocurrency news with no commercial relevance.</p>
+</section>
+<section class="case-section" id="the-three-problems-i-am-most-proud-of-improving"><h2 class="section-title">The Three Problems I Am Most Proud of Improving</h2>
+<div class="proud-grid"><div class="proud-card"><div class="proud-number"><span>0</span><span>1</span></div><div class="proud-copy"><h3>Website Performance</h3>
+<h4>Problem</h4>
+<p>Page-speed and Core Web Vitals issues were weakening the technical quality and user experience of an otherwise established website.</p>
+<h4>What I Did</h4>
+<p>Audited performance issues and coordinated with developers around:</p>
+<ul>
+<li>Image optimization</li>
+<li>Font optimization</li>
+<li>Visual-asset optimization</li>
+<li>CSS minification</li>
+<li>JavaScript minification</li>
+<li>Third-party script review</li>
+<li>Additional performance improvements</li>
+</ul>
+<h4>Why It Mattered</h4>
+<p>A payment platform should feel fast and reliable. Improved performance created a stronger UX and technical SEO foundation.</p>
+</div></div><div class="proud-card"><div class="proud-number"><span>0</span><span>2</span></div><div class="proud-copy"><h3>Weak Backlink Profile</h3>
+<h4>Problem</h4>
+<p>CoinRemitter's backlink profile had room to grow relative to the competitiveness of the crypto-payment market.</p>
+<h4>What I Did</h4>
+<p>Worked on:</p>
+<ul>
+<li>Guest posts</li>
+<li>PR opportunities</li>
+<li>Website selection</li>
+<li>Target URLs</li>
+<li>Anchor-text planning</li>
+<li>Placement coordination</li>
+</ul>
+<h4>Why It Mattered</h4>
+<p>The work helped strengthen CoinRemitter's external backlink profile and support its broader organic search presence.</p>
+</div></div><div class="proud-card"><div class="proud-number"><span>0</span><span>3</span></div><div class="proud-copy"><h3>Limited Search-Focused Content and Internal Linking</h3>
+<h4>Problem</h4>
+<p>There were opportunities to build more useful search content and connect existing informational pages more effectively with the commercial product ecosystem.</p>
+<h4>What I Did</h4>
+<p>Worked on approximately:</p>
+<h3>30 Articles</h3>
+<p>through:</p>
+<ul>
+<li>Topic research</li>
+<li>Keyword research</li>
+<li>Briefs</li>
+<li>SEO review</li>
+<li>Existing-content updates</li>
+<li>Internal-link planning</li>
+</ul>
+<h4>Why It Mattered</h4>
+<p>The content created additional search entry points while also giving users and search engines clearer paths toward: <strong>Gateways + Plugins + APIs + Widgets + Commercial Pages</strong>.</p>
+</div></div></div></section>
+<section class="case-section" id="business-impact"><h2 class="section-title">Business Impact</h2>
+<p>Commercial performance also improved during the wider project period. However, sales and conversion figures are confidential and are intentionally excluded from this portfolio. I also avoid attributing business improvements to one SEO activity without evidence showing direct causation.</p>
+</section>
+<section class="case-section" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<div class="proof-plain"><p>Original Search Console and Analytics screenshots from this project are no longer available. This case study therefore focuses on the SEO work I directly handled, including commercial widget and service-page optimization, keyword research, content strategy, internal linking, performance improvements, and the off-page work completed during my time on the project.</p></div>
+</section>
+<section class="case-section" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list"><li>Google Search Console</li><li>Google Analytics 4</li><li>Semrush</li><li>Ubersuggest</li><li>Competitor SERP Research</li><li>Backlink Research &amp; Monitoring Tools</li></ul></section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The hardest part of CoinRemitter was not fixing one catastrophic SEO issue. It was knowing:</p>
+<h3>What Not to Change</h3>
+<p>The website already had a functioning SEO strategy. That meant aggressively restructuring pages, replacing every keyword, or rebuilding the entire content strategy could have disrupted things that were already working. The better approach was to identify specific weaknesses: <strong>Page Speed</strong> <strong>Widget Pages</strong> <strong>Content Coverage</strong> <strong>Internal Linking</strong> <strong>Backlinks</strong> and improve those areas without creating unnecessary instability elsewhere. That required a different kind of SEO judgement from working on a brand-new site. The question was not: <strong>How much can I change?</strong> It was: <strong>Where can I create additional value without disrupting what already works?</strong></p>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>CoinRemitter reinforced an important SEO lesson:</p>
+<h3>An established SEO strategy does not always need to be replaced.</h3>
+<p>Sometimes the stronger decision is to understand what is already working and concentrate resources on the gaps. For CoinRemitter, those gaps included: <strong>High-Intent Page SEO</strong> <strong>Page Speed &amp; Core Web Vitals</strong> <strong>Content</strong> <strong>Internal Linking</strong> <strong>Backlink Profile</strong> It also reinforced the value of feature-level search targeting. A broad term such as: <strong>crypto payment gateway</strong> may represent the overall business. But pages built around:</p>
+<ul>
+<li>pricing widgets</li>
+<li>presale payments</li>
+<li>payment buttons</li>
+<li>payment pages</li>
+<li>invoices</li>
+</ul>
+<p>can capture users with much more specific needs. The current product architecture still reflects this feature-level approach.</p>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>From March 2024 to November 2025, I contributed to the SEO of CoinRemitter as part of the SEO team. The website already had an established search strategy. My responsibility was not to replace it. My job was to strengthen specific areas where I could create additional value. That included: <strong>Widget &amp; Service-Page SEO</strong> <strong>Keyword Research</strong> <strong>On-Page Optimization</strong> <strong>Page Speed</strong> <strong>Core Web Vitals</strong> <strong>Blog Strategy</strong> <strong>Internal Linking</strong> <strong>Guest Posts</strong> <strong>PR</strong> <strong>GSC &amp; GA4 Monitoring</strong> I no longer have access to the project's original first-party analytics, so I intentionally do not attach unverifiable historical traffic-growth percentages to this case study. The strongest representation of my contribution is the type of work I performed inside an already functioning SEO ecosystem: <strong>Improving technical performance, strengthening high-intent commercial pages, building better relationships between informational and product content, and supporting the website with a stronger backlink profile without unnecessarily rebuilding a strategy that was already working.</strong> <span class="takeaway-bridge">For me, this project demonstrates that I can:</span> <strong>Join an established SEO ecosystem, understand what already works, identify specific weaknesses, coordinate focused improvements across content, technical performance, and off-page SEO, and add value without creating unnecessary change.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="allclonescript.html"><span class="case-pagination-label">Previous Case Study</span><strong>AllCloneScript</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a aria-current="page" href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

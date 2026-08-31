@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SEO Case Studies | Abhi Patel</title>
+<meta content="Explore SEO case studies by Abhi Patel across e-commerce, OTT, SaaS, healthcare technology, digital marketplaces, agencies, FinTech, and jewellery." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg:#000;
+      --surface:#070707;
+      --text:#fff;
+      --muted:#a8a8a8;
+      --muted-2:#777;
+      --line:#252525;
+      --line-strong:#3a3a3a;
+      --max:1240px;
+      --radius:18px;
+      --transition:220ms ease;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; background:var(--bg); }
+    body {
+      min-height:100vh;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:16px;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a { color:inherit; text-decoration:none; }
+    :focus-visible { outline:2px solid #fff; outline-offset:4px; }
+    ::selection { color:#000; background:#fff; }
+    .container { width:min(calc(100% - 48px), var(--max)); margin-inline:auto; }
+
+    .skip-link {
+      position:fixed; left:14px; top:14px; z-index:9999;
+      padding:10px 14px; border-radius:8px;
+      color:#000; background:#fff; font-weight:700;
+      transform:translateY(-180%);
+    }
+    .skip-link:focus { transform:translateY(0); }
+
+    .site-header {
+      position:sticky; top:0; z-index:1000;
+      background:rgba(0,0,0,.86);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+    .nav {
+      min-height:72px;
+      display:flex; align-items:center; justify-content:space-between; gap:28px;
+    }
+    .brand { font-size:14px; font-weight:800; letter-spacing:.03em; white-space:nowrap; }
+    .nav-links { display:flex; align-items:center; gap:26px; list-style:none; }
+    .nav-links a { color:var(--muted); font-size:13px; transition:color var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color:#fff; }
+    .nav-contact {
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:42px; padding:0 18px;
+      border:1px solid #fff; border-radius:999px;
+      font-size:13px; font-weight:700;
+      transition:background var(--transition), color var(--transition);
+    }
+    .nav-contact:hover { background:#fff; color:#000; }
+
+    .menu-toggle {
+      display:none;
+      width:44px; height:44px;
+      border:1px solid var(--line-strong); border-radius:50%;
+      background:transparent; color:#fff; cursor:pointer;
+    }
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content:""; display:block;
+      width:18px; height:1px; margin:4px auto;
+      background:currentColor;
+      transition:transform var(--transition), opacity var(--transition);
+    }
+    .menu-toggle[aria-expanded="true"] span { opacity:0; }
+    .menu-toggle[aria-expanded="true"]::before { transform:translateY(5px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"]::after { transform:translateY(-5px) rotate(-45deg); }
+
+    .hero {
+      padding:clamp(72px, 9vw, 126px) 0 clamp(64px, 8vw, 108px);
+      border-bottom:1px solid var(--line);
+    }
+    .hero h1 {
+      font-size:clamp(3.4rem, 8vw, 7.8rem);
+      line-height:.88;
+      letter-spacing:-.065em;
+      font-weight:900;
+    }
+    .hero p {
+      max-width:900px;
+      margin-top:28px;
+      color:var(--muted);
+      font-size:clamp(1rem, 1.6vw, 1.2rem);
+      line-height:1.78;
+    }
+
+    .case-studies { padding:clamp(72px, 8vw, 112px) 0 clamp(96px, 10vw, 140px); }
+    .case-grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:18px;
+      align-items:start;
+    }
+    .case-card {
+      min-width:0;
+      padding:clamp(24px, 3vw, 34px);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(145deg,#090909 0%,#030303 100%);
+      transition:transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .case-card:hover {
+      transform:translateY(-3px);
+      border-color:var(--line-strong);
+      background:linear-gradient(145deg,#0b0b0b 0%,#040404 100%);
+    }
+    .case-card header { padding-bottom:24px; border-bottom:1px solid var(--line); }
+    .case-card h2 {
+      font-size:clamp(2rem, 3.6vw, 3rem);
+      line-height:1;
+      letter-spacing:-.045em;
+      font-weight:850;
+      overflow-wrap:anywhere;
+    }
+    .case-industry { margin-top:18px; }
+    .case-section { padding-top:24px; }
+    .label {
+      display:block; margin-bottom:8px;
+      color:var(--muted-2);
+      font-size:10px; line-height:1.3;
+      letter-spacing:.15em; text-transform:uppercase; font-weight:800;
+    }
+    .case-industry p, .case-section p {
+      color:#d9d9d9; font-size:14px; line-height:1.72;
+    }
+    .scope { color:var(--muted) !important; font-size:13px !important; line-height:1.82 !important; }
+    .impact-list { display:grid; gap:8px; list-style:none; }
+    .impact-list li {
+      color:#fff;
+      font-size:clamp(1rem, 1.7vw, 1.14rem);
+      line-height:1.35;
+      font-weight:760;
+      letter-spacing:-.015em;
+    }
+    .case-footer {
+      display:flex; justify-content:flex-end;
+      padding-top:28px; margin-top:28px;
+      border-top:1px solid var(--line);
+    }
+    .case-link {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:14px; font-weight:760;
+    }
+    .case-link span { transition:transform var(--transition); }
+    .case-link:hover span { transform:translateX(4px); }
+
+    .footer { border-top:1px solid var(--line); padding:32px 0 44px; }
+    .footer-inner {
+      display:flex; align-items:center; justify-content:space-between; gap:20px;
+      color:var(--muted-2); font-size:12px;
+    }
+    .footer-links { display:flex; align-items:center; gap:18px; }
+    .footer a:hover { color:#fff; }
+
+    @media (max-width:920px) {
+      .case-grid { grid-template-columns:1fr; }
+    }
+
+    @media (max-width:860px) {
+      .menu-toggle { display:block; }
+      .nav-contact { display:none; }
+      .nav-links {
+        position:absolute; top:72px; left:24px; right:24px;
+        display:none; padding:18px;
+        border:1px solid var(--line); border-radius:14px;
+        background:#080808;
+      }
+      .nav-links.open { display:grid; gap:2px; }
+      .nav-links a { display:block; padding:10px 6px; color:#e0e0e0; }
+    }
+
+    @media (max-width:680px) {
+      .container { width:min(calc(100% - 28px), var(--max)); }
+      .hero { padding:58px 0 64px; }
+      .hero h1 { font-size:clamp(3rem, 16vw, 5.1rem); }
+      .case-studies { padding:64px 0 92px; }
+      .case-grid { gap:12px; }
+      .case-card { padding:22px; border-radius:14px; }
+      .case-card h2 { font-size:clamp(2rem, 10vw, 2.6rem); }
+      .case-footer { justify-content:flex-start; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after {
+        transition-duration:.01ms !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"SEO Case Studies",
+    "description":"A collection of SEO projects across e-commerce, SaaS, OTT, healthcare technology, digital marketplaces, agencies, and FinTech.",
+    "about":{"@type":"Person","name":"Abhi Patel","jobTitle":"SEO Specialist"}
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="website" property="og:type"/><meta content="SEO Case Studies | Abhi Patel" property="og:title"/><meta content="Explore SEO case studies by Abhi Patel across e-commerce, OTT, SaaS, healthcare technology, digital marketplaces, agencies, FinTech, and jewellery." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="SEO Case Studies | Abhi Patel" name="twitter:title"/><meta content="Explore SEO case studies by Abhi Patel across e-commerce, OTT, SaaS, healthcare technology, digital marketplaces, agencies, FinTech, and jewellery." name="twitter:description"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="assets/css/site-shell.css" rel="stylesheet"/><link href="assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-list" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a aria-current="page" class="global-all-cases" href="seo-case-studies.html">All Case Studies</a><a href="case-studies/earthly-jewels.html">Earthly Jewels</a><a href="case-studies/streamit.html">Streamit</a><a href="case-studies/tinyfacets.html">Tinyfacets</a><a href="case-studies/jewelite.html">Jewelite</a><a href="case-studies/iqonic-tech.html">IQONIC Tech</a><a href="case-studies/kivicare.html">KiviCare</a><a href="case-studies/iqonic-agency.html">IQONIC Agency</a><a href="case-studies/bitrix-theme.html">Bitrix Theme</a><a href="case-studies/allclonescript.html">AllCloneScript</a><a href="case-studies/coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container">
+<h1>SEO Case Studies</h1>
+<p>
+          A collection of SEO projects across e-commerce, SaaS, OTT, healthcare technology,
+          digital marketplaces, agencies, and FinTech. Each case study shows the challenge,
+          my role, the SEO work I handled, and the outcomes achieved.
+        </p>
+</div>
+</section>
+<section aria-label="SEO case studies" class="case-studies">
+<div class="container">
+<div class="case-grid">
+<article class="case-card">
+<header>
+<h2>Earthly Jewels</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Lab-Grown Diamond Jewellery / E-commerce</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>+142% Organic Clicks</li><li>+143% Search Impressions</li><li>Average Position: 14.8 → 9.5</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Scaling an existing Shopify jewellery store through end-to-end SEO.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>Existing organic visibility was being limited by weak keyword targeting, thin collection and product content, poor internal linking, indexing and performance issues, and an inconsistent backlink profile.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">SEO Strategy &amp; Audits • Keyword &amp; Content Strategy • Collection &amp; Product SEO • Technical SEO • Internal Linking • Local SEO • Link Building • AI Search Optimization</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/earthly-jewels.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>Streamit</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>OTT / Streaming Technology</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>+559.6% Organic Clicks</li><li>+476.6% Search Impressions</li><li>“streamit” Average Position: 78 → 3</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Repositioning a young product-preview website into a broader OTT platform brand.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>A one-to-two-month-old domain had limited search visibility, thin product-focused content, weak technical and internal-linking foundations, few relevant backlinks, and no clear search positioning as an OTT platform provider. Its own main domain also struggled to rank prominently for the branded query “streamit.”</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">SEO Strategy &amp; Positioning • Website Architecture • Keyword &amp; Content Strategy • Technical SEO • Internal Linking • Brand SEO • Off-Page SEO • AI Search Optimization</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/streamit.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>Tinyfacets</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Kids Gold Jewellery / E-commerce</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>12,552 Search Impressions</li><li>185 Organic Clicks</li><li>122 Pages Indexed</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Building SEO from day one for a brand-new Shopify jewellery store.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>A newly launched domain started with no search history, rankings, meaningful backlinks, or established topical authority, while already containing dozens of products and commercial collections that needed a complete SEO foundation.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">SEO Strategy &amp; Technical Foundation • Keyword Research • Collection &amp; Product SEO • Content Strategy • Internal Linking • Local SEO • AI Search Optimization</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/tinyfacets.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>Jewelite</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Natural Diamond Jewellery / E-commerce</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>3,135 Search Impressions</li><li>89 Organic Clicks</li><li>170 Pages Indexed</li><li>400+ Non-Branded Keywords Showing Visibility</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Building the SEO layer almost from scratch for a newly launched natural-diamond Shopify store.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>The website was visually live but had very little SEO-focused content, no established search authority, weak technical foundations, generic Shopify structure, and dozens of product, collection, diamond-shape, and education pages that needed clear search targeting and internal relationships.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">SEO Strategy &amp; Technical Foundation • Keyword Architecture • Collection, Shape &amp; Product SEO • Product URL Migration • Education &amp; Trust Content • Internal Linking • Local SEO • AI Search Optimization</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/jewelite.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>IQONIC Tech</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Custom Software Development / SaaS</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>Homepage: 14,083 Impressions</li><li>Cost Calculator: 8,907 Impressions</li><li>166 Ranking Keywords on the Calculator Page</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Focused SEO for two high-value commercial pages rather than a full-site SEO overhaul.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>The homepage needed stronger commercial positioning and keyword targeting, while a new Software Development Cost Calculator had to work as a useful tool, non-branded search landing page, and lead-generation asset at the same time.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">Keyword Research • Homepage SEO • Cost Calculator Content &amp; SEO • Search Intent Mapping • Internal Linking • Metadata • CTA Optimization • Off-Page SEO</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/iqonic-tech.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>KiviCare</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Healthcare Software / Clinic Management</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>60+ New Referring Domains Built</li><li>10–12 Links Added Per Month</li><li>Stronger Relevance, Anchor Diversity &amp; Deep-Page Support</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Building a more relevant and quality-controlled backlink profile for an established healthcare software brand.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>The existing backlink profile had inconsistent quality, weak deep-page support, limited anchor-text diversity, and an authority gap compared with competitors. The challenge was not simply building more links, but improving relevance, contextual quality, anchor selection, and target-page strategy.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">Off-Page SEO Strategy • Backlink Audits • Competitor Research • Website Quality Evaluation • Anchor-Text Strategy • Target-Page Selection • Link Partnerships • Guest Posts • Backlink Verification</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/kivicare.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>IQONIC Agency</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Creative &amp; Digital Growth Agency</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>41 Organic Clicks</li><li>560 Search Impressions</li><li>3/3 Pages Indexed</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Setting up a clean SEO foundation for a newly launched 3-page agency website.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>The website was already live but lacked several basic SEO and search-management elements, including metadata, heading structure, internal linking, canonicals, sitemap, robots.txt, tracking, and structured data. Because the site was mainly a demo and agency showcase, the goal was to fix the foundation without overengineering a full organic growth campaign.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">SEO Audit • On-Page SEO • Technical SEO • Search Console &amp; GA4 Setup • Internal Linking • Structured Data • Initial Off-Page SEO</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/iqonic-agency.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>Bitrix Theme</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Digital Products / Website Templates &amp; UI Kits</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>~300 Products Managed Within the SEO Ecosystem</li><li>~80 Blogs Planned / Optimized</li><li>Improved Crawl, Index Coverage &amp; Commercial Search Visibility</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Building and scaling SEO across a growing digital-product marketplace with hundreds of closely related URLs.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>A relatively new marketplace had thin product content, weak keyword targeting, indexing and crawl issues, duplicate and low-value URLs, almost no internal linking, limited content strategy, and frequent keyword overlap across similar products.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">End-to-End SEO Strategy • Keyword Research &amp; Mapping • Product &amp; Category SEO • Technical SEO • Cannibalization Management • Content Strategy • Internal Linking • Schema • Off-Page SEO</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/bitrix-theme.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>AllCloneScript</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Clone Scripts / Digital Products Marketplace</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>~120 SEO-Led Blogs Built</li><li>Separate Keyword &amp; Content Positioning Established</li><li>Improved Index Coverage &amp; Commercial Search Visibility</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Building a separate search identity for a second marketplace with an overlapping product catalog.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>Almost the entire product catalog overlapped with another website I managed, creating a constant risk of cross-domain keyword competition, duplicate positioning, and similar product pages targeting the same searches. At the same time, the new site had thin product content, weak internal linking, indexing issues, no blog strategy, and a weak technical foundation.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">SEO Strategy • Cross-Domain Keyword Differentiation • Product &amp; Solution-Page SEO • Technical SEO • Content Strategy • Internal Linking • Schema • Initial Off-Page SEO</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/allclonescript.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+<article class="case-card">
+<header>
+<h2>CoinRemitter</h2>
+<div class="case-industry">
+<span class="label">Industry</span>
+<p>Cryptocurrency / FinTech / Payment Technology</p>
+</div>
+</header><div class="case-section case-impact">
+<span class="label">Impact</span>
+<ul class="impact-list"><li>Improved Website Performance &amp; Core Web Vitals</li><li>~30 Blogs Worked On</li><li>Stronger Commercial-Page Visibility &amp; Backlink Profile</li></ul>
+</div>
+<div class="case-section">
+<span class="label">Project Focus</span>
+<p>Strengthening selected SEO growth areas within an already established crypto payment platform.</p>
+</div>
+<div class="case-section">
+<span class="label">The Challenge</span>
+<p>CoinRemitter already had a functioning SEO strategy, but selected commercial pages needed stronger keyword targeting and content; page speed and Core Web Vitals required improvement, informational and commercial content needed better internal linking, and the backlink profile had room to grow.</p>
+</div>
+<div class="case-section">
+<span class="label">What I Worked On</span>
+<p class="scope">Widget &amp; Service-Page SEO • Keyword Research • On-Page SEO • Page Speed &amp; Core Web Vitals • Blog Strategy • Internal Linking • Guest Posts • PR • GSC &amp; GA4 Monitoring</p>
+</div>
+
+<div class="case-footer">
+<a class="case-link" href="case-studies/coinremitter.html">
+          View Case Study <span aria-hidden="true">→</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="index.html#about">About Me</a><a href="index.html#what-i-do">What I Do</a><a href="index.html#process">My SEO Process</a><a href="index.html#projects">Featured SEO Projects</a><a href="index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a aria-current="page" class="global-footer-all-cases" href="seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="case-studies/earthly-jewels.html">Earthly Jewels</a><a href="case-studies/streamit.html">Streamit</a><a href="case-studies/tinyfacets.html">Tinyfacets</a><a href="case-studies/jewelite.html">Jewelite</a><a href="case-studies/iqonic-tech.html">IQONIC Tech</a><a href="case-studies/kivicare.html">KiviCare</a><a href="case-studies/iqonic-agency.html">IQONIC Agency</a><a href="case-studies/bitrix-theme.html">Bitrix Theme</a><a href="case-studies/allclonescript.html">AllCloneScript</a><a href="case-studies/coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+
+</body>
+</html>

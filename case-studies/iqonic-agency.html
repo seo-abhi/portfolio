@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IQONIC Agency SEO Case Study | Abhi Patel</title>
+<meta content="IQONIC Agency SEO case study by Abhi Patel, covering on-page SEO, technical setup, indexing, structured data, internal links, analytics, and early visibility." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Tinyfacets structured keyword architecture */
+    .keyword-architecture {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .keyword-architecture-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .keyword-architecture-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .keyword-architecture-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Search-result mini cards */
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .result-mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .result-mini-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .result-mini-card p {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    /* Screenshot placeholders, ready for future proof images */
+    .evidence-placeholder {
+      margin: 34px 0 44px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+        var(--surface);
+      text-align: center;
+    }
+
+    .evidence-placeholder .placeholder-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-placeholder .placeholder-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evidence-placeholder figcaption {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Learnings */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .learning-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 620px) {
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Final indexing-status card fix */
+    .status-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .status-list li {
+      list-style: none !important;
+      padding: 16px 18px !important;
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+    }
+
+    .status-list li::before,
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+
+  
+    /* Jewelite specific structured blocks */
+    .team-grid,
+    .schema-grid,
+    .trust-grid,
+    .keyword-architecture,
+    .result-mini-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .team-card,
+    .schema-card,
+    .trust-card,
+    .keyword-architecture-card,
+    .result-mini-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .team-card h3,
+    .schema-card h3,
+    .trust-card h3,
+    .keyword-architecture-card h3,
+    .result-mini-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .team-card p,
+    .schema-card p,
+    .trust-card p,
+    .keyword-architecture-card p,
+    .result-mini-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .learning-item {
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .metric-note {
+      margin: 18px 0 28px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e8e8e8;
+    }
+
+    .code-sample {
+      margin: 16px 0 24px;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #050505;
+      color: #f0f0f0;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 620px) {
+      .team-grid,
+      .schema-grid,
+      .trust-grid,
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Tech focused-scope additions */
+    .scope-grid,
+    .page-result-grid,
+    .query-grid,
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .page-result-card,
+    .query-card,
+    .learning-item {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .page-result-card h3,
+    .query-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .scope-card p,
+    .page-result-card p,
+    .query-card p {
+      margin: 0 0 7px;
+      font-size: 14px;
+    }
+
+    .query-card .query-name {
+      margin-bottom: 14px;
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .query-card .query-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .query-card .query-metrics span {
+      display: block;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #dcdcdc;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .landing-page-callout {
+      margin: 22px 0 30px;
+      padding: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .landing-page-callout h3 {
+      margin: 0 0 10px;
+    }
+
+    .landing-page-callout p {
+      margin: 0;
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .page-result-grid,
+      .query-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .query-card .query-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .scope-grid,
+    .foundation-grid,
+    .future-grid,
+    .learning-grid,
+    .reported-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .scope-card,
+    .foundation-card,
+    .future-card,
+    .learning-item,
+    .reported-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .scope-card h3,
+    .foundation-card h3,
+    .future-card h3,
+    .reported-card h3 {
+      margin: 0 0 9px;
+    }
+
+    .scope-card p,
+    .foundation-card p,
+    .future-card p,
+    .reported-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .scope-note,
+    .metric-note {
+      margin: 20px 0 30px;
+      padding: 18px 20px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #e9e9e9;
+      line-height: 1.7;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 30px;
+    }
+
+    .process-card {
+      min-height: 148px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .process-number {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .proof-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .outcome-stack {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+
+    .outcome-stack .outcome-item {
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    @media (max-width: 860px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scope-grid,
+      .foundation-grid,
+      .future-grid,
+      .learning-grid,
+      .reported-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* IQONIC Agency Project Snapshot polish */
+    .snapshot--agency {
+      padding: clamp(72px, 8vw, 108px) 0;
+    }
+
+    .snapshot--agency .snapshot-top {
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      gap: clamp(58px, 7vw, 92px);
+      align-items: start;
+    }
+
+    .snapshot--agency .snapshot-heading {
+      max-width: 690px;
+      padding-top: 4px;
+    }
+
+    .snapshot--agency .snapshot-heading h2 {
+      max-width: 680px;
+      margin-top: 16px;
+      font-size: clamp(2.85rem, 4.6vw, 4.35rem);
+      line-height: .98;
+      letter-spacing: -.052em;
+      text-wrap: balance;
+    }
+
+    .snapshot--agency .snapshot-meta {
+      align-self: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      min-width: 0;
+    }
+
+    .snapshot--agency .meta-item {
+      min-height: 118px;
+      padding: 24px 25px;
+    }
+
+    .snapshot--agency .meta-value {
+      font-size: 15px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .snapshot--agency .snapshot-lower {
+      display: grid;
+      grid-template-columns: minmax(270px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(48px, 6vw, 82px);
+      align-items: start;
+      margin-top: clamp(52px, 6vw, 76px);
+      padding-top: clamp(32px, 4vw, 44px);
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot--agency .snapshot-scope-block,
+    .snapshot--agency .snapshot-signals-block {
+      min-width: 0;
+    }
+
+    .snapshot--agency .snapshot-lower h3 {
+      margin: 10px 0 0;
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: -.025em;
+    }
+
+    .snapshot-pages-list {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .snapshot-pages-list li {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      color: #f4f4f4;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .snapshot-pages-list li span {
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .snapshot--agency .snapshot-signals-block .kpi-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .snapshot--agency .snapshot-signals-block .kpi {
+      min-height: 148px;
+      padding: 21px 22px;
+    }
+
+    .snapshot--agency .snapshot-note {
+      margin-top: clamp(38px, 5vw, 56px);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1180px) {
+      .snapshot--agency .snapshot-top {
+        grid-template-columns: minmax(0, .95fr) minmax(380px, 1.05fr);
+        gap: 46px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        font-size: clamp(2.75rem, 4.3vw, 3.8rem);
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .snapshot--agency .snapshot-top {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .snapshot--agency .snapshot-heading {
+        max-width: 780px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        max-width: 760px;
+        font-size: clamp(2.8rem, 7vw, 4.25rem);
+      }
+
+      .snapshot--agency .snapshot-meta {
+        width: 100%;
+      }
+
+      .snapshot--agency .snapshot-lower {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .snapshot--agency .snapshot-scope-block {
+        max-width: 640px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .snapshot--agency {
+        padding: 60px 0 68px;
+      }
+
+      .snapshot--agency .snapshot-heading h2 {
+        margin-top: 12px;
+        font-size: clamp(2.45rem, 12vw, 3.65rem);
+        line-height: 1;
+      }
+
+      .snapshot--agency .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--agency .meta-item {
+        min-height: auto;
+        padding: 19px 20px;
+      }
+
+      .snapshot--agency .snapshot-lower {
+        margin-top: 44px;
+        padding-top: 28px;
+        gap: 38px;
+      }
+
+      .snapshot--agency .snapshot-signals-block .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .snapshot--agency .snapshot-signals-block .kpi {
+        min-height: 132px;
+      }
+    }
+
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building a Clean SEO Foundation for a Newly Launched Agency Website",
+    "about": "SEO case study for IQONIC Agency",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="IQONIC Agency SEO Case Study | Abhi Patel" property="og:title"/><meta content="IQONIC Agency SEO case study by Abhi Patel, covering on-page SEO, technical setup, indexing, structured data, internal links, analytics, and early visibility." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="IQONIC Agency SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="IQONIC Agency SEO case study by Abhi Patel, covering on-page SEO, technical setup, indexing, structured data, internal links, analytics, and early visibility." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a aria-current="page" href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>IQONIC Agency</span>
+</nav>
+<div class="eyebrow">SEO Case Study / IQONIC Agency</div>
+<h1>IQONIC Agency SEO Case Study</h1>
+<div class="hero-subtitle">Building a Clean SEO Foundation for a Newly Launched Agency Website</div>
+<div class="hero-copy">
+<p>IQONIC Agency was a very different SEO project from the larger websites I had worked on.</p>
+<p>The website was created primarily as a small agency showcase to present services, portfolio work, pricing, generate leads, and test a new agency positioning.</p>
+<p>When I started working on SEO, the website was already live and only around two months old.</p>
+<p>The objective was not to turn a three-page showcase property into a large organic-growth campaign.</p>
+<p>Instead, I focused on what the website actually needed at that stage: <strong>a clean on-page and technical SEO foundation so it could be properly understood, indexed, tracked, and discovered in search.</strong></p>
+<p>This became a useful example of another important SEO skill: <strong>knowing when a website needs more SEO, and when it simply needs the right foundation first.</strong></p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot snapshot--agency">
+<div class="container">
+<div class="snapshot-top">
+<div class="snapshot-heading">
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">A clean foundational SEO setup for a small three-page agency website.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">Creative &amp; Digital Growth Agency</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Project Stage</span>
+<div class="meta-value">Newly Launched Website</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">SEO Duration</span>
+<div class="meta-value">Approximately 2 Months</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">SEO Scope</span>
+<div class="meta-value">3 Pages</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role</span>
+<div class="meta-value">SEO Executive</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Primary Goal</span>
+<div class="meta-value">Foundational SEO Setup</div>
+</div>
+</div>
+</div>
+<div class="snapshot-lower">
+<div class="snapshot-scope-block">
+<div class="section-kicker">SEO Scope</div>
+<h3>Pages in My SEO Scope</h3>
+<ul class="snapshot-pages-list">
+<li><span>01</span>Homepage</li>
+<li><span>02</span>Pricing Page</li>
+<li><span>03</span>Earthly Jewels Case Study Page</li>
+</ul>
+</div>
+<div class="snapshot-signals-block">
+<div class="section-kicker">Early Performance</div>
+<h3>Early Search Signals</h3>
+<div aria-label="Early search signals" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">Organic Clicks</div>
+<div><div class="kpi-value">41</div><div class="kpi-detail">Google Search Console</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Search Impressions</div>
+<div><div class="kpi-value">563</div><div class="kpi-detail">Screenshot-verified</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Core Pages Indexed</div>
+<div><div class="kpi-value">3 / 3</div><div class="kpi-detail">All scoped pages indexed</div></div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Search Console Queries</div>
+<div><div class="kpi-value">23</div><div class="kpi-detail">Reported project metric</div></div>
+</article>
+</div>
+</div>
+</div>
+<div class="scope-note snapshot-note">
+          At this stage, the recorded queries were branded searches. Because no full keyword strategy or content-led SEO campaign had been executed, I treat these numbers as <strong>early search signals rather than evidence of large-scale organic growth.</strong>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-the-right-seo-scope">Right SEO Scope</a></li>
+<li><a href="#optimizing-the-existing-pages">On-Page SEO</a></li>
+<li><a href="#building-internal-linking">Internal Linking</a></li>
+<li><a href="#establishing-search-measurement">Measurement</a></li>
+<li><a href="#building-the-technical-seo-foundation">Technical Foundation</a></li>
+<li><a href="#improving-page-indexing">Indexing</a></li>
+<li><a href="#adding-structured-data">Structured Data</a></li>
+<li><a href="#building-an-initial-off-page-footprint">Off-Page Foundation</a></li>
+<li><a href="#early-search-results">Early Results</a></li>
+<li><a href="#early-brand-query-visibility">Brand Visibility</a></li>
+<li><a href="#homepage-performance">Homepage</a></li>
+<li><a href="#pricing-page-performance">Pricing Page</a></li>
+<li><a href="#what-i-intentionally-did-not-do">What I Did Not Do</a></li>
+<li><a href="#what-i-would-do-if-seo-became-a-growth-channel">Future SEO Phase</a></li>
+<li><a href="#current-seo-outcome">Current Outcome</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#tools-platforms-used">Tools</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>Most of the website design and content already existed when I started.</p>
+<p>The site itself was technically stable.</p>
+<p>HTTPS was already implemented.</p>
+<p>The website was mobile responsive.</p>
+<p>There were no major issues involving:</p>
+<ul>
+<li>Broken links</li>
+<li>Redirects</li>
+<li>404 errors</li>
+</ul>
+<p>The problem was that several basic SEO and search-management elements had not yet been completed.</p>
+<p>The initial review identified:</p>
+<ul>
+<li>Missing metadata</li>
+<li>Improper heading hierarchy</li>
+<li>Missing image alt text</li>
+<li>Limited internal linking</li>
+<li>Missing canonical tags</li>
+<li>Weak page-title structure</li>
+<li>No XML sitemap</li>
+<li>No robots.txt setup</li>
+<li>No Google Search Console setup</li>
+<li>No GA4 tracking setup</li>
+<li>No structured data implementation</li>
+</ul>
+<p>The challenge therefore was not:</p>
+<div class="flow-statement">How do I rebuild the website's SEO?</div>
+<p>It was:</p>
+<div class="flow-statement">How do I complete the SEO foundation around an otherwise stable, newly launched website?</div>
+</section>
+<section class="case-section case-section--structured" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>Because the site contained only three pages within my SEO scope, the problems were relatively focused.</p>
+<h3>On-Page SEO</h3>
+<p>The main page-level issues included:</p>
+<ul>
+<li>Missing or weak meta titles</li>
+<li>Missing or weak meta descriptions</li>
+<li>Improper H1 structure</li>
+<li>H2 and H3 hierarchy issues</li>
+<li>Missing image alt text</li>
+<li>Very little internal linking</li>
+<li>Missing canonical tags</li>
+<li>Weak page-title structure</li>
+<li>Limited anchor-text optimization</li>
+</ul>
+<p>The existing content itself did not require a complete rewrite.</p>
+<p>The bigger opportunity was improving how that content was structured and presented to search engines.</p>
+<h3>Technical SEO</h3>
+<p>Several foundational technical elements had not yet been implemented:</p>
+<ul class="keyword-list"><li>XML Sitemap</li><li>Robots.txt</li><li>Canonical Tags</li><li>Structured Data</li><li>Search Console</li><li>GA4 Tracking</li></ul>
+<p>The site itself did not have severe technical problems.</p>
+<p>This was primarily a case of completing the infrastructure required for cleaner search management.</p>
+<h3>Search Measurement</h3>
+<p>One particularly important gap was tracking.</p>
+<p>Without Google Search Console and GA4, the website did not yet have a useful baseline for monitoring:</p>
+<ul class="keyword-list"><li>Clicks</li><li>Impressions</li><li>Queries</li><li>Page Performance</li><li>Indexing</li><li>Future Traffic Development</li></ul>
+<p>Before trying to build a growth strategy, the website needed to become measurable.</p>
+<h3>Off-Page SEO</h3>
+<p>As a new domain, the website also had very little authority.</p>
+<p>However, running a full backlink campaign for a three-page demo property would have been disproportionate to the project.</p>
+<p>The correct approach was therefore to establish only a small initial referring-domain footprint.</p>
+</section>
+<section class="case-section" id="my-role"><h2 class="section-title">My Role</h2>
+<p>My responsibilities included:</p>
+<ul>
+<li>SEO audit</li>
+<li>On-page SEO recommendations</li>
+<li>Technical SEO</li>
+<li>SEO implementation coordination</li>
+<li>Initial off-page SEO</li>
+<li>Google Search Console monitoring</li>
+</ul>
+<p>Because IQONIC Agency was primarily a showcase property, the scope was intentionally kept lightweight.</p>
+<p>I did not try to turn a limited SEO assignment into a full-site ownership claim.</p>
+<p>The work focused specifically on the three pages and foundational areas that were actually part of my responsibility.</p>
+</section>
+<section class="case-section" id="starting-with-the-right-seo-scope"><h2 class="section-title">Starting With the Right SEO Scope</h2>
+<p>One of the most important decisions in this project was deciding what <strong>not</strong> to do.</p>
+<p>A new three-page agency showcase could easily have been overengineered with:</p>
+<ul>
+<li>Large keyword spreadsheets</li>
+<li>Dozens of content recommendations</li>
+<li>A full blog calendar</li>
+<li>Aggressive link building</li>
+<li>Competitor content cloning</li>
+<li>Large technical task lists</li>
+</ul>
+<p>But none of that matched the website's actual purpose at the time.</p>
+<p>The better sequence was:</p>
+<div aria-label="IQONIC Agency foundational SEO sequence" class="horizontal-flow"><span>Audit</span><span aria-hidden="true" class="flow-arrow">→</span><span>Fix Basic On-Page SEO</span><span aria-hidden="true" class="flow-arrow">→</span><span>Complete Technical Foundation</span><span aria-hidden="true" class="flow-arrow">→</span><span>Set Up Tracking</span><span aria-hidden="true" class="flow-arrow">→</span><span>Get Core Pages Indexed</span><span aria-hidden="true" class="flow-arrow">→</span><span>Add Initial Brand Signals</span><span aria-hidden="true" class="flow-arrow">→</span><span>Monitor What Happens Next</span></div>
+<p>This kept the work proportional to the website's stage.</p>
+</section>
+<section class="case-section" id="optimizing-the-existing-pages"><h2 class="section-title">Optimizing the Existing Pages</h2>
+<p>Full keyword research was intentionally not included in this phase.</p>
+<p>Instead of rewriting the website around search terms the business was not yet actively targeting, I retained most of the existing content and improved the SEO structure around it.</p>
+<p>The on-page work included:</p>
+<ul>
+<li>Meta titles</li>
+<li>Meta descriptions</li>
+<li>H1 structure</li>
+<li>H2 and H3 hierarchy</li>
+<li>Image alt text</li>
+<li>Internal linking</li>
+<li>Canonical tags</li>
+<li>Content formatting</li>
+<li>Anchor text</li>
+<li>Page-title structure</li>
+</ul>
+<p>Content changes were minimal.</p>
+<p>The goal was:</p>
+<div class="flow-statement">Preserve the Existing Positioning → Improve Search Clarity Around It</div>
+<p>rather than:</p>
+<div class="flow-statement">Rewrite Everything for SEO.</div>
+</section>
+<section class="case-section case-section--structured" id="improving-metadata-and-heading-structure"><h2 class="section-title">Improving Metadata and Heading Structure</h2>
+<p>The website needed clearer page-level signals.</p>
+<p>I worked on improving:</p>
+<div class="foundation-grid">
+<div class="foundation-card"><h4>Meta Titles</h4><p>Making page titles clearer and more useful for search.</p></div>
+<div class="foundation-card"><h4>Meta Descriptions</h4><p>Adding missing descriptions and improving how pages were represented in results.</p></div>
+<div class="foundation-card"><h4>H1 Structure</h4><p>Ensuring pages had a clearer primary heading.</p></div>
+<div class="foundation-card"><h4>H2 and H3 Hierarchy</h4><p>Cleaning up heading relationships so page structure was easier to interpret.</p></div>
+</div>
+<p>These were basic SEO elements, but they were important because the website had not yet developed a mature on-page framework.</p>
+</section>
+<section class="case-section" id="building-internal-linking"><h2 class="section-title">Building Internal Linking</h2>
+<p>Internal linking was also limited.</p>
+<p>I introduced links between the important pages within the small site structure.</p>
+<p>Because the website only contained a few pages, there was no need for a complex internal-linking architecture.</p>
+<p>The goal was simply to ensure that important pages were:</p>
+<ul class="keyword-list"><li>Connected</li><li>Discoverable</li><li>Contextually Related</li><li>Not Isolated</li></ul>
+<p>Relevant anchor text was used where it naturally fit.</p>
+<p>This created a cleaner internal path for both users and crawlers.</p>
+</section>
+<section class="case-section case-section--proof" id="establishing-search-measurement"><h2 class="section-title">Establishing Search Measurement</h2>
+<p>The next important step was giving the website a measurable SEO baseline.</p>
+<p>I had:</p>
+<h3>Google Search Console</h3>
+<p>and:</p>
+<h3>Google Analytics 4</h3>
+<p>configured.</p>
+<p>This allowed us to begin monitoring:</p>
+<ul class="keyword-list"><li>Search Impressions</li><li>Organic Clicks</li><li>Search Queries</li><li>Page Performance</li><li>Indexing</li><li>Future Traffic Development</li></ul>
+<p>For a new website, this was particularly important.</p>
+<p>Before meaningful SEO growth can be evaluated, there needs to be reliable data showing where the website started.</p>
+<h3>GA4 Organic Traffic Snapshot</h3>
+<p>In the supplied 90-day Google Analytics 4 snapshot, <strong>google / organic</strong> recorded:</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Sessions</h4><p><strong>55</strong></p></div><div class="result-mini-card"><h4>Engaged Sessions</h4><p><strong>25</strong></p></div><div class="result-mini-card"><h4>Engagement Rate</h4><p><strong>45.45%</strong></p></div><div class="result-mini-card"><h4>Avg. Engagement Time / Session</h4><p><strong>24s</strong></p></div><div class="result-mini-card"><h4>Events / Session</h4><p><strong>3.64</strong></p></div><div class="result-mini-card"><h4>Total Users</h4><p><strong>24</strong></p></div></div>
+<p class="metric-note">The GA4 screenshot covers a 90-day reporting window, so I keep it separate from the approximately two-month Search Console narrative rather than treating the two periods as identical.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Analytics 4 Traffic Acquisition report filtered to google organic showing 55 sessions, 25 engaged sessions, 45.45 percent engagement rate, 24 seconds average engagement time per session and 24 total users." decoding="async" height="758" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/iqonic-agency/01-google-analytics-4-google-organic-traffic-snapshot.webp" width="1599"/>
+</div>
+<figcaption>Google Analytics 4, Google / Organic traffic snapshot</figcaption>
+</figure></section>
+<section class="case-section" id="building-the-technical-seo-foundation"><h2 class="section-title">Building the Technical SEO Foundation</h2>
+<p>The technical work focused on completing the missing fundamentals rather than solving major technical failures.</p>
+<h3>XML Sitemap</h3>
+<p>The website did not have an XML sitemap.</p>
+<p>I had one added so the site had a clearer search-engine discovery mechanism.</p>
+<p>For a website this small, this was not solving a major crawl-budget problem.</p>
+<p>It was simply part of establishing cleaner technical SEO hygiene.</p>
+<h3>Robots.txt</h3>
+<p>A robots.txt file was also added as part of the site's basic crawl configuration.</p>
+<p>Again, this was foundational rather than corrective.</p>
+<h3>Canonical Tags</h3>
+<p>Canonical tags had not been implemented.</p>
+<p>I defined the preferred page URLs and coordinated the addition of canonical tags.</p>
+<p>This helped provide clearer URL signals and reduced the possibility of unnecessary ambiguity later.</p>
+</section>
+<section class="case-section case-section--proof" id="improving-page-indexing"><h2 class="section-title">Improving Page Indexing</h2>
+<p>The homepage had already been discovered by Google.</p>
+<p>The remaining two pages in my scope still needed indexing support.</p>
+<p>I used Google Search Console to request indexing for:</p>
+<ul class="keyword-list"><li>Pricing Page</li><li>Earthly Jewels Case Study Page</li></ul>
+<p>All three core pages were subsequently indexed.</p>
+<p>That gave the project one of its most basic but important milestones:</p>
+<h3>3 / 3 Core Pages Indexed</h3>
+<p>For this stage, that was exactly the result I wanted.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console indexed pages report showing all three scoped IQONIC Agency pages indexed: homepage, Earthly Jewels case study page and pricing page." decoding="async" height="762" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/iqonic-agency/02-google-search-console-all-three-scoped-pages-indexed.webp" width="1598"/>
+</div>
+<figcaption>Google Search Console, all three scoped pages indexed</figcaption>
+</figure></section>
+<section class="case-section" id="adding-structured-data"><h2 class="section-title">Adding Structured Data</h2>
+<p>Structured data had not yet been implemented.</p>
+<p>I prepared the relevant schema markup and shared it with the developer for implementation.</p>
+<p>The purpose was to provide search engines with clearer structured information about the website and relevant pages.</p>
+<p>This was not about chasing rich results.</p>
+<p>It was part of creating a more complete technical foundation.</p>
+</section>
+<section class="case-section" id="improving-page-speed-and-core-web-vitals"><h2 class="section-title">Improving Page Speed and Core Web Vitals</h2>
+<p>Page performance was already relatively good.</p>
+<p>I therefore do not present speed as a major problem that I solved.</p>
+<p>Instead, I worked with the developer on additional:</p>
+<ul class="keyword-list"><li>Page-Speed Improvements</li><li>Core Web Vitals Improvements</li></ul>
+<p>where opportunities existed.</p>
+<p>This is important because portfolio case studies should distinguish between:</p>
+<div class="flow-statement">Major Problem Solved</div>
+<p>and:</p>
+<div class="flow-statement">Existing Good Performance Further Improved</div>
+<p>IQONIC Agency falls into the second category.</p>
+</section>
+<section class="case-section" id="additional-technical-checks"><h2 class="section-title">Additional Technical Checks</h2>
+<p>I also reviewed:</p>
+<ul class="keyword-list"><li>HTTPS</li><li>Mobile Friendliness</li><li>Indexability</li><li>Broken Links</li><li>Redirects</li><li>404 Errors</li></ul>
+<p>No significant problems were found in these areas.</p>
+<p>That meant there was no reason to create technical tasks simply to make the project look larger.</p>
+<p>The technical work stayed focused on the areas that genuinely needed attention.</p>
+</section>
+<section class="case-section" id="building-an-initial-off-page-footprint"><h2 class="section-title">Building an Initial Off-Page Footprint</h2>
+<p>A full authority-building campaign was not justified at this stage.</p>
+<p>Instead, I created a few relevant branded backlinks from websites already connected to the wider business ecosystem:</p>
+<ul class="keyword-list"><li>IQONIC Design</li><li>IQONIC Tech</li><li>Earthly Jewels</li></ul>
+<p>These links primarily pointed to the IQONIC Agency homepage.</p>
+<p>The main anchor was:</p>
+<h3>IQONIC Agency</h3>
+<p>The purpose was to:</p>
+<ul>
+<li>Create the first referring-domain signals</li>
+<li>Support brand discovery</li>
+<li>Establish a small authority footprint</li>
+<li>Connect the new website with relevant existing properties</li>
+</ul>
+<p>This was deliberately:</p>
+<div class="flow-statement">An Initial Off-Page Foundation</div>
+<p>not:</p>
+<div class="flow-statement">A Full Link-Building Campaign.</div>
+</section>
+<section class="case-section case-section--proof" id="early-search-results"><h2 class="section-title">Early Search Results</h2>
+<p>After approximately two months, Google Search Console showed:</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Organic Clicks</h4><p><strong>41</strong></p></div><div class="result-mini-card"><h4>Search Impressions</h4><p><strong>563</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>7.3%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>12.9</strong></p></div><div class="result-mini-card"><h4>Pages Indexed</h4><p><strong>3 / 3</strong></p></div><div class="result-mini-card"><h4>Search Console Queries</h4><p><strong>23 Reported</strong></p></div></div>
+<p>At this stage, the recorded queries were branded searches.</p>
+<p>That was expected.</p>
+<p>No full non-branded keyword strategy had been implemented, so it would be misleading to expect or claim broad commercial SEO visibility.</p>
+<p class="metric-note"><strong>23 Search Console queries</strong> is retained as a reported project metric from the source case study. The supplied overall GSC screenshot directly verifies the clicks, impressions, CTR, and average-position figures shown above.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console overall performance for IQONIC Agency showing 41 clicks, 563 impressions, 7.3 percent CTR and 12.9 average position." decoding="async" height="763" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/iqonic-agency/03-google-search-console-early-search-performance-after-approximately-two-months.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early search performance after approximately two months</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="early-brand-query-visibility"><h2 class="section-title">Early Brand Query Visibility</h2>
+<p>Some of the queries beginning to generate visibility included:</p>
+<h3>“iqonic agency”</h3>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>29</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>46</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>63%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>1.7</strong></p></div></div>
+<div class="reported-grid">
+<div class="reported-card">
+<h4>“iqonic landing”</h4>
+<p><strong>119 impressions</strong></p>
+</div>
+<div class="reported-card">
+<h4>“iqonic”</h4>
+<p><strong>77 impressions</strong></p>
+</div>
+</div>
+<p>These were primarily branded or brand-related queries.</p>
+<p>Rather than treating that as a weakness, I see it as an accurate reflection of the project's limited SEO scope.</p>
+<p>The website had begun developing search visibility around its identity before any large non-branded strategy had been launched.</p>
+<p class="metric-note">The supplied GSC screenshot directly verifies the <strong>“iqonic agency”</strong> figures. The other two branded-query examples are retained as reported project observations from the original case study.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console performance for the query "iqonic agency" showing 29 clicks, 46 impressions, 63 percent CTR and 1.7 average position.' decoding="async" height="762" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/iqonic-agency/04-google-search-console-iqonic-agency-branded-query-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, “iqonic agency” branded-query performance</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="homepage-performance"><h2 class="section-title">Homepage Performance</h2>
+<p>The homepage generated most of the website's early organic visibility.</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>39</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>530</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>7.4%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>12.7</strong></p></div></div>
+<p>The live homepage today continues to function as the agency's central brand and lead-generation page, covering content production, website work, campaigns, paid growth, SEO/GEO, success stories, and target industries.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the IQONIC Agency homepage showing 39 clicks, 530 impressions, 7.4 percent CTR and 12.7 average position." decoding="async" height="760" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/iqonic-agency/05-google-search-console-iqonic-agency-homepage-performance.webp" width="1596"/>
+</div>
+<figcaption>Google Search Console, IQONIC Agency homepage performance</figcaption>
+</figure></section>
+<section class="case-section case-section--proof" id="pricing-page-performance"><h2 class="section-title">Pricing Page Performance</h2>
+<p>The pricing page also began appearing in search.</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Clicks</h4><p><strong>1</strong></p></div><div class="result-mini-card"><h4>Impressions</h4><p><strong>58</strong></p></div><div class="result-mini-card"><h4>CTR</h4><p><strong>1.7%</strong></p></div><div class="result-mini-card"><h4>Average Position</h4><p><strong>11.2</strong></p></div></div>
+<p>These numbers are small.</p>
+<p>I would not present them as a major ranking achievement.</p>
+<p>What matters is that the page had:</p>
+<div aria-label="Pricing page early search progression" class="horizontal-flow"><span>Been Indexed</span><span aria-hidden="true" class="flow-arrow">→</span><span>Started Appearing in Search</span><span aria-hidden="true" class="flow-arrow">→</span><span>Begun Accumulating Search Data</span></div>
+<p>The current live pricing page remains a dedicated commercial page presenting multiple agency plans and service combinations, so indexing it as part of the original core three-page scope made sense.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the IQONIC Agency pricing page showing 1 click, 58 impressions, 1.7 percent CTR and 11.2 average position." decoding="async" height="758" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/iqonic-agency/06-google-search-console-iqonic-agency-pricing-page-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, IQONIC Agency pricing page performance</figcaption>
+</figure></section>
+<section class="case-section" id="what-improved-during-the-initial-phase"><h2 class="section-title">What Improved During the Initial Phase</h2>
+<p>Within approximately two months:</p>
+<ul>
+<li>All three pages in my SEO scope were indexed</li>
+<li>Google Search Console was configured</li>
+<li>GA4 tracking was configured</li>
+<li>Metadata was implemented</li>
+<li>Heading hierarchy was cleaned up</li>
+<li>Image alt text was added</li>
+<li>Internal linking was introduced</li>
+<li>Canonical signals were implemented</li>
+<li>XML sitemap was added</li>
+<li>Robots.txt was added</li>
+<li>Structured data was implemented</li>
+<li>Page performance received additional optimization</li>
+<li>The brand began appearing in Google Search</li>
+<li>Search impressions began accumulating</li>
+<li>Branded clicks started appearing</li>
+<li>The website received its first relevant referring-domain signals</li>
+</ul>
+<p>These were the outcomes the project was designed to create.</p>
+</section>
+<section class="case-section" id="what-i-intentionally-did-not-do"><h2 class="section-title">What I Intentionally Did Not Do</h2>
+<p>One of the most important parts of this case study is the work I deliberately chose not to recommend yet.</p>
+<p>I did not carry out:</p>
+<ul>
+<li>Full keyword research</li>
+<li>Competitor keyword research</li>
+<li>Full website content rewriting</li>
+<li>Blog strategy</li>
+<li>Topic clusters</li>
+<li>Large-scale content optimization</li>
+<li>Full backlink campaign</li>
+<li>Digital PR</li>
+<li>Local SEO</li>
+<li>Long-term SEO strategy</li>
+</ul>
+<p>These areas were not forgotten.</p>
+<p>They were outside the justified scope.</p>
+<p>IQONIC Agency was primarily built as:</p>
+<ul class="keyword-list"><li>A Demo Website</li><li>A Portfolio Website</li><li>An Agency Showcase</li><li>A Lead-Generation Property</li><li>A Testing Ground for a New Agency Positioning</li></ul>
+<p>Running a large SEO campaign against a three-page showcase property would not have been an efficient use of time or resources.</p>
+<p>The better decision was:</p>
+<div class="flow-statement">Build the Foundation Now → Expand SEO Only If Organic Search Becomes a Real Growth Priority</div>
+</section>
+<section class="case-section case-section--structured" id="what-i-would-do-if-seo-became-a-growth-channel"><h2 class="section-title">What I Would Do If SEO Became a Growth Channel</h2>
+<p>If IQONIC Agency becomes a serious organic-growth project later, I would move into a broader second phase.</p>
+<div class="future-grid">
+<div class="future-card">
+<h4>1. Keyword &amp; Search Intent Research</h4>
+<p>Identify validated commercial opportunities around agency services, industries, customer problems, and commercial search terms.</p>
+</div>
+<div class="future-card">
+<h4>2. Competitor SEO Analysis</h4>
+<p>Analyse competing agencies to understand keyword gaps, content gaps, landing-page opportunities, website architecture, and authority gaps.</p>
+</div>
+<div class="future-card">
+<h4>3. SEO-Led Website Rewrite</h4>
+<p>Expand the current showcase content into a more search-focused website built around validated user intent.</p>
+</div>
+<div class="future-card">
+<h4>4. Expand the Case Study Library</h4>
+<p>Create additional optimized case studies that support proof, long-tail searches, industry relevance, and service relevance.</p>
+</div>
+<div class="future-card">
+<h4>5. Build a Broader Backlink Profile</h4>
+<p>Move beyond initial ecosystem links into a structured off-page strategy using relevant websites and stronger target-page planning.</p>
+</div>
+</div>
+<p>The current live homepage already gives case studies and success stories a prominent role, which would make an expanded search-focused case-study library a logical future SEO asset.</p>
+</section>
+<section class="case-section" id="current-seo-outcome"><h2 class="section-title">Current SEO Outcome</h2>
+<p>This is not a case study about:</p>
+<div class="outcome-stack">
+<div class="outcome-item">Hundreds of keywords</div>
+<div class="outcome-item">Large traffic growth</div>
+<div class="outcome-item">A major technical rescue</div>
+</div>
+<p>The outcome is more appropriate to the size and purpose of the project.</p>
+<p>After approximately two months, the website had:</p>
+<div class="result-mini-grid"><div class="result-mini-card"><h4>Core Pages Indexed</h4><p><strong>3 / 3</strong></p></div><div class="result-mini-card"><h4>Organic Clicks</h4><p><strong>41</strong></p></div><div class="result-mini-card"><h4>Search Impressions</h4><p><strong>563</strong></p></div><div class="result-mini-card"><h4>Search Console Queries</h4><p><strong>23 Reported</strong></p></div></div>
+<p>along with:</p>
+<ul>
+<li>Working tracking</li>
+<li>Metadata</li>
+<li>Internal links</li>
+<li>Canonicals</li>
+<li>Sitemap</li>
+<li>Robots.txt</li>
+<li>Structured data</li>
+<li>Improved page performance</li>
+<li>Initial backlinks</li>
+<li>Early branded search visibility</li>
+</ul>
+<p>That is the correct way to evaluate this project.</p>
+</section>
+<section class="case-section" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<p>The evidence is placed directly beside the claims it supports throughout the case study. This section is a compact recap rather than a repeated screenshot gallery.</p>
+<div class="proof-list">
+<div class="proof-item"><strong>Overall Search Performance</strong>41 clicks · 563 impressions · 7.3% CTR · 12.9 average position.</div>
+<div class="proof-item"><strong>Index Coverage</strong>3 / 3 scoped pages indexed.</div>
+<div class="proof-item"><strong>Homepage Performance</strong>39 clicks · 530 impressions · 7.4% CTR · 12.7 average position.</div>
+<div class="proof-item"><strong>Pricing Page</strong>1 click · 58 impressions · 1.7% CTR · 11.2 average position.</div>
+<div class="proof-item"><strong>Brand Visibility</strong>“iqonic agency” · 29 clicks · 46 impressions · 63% CTR · 1.7 average position.</div>
+<div class="proof-item"><strong>Analytics Setup</strong>GA4 configured, with 55 Google / Organic sessions and 24 users in the supplied 90-day snapshot.</div>
+</div>
+<p>This keeps the evidence proportional to what the project actually achieved.</p>
+</section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Google Analytics 4</li>
+</ul>
+<p>The project also involved coordination with the website developer for technical implementation and structured data.</p>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The hardest part of this project was not solving a complex technical issue.</p>
+<p>It was resisting the temptation to overengineer SEO.</p>
+<p>There are many SEO activities that could have been done.</p>
+<p>That does not mean they should have been done.</p>
+<p>The website only had three pages in scope and existed primarily as an agency showcase.</p>
+<p>Running extensive keyword research, publishing large volumes of content, building dozens of backlinks, and creating a complex organic-growth roadmap would have added work without matching the actual business priority.</p>
+<p>The real decision was:</p>
+<div class="flow-statement">What does this website genuinely need right now?</div>
+<p>The answer was:</p>
+<div class="flow-statement">A clean, measurable SEO foundation.</div>
+<p>That became the guiding principle for the project.</p>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>IQONIC Agency reinforced an important SEO lesson:</p>
+<h3>Good SEO is also about prioritization.</h3>
+<p>It is easy to build a long audit containing everything that could theoretically be improved.</p>
+<p>The more useful skill is deciding:</p>
+<div class="flow-statement">Which improvements actually make sense for the website's current stage, purpose, and resources?</div>
+<p>For IQONIC Agency, the correct strategy was not maximum SEO activity.</p>
+<p>It was:</p>
+<div class="flow-statement">Enough SEO to make the website technically clean, understandable, measurable, indexable, and ready for expansion later.</div>
+<p>That made the project smaller in scope, but more disciplined in execution.</p>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>IQONIC Agency was never intended to become a large SEO growth project during its first two months.</p>
+<p>My responsibility was not to apply every SEO tactic available.</p>
+<p>It was to identify what the website actually needed and build that foundation properly.</p>
+<p>I worked on:</p>
+<ul class="keyword-list"><li>On-Page SEO</li><li>Technical SEO</li><li>Tracking</li><li>Indexing</li><li>Structured Data</li><li>Internal Linking</li><li>Initial Off-Page Signals</li></ul>
+<p>while intentionally keeping the strategy proportional to the website's purpose.</p>
+<p>The current numbers are not a dramatic traffic-growth story, and I would not present them as one.</p>
+<p>They represent something more appropriate:</p>
+<div class="flow-statement">A newly launched agency website with every core page indexed, early branded search visibility, measurable Search Console activity, and a clean SEO foundation ready for future growth if organic search becomes a larger business priority.</div>
+<p>For me, this project demonstrates that I can:</p>
+<p><strong>Understand the stage of a website, define the right SEO scope, execute the fundamentals properly, and avoid unnecessary SEO work when the business does not yet need it.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="kivicare.html"><span class="case-pagination-label">Previous Case Study</span><strong>KiviCare</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="bitrix-theme.html"><span class="case-pagination-label">Next Case Study</span><strong>Bitrix Theme</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a aria-current="page" href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

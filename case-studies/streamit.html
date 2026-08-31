@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Streamit SEO Case Study | Abhi Patel</title>
+<meta content="Streamit SEO case study by Abhi Patel, covering technical SEO, brand positioning, content strategy, internal linking, off-page SEO, and major organic growth." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "From Product Preview Site to OTT Platform Brand With 559% Organic Click Growth",
+    "about": "SEO case study for Streamit",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="Streamit SEO Case Study | Abhi Patel" property="og:title"/><meta content="Streamit SEO case study by Abhi Patel, covering technical SEO, brand positioning, content strategy, internal linking, off-page SEO, and major organic growth." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Streamit SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="Streamit SEO case study by Abhi Patel, covering technical SEO, brand positioning, content strategy, internal linking, off-page SEO, and major organic growth." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a aria-current="page" href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>Streamit</span>
+</nav>
+<div class="eyebrow">SEO Case Study / Streamit</div>
+<h1>Streamit SEO Case Study</h1>
+<div class="hero-subtitle">From Product Preview Site to OTT Platform Brand With 559% Organic Click Growth</div>
+<div class="hero-copy">
+<p>Streamit started as something very different from the website it is today.</p><p>When I took over the SEO project, the domain was only around one to two months old and primarily worked as a preview website for Streamit's Laravel products listed across marketplaces such as ThemeForest and CodeCanyon.</p><p>It had almost no meaningful non-branded organic visibility, limited website architecture, thin pages, weak technical SEO, poor internal linking, few relevant backlinks, and no clear search positioning as an OTT platform provider.</p><p>Over the next six months, I led the SEO transformation of Streamit from a product-preview website into a broader custom OTT platform brand covering solutions, industries, products, features, educational content, and commercial search intent.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot">
+<div class="container">
+<div class="snapshot-top">
+<div>
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">Six months of end-to-end SEO ownership.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">OTT / Streaming Technology</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Website</span>
+<div class="meta-value">streamit.tech</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Project Duration</span>
+<div class="meta-value">6 Months</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role</span>
+<div class="meta-value">SEO Lead</div>
+</div>
+</div>
+</div>
+<div aria-label="Key SEO results" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">Organic Click Growth</div>
+<div>
+<div class="kpi-value">+559.6%</div>
+<div class="kpi-detail">235 → 1,550 clicks</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Search Impressions</div>
+<div>
+<div class="kpi-value">+476.6%</div>
+<div class="kpi-detail">2,480 → 14,300 impressions</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Homepage Organic Clicks</div>
+<div>
+<div class="kpi-value">+739.6%</div>
+<div class="kpi-detail">182 → 1,528 clicks</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Brand Keyword</div>
+<div>
+<div class="kpi-value">78 → 3</div>
+<div class="kpi-detail">“streamit” average position</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">CTR</div>
+<div>
+<div class="kpi-value">10.9%</div>
+<div class="kpi-detail">Up from 9.5%</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Average Position</div>
+<div>
+<div class="kpi-value">10.2</div>
+<div class="kpi-detail">Improved from 12.6</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#repositioning-streamit">Repositioning</a></li>
+<li><a href="#consolidating-the-streamit-ecosystem">Brand Search Win</a></li>
+<li><a href="#building-the-keyword-strategy">Keyword Strategy</a></li>
+<li><a href="#rebuilding-the-website-architecture">Architecture</a></li>
+<li><a href="#transforming-the-blog-strategy">Content Strategy</a></li>
+<li><a href="#improving-indexing">Indexing</a></li>
+<li><a href="#improving-off-page-seo">Off-Page SEO</a></li>
+<li><a href="#overall-seo-results">Overall Results</a></li>
+<li><a href="#homepage-growth">Homepage Growth</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>Streamit was not originally built as a search-focused business website.
+Its main purpose was to showcase and preview Streamit's Laravel products.
+The website had only a few main pages, and those pages mostly explained product features rather than addressing the search intent of founders, creators, media companies, or businesses looking to launch streaming platforms.
+Organic traffic was extremely limited and primarily branded.
+The website had little authority because the domain itself was new.
+SEO had not yet been developed across any of the three major areas:
+<strong>On-page SEO</strong>
+<strong>Technical SEO</strong>
+<strong>Off-page SEO</strong>
+The challenge was therefore much bigger than improving a few rankings.
+Streamit needed an entirely new SEO foundation and a clearer identity in search.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>My audit identified problems across almost every part of the website.</p>
+<h3>Technical SEO</h3>
+<p>Several technical issues were limiting discoverability and performance:</p>
+<ul>
+<li>Unnecessary URLs included in the sitemap</li>
+<li>AI crawlers blocked through robots.txt</li>
+<li>Pages appearing under Crawled – currently not indexed</li>
+<li>Pages appearing under Discovered – currently not indexed</li>
+<li>Missing structured data</li>
+<li>Weak mobile and desktop performance</li>
+<li>Some canonical issues</li>
+<li>Some redirect issues</li>
+</ul>
+<p>Many indexing problems were connected to another issue: page quality.
+Several pages simply did not contain enough useful content for search engines to consider them valuable.</p>
+<hr/>
+<h3>On-Page SEO</h3>
+<p>The on-page foundation was equally weak.
+There was:</p>
+<ul>
+<li>No structured keyword targeting</li>
+<li>Thin page content</li>
+<li>Missing or weak image alt text</li>
+<li>Incorrect heading hierarchy</li>
+<li>Generic meta titles and descriptions</li>
+<li>Almost no useful internal linking</li>
+<li>Limited search intent optimization</li>
+</ul>
+<p>The existing pages explained the product but were not designed around what potential customers were actually searching for.</p>
+<hr/>
+<h3>Content</h3>
+<p>Streamit was publishing approximately one blog every day.
+The publishing frequency looked strong on paper.
+The SEO value was not.
+Many blogs:</p>
+<ul>
+<li>Had little or no keyword research</li>
+<li>Targeted random topics</li>
+<li>Contained thin content</li>
+<li>Had weak internal linking</li>
+<li>Generated little traffic</li>
+<li>Were not getting indexed</li>
+</ul>
+<p>The website did not need more content.
+It needed <strong>better reasons for each piece of content to exist.</strong></p>
+<hr/>
+<h3>Off-Page SEO</h3>
+<p>Streamit had some backlinks, but many placements were not strongly relevant to the OTT or streaming industry.
+Anchor selection was also generic.
+For a new domain competing against established streaming technology companies, this was not enough to build meaningful topical authority.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="my-role"><h2 class="section-title">My Role</h2>
+<p>I led SEO strategy and execution for Streamit.
+My responsibilities included:</p>
+<ul>
+<li>SEO audits</li>
+<li>Keyword research</li>
+<li>Competitor analysis</li>
+<li>Website positioning</li>
+<li>Website architecture</li>
+<li>Landing-page strategy</li>
+<li>Full-page content rewrites</li>
+<li>Blog strategy</li>
+<li>Technical SEO</li>
+<li>Internal linking</li>
+<li>Backlink strategy</li>
+<li>AI search optimization</li>
+<li>Content briefs</li>
+<li>Developer coordination</li>
+<li>Designer coordination</li>
+<li>Content-team management</li>
+<li>Approvals</li>
+<li>Monthly SEO reporting</li>
+</ul>
+<p>I owned the project from strategy through implementation and performance tracking.</p>
+<hr/>
+</section>
+<section class="case-section" id="starting-with-the-technical-foundation"><h2 class="section-title">Starting With the Technical Foundation</h2>
+<p>Before expanding the website, I first focused on making sure search engines could properly crawl, understand, and process it.
+I performed technical audits using tools such as Screaming Frog, Google Search Console, PageSpeed Insights, Semrush, and other SEO validation tools.
+Working with the development team, I helped implement improvements including:</p>
+<ul>
+<li>Sitemap cleanup</li>
+<li>Robots.txt updates</li>
+<li>AI crawler accessibility</li>
+<li>Relevant structured data</li>
+<li>Heading hierarchy fixes</li>
+<li>Speed improvements</li>
+<li>Redirect corrections</li>
+<li>Canonical fixes</li>
+<li>Structured data validation</li>
+</ul>
+<p>Different schemas were implemented depending on page purpose.
+For example:
+<strong>Homepage → Organization schema</strong>
+<strong>Solution pages → Service schema</strong>
+<strong>Relevant pages → FAQ and Breadcrumb schema</strong>
+The technical work created the foundation needed before significantly expanding the site's content and architecture.</p>
+<hr/>
+</section>
+<section class="case-section" id="repositioning-streamit"><h2 class="section-title">Repositioning Streamit</h2>
+<p>This became one of the most important parts of the project.
+Originally, Streamit looked primarily like a website supporting products available through marketplaces.
+But the business itself had a much broader offering.
+The SEO positioning therefore shifted toward:
+<strong>Custom OTT platform provider</strong>
+rather than simply:
+<strong>OTT product or template preview</strong>
+This change influenced the entire website.
+Instead of only explaining products, the site began addressing questions around:</p>
+<ul>
+<li>OTT platform development</li>
+<li>Streaming websites</li>
+<li>Mobile streaming apps</li>
+<li>TV streaming applications</li>
+<li>Custom OTT solutions</li>
+<li>Infrastructure</li>
+<li>Industry-specific streaming platforms</li>
+<li>Platform ownership</li>
+<li>Monetization</li>
+<li>Scalability</li>
+<li>AI-driven streaming capabilities</li>
+</ul>
+<p>The website architecture and content strategy were rebuilt around this broader positioning.</p>
+<hr/>
+</section>
+<section class="case-section" id="solving-the-streamit-brand-search-problem"><h2 class="section-title">Solving the Streamit Brand Search Problem</h2>
+<p>The branded query became one of the most interesting challenges in the project.
+Searching for <strong>“streamit”</strong> did not initially surface streamit.tech prominently.
+Several other properties were appearing before the main website:</p>
+<ul>
+<li>Streamit products on ThemeForest</li>
+<li>Streamit products on CodeCanyon</li>
+<li>Streamit applications</li>
+<li>Other Streamit ecosystem properties</li>
+</ul>
+<p>Google was also frequently interpreting “Streamit” similarly to <strong>“Streamlit.”</strong>
+At one point, the main Streamit website itself appeared several pages deep in search results.
+The challenge was therefore not simply ranking a homepage.
+Google needed clearer signals about which website represented the main Streamit brand.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="consolidating-the-streamit-ecosystem"><h2 class="section-title">Consolidating the Streamit Ecosystem</h2>
+<p>We strengthened the relationship between streamit.tech and other Streamit properties.
+Where possible, product listings, applications, marketplace pages, and other Streamit properties were updated to clearly reference <strong>streamit.tech as the main website for the Streamit ecosystem</strong>.
+At the same time, the website itself was repositioned and expanded to better represent the overall business.
+This combination strengthened Google's understanding of the main brand property.</p>
+<h4>The result</h4>
+<p>For the query:</p>
+<h3>“streamit”</h3>
+<p><strong>Clicks</strong>
+0 → 1,232
+<strong>Impressions</strong>
+118 → 7,586
+<strong>Average Position</strong>
+78 → 3
+Impressions increased by approximately <strong>6,329%</strong>.
+Later SERP checks showed <strong>streamit.tech reaching the #1 position for the Streamit brand query.</strong></p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console comparison for the query "streamit", showing 1,232 clicks versus 0, 7,586 impressions versus 118, 16.2% CTR versus 0%, and average position 3 versus 78.' decoding="async" height="726" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/streamit/01-google-search-console-streamit-query-comparison.webp" width="1597"/>
+</div>
+<figcaption>Google Search Console, "streamit" query comparison</figcaption>
+</figure>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google search results for "streamit" showing Streamit Tech at streamit.tech as the first organic result with the Streamit favicon visible.' decoding="async" height="852" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/streamit/02-google-serp-streamit-tech-ranking-1-for-streamit.webp" width="1599"/>
+</div>
+<figcaption>Google SERP, streamit.tech ranking #1 for "streamit"</figcaption>
+</figure>
+This became one of the biggest SEO wins of the entire project.
+
+<hr/>
+</section>
+<section class="case-section keyword-strategy" id="building-the-keyword-strategy"><h2 class="section-title">Building the Keyword Strategy</h2>
+<p>Because Streamit needed both brand visibility and non-branded growth, I developed a keyword strategy around both.
+The homepage was mapped around:</p>
+<h4>Primary Keyword</h4>
+<ul class="keyword-list keyword-list--primary" role="list">
+<li><strong>Streamit</strong></li>
+</ul>
+<h4>Secondary Keywords</h4>
+<ul class="keyword-list" role="list">
+<li>OTT platform provider</li>
+<li>OTT platform providers</li>
+<li>OTT solution provider</li>
+<li>OTT solution providers</li>
+<li>OTT platform solution</li>
+<li>end-to-end OTT solution</li>
+</ul>
+<h4>Supporting Keywords</h4>
+<ul class="keyword-list" role="list">
+<li>OTT platform development</li>
+<li>OTT platform development company</li>
+<li>create OTT platform</li>
+<li>create your own OTT platform</li>
+<li>build OTT platform</li>
+<li>custom OTT solutions</li>
+</ul>
+<p class="keyword-objective">The objective was to maintain strong brand relevance while simultaneously helping Google understand what Streamit actually offered.</p>
+<hr/>
+</section>
+<section class="case-section" id="mapping-keywords-across-the-website"><h2 class="section-title">Mapping Keywords Across the Website</h2>
+<p>Keyword research combined:</p>
+<ul>
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Competitor analysis</li>
+<li>Non-branded competitor rankings</li>
+<li>Search volume</li>
+<li>Competition</li>
+<li>Search intent</li>
+</ul>
+<p>Each major solution page received its own primary and secondary keyword set.
+This helped avoid unnecessary keyword overlap and reduced the risk of different pages competing against each other.
+Instead of trying to rank every page for “OTT platform,” pages were mapped around the specific problem or solution they addressed.</p>
+<hr/>
+</section>
+<section class="case-section" id="rebuilding-the-website-architecture"><h2 class="section-title">Rebuilding the Website Architecture</h2>
+<p>The original website contained only a small number of product-focused pages.
+As the SEO strategy developed, the website expanded into a much broader search ecosystem.
+I worked on:</p>
+<ul>
+<li>Homepage</li>
+<li>Core solution pages</li>
+<li>New solution pages</li>
+<li>Industry pages</li>
+<li>Product positioning</li>
+<li>Feature-related content</li>
+<li>Blog clusters</li>
+<li>Internal linking between these sections</li>
+</ul>
+<p>Approximately <strong>30 important landing and solution pages</strong> were rewritten and optimized.
+For these pages, I worked on:</p>
+<ul>
+<li>Keyword targeting</li>
+<li>H1/H2 structure</li>
+<li>Content</li>
+<li>Metadata</li>
+<li>FAQs</li>
+<li>Internal linking</li>
+<li>Search intent</li>
+<li>CTA positioning</li>
+<li>Structured data</li>
+<li>Content depth</li>
+</ul>
+<p>This was not simply a content refresh.
+It changed how the website represented the Streamit business to both users and search engines.</p>
+<hr/>
+</section>
+<section class="case-section" id="creating-industry-specific-seo-pages"><h2 class="section-title">Creating Industry-Specific SEO Pages</h2>
+<p>Competitor research showed that established OTT companies were targeting individual industries through dedicated landing pages.
+This created a clear opportunity.
+I developed and optimized industry-specific content for:</p>
+<ul>
+<li>Entertainment</li>
+<li>Media &amp; Broadcast</li>
+<li>Sports</li>
+<li>Beauty</li>
+<li>Content Creators</li>
+<li>E-learning</li>
+<li>Fitness</li>
+<li>Spirituality</li>
+<li>Podcasting</li>
+</ul>
+<p>Rather than duplicating one template across industries, each page was developed around different:</p>
+<ul>
+<li>Keywords</li>
+<li>Audience problems</li>
+<li>Platform requirements</li>
+<li>Features</li>
+<li>Monetization models</li>
+<li>Use cases</li>
+</ul>
+<p>One early example was the Entertainment industry page, which generated approximately <strong>1,500 impressions within four months</strong>.
+For a relatively young domain, these impressions showed that the expanded non-branded architecture was beginning to gain visibility.</p>
+<hr/>
+</section>
+<section class="case-section" id="transforming-the-blog-strategy"><h2 class="section-title">Transforming the Blog Strategy</h2>
+<p>The original content strategy prioritized publishing frequency.
+I changed the focus toward search opportunity.
+Instead of publishing random daily topics, blog planning began using:</p>
+<ul>
+<li>TOFU / MOFU / BOFU intent</li>
+<li>Keyword clusters</li>
+<li>Competitor content gaps</li>
+<li>Search intent</li>
+<li>Existing impressions</li>
+<li>Topic relevance</li>
+<li>Internal-link opportunities</li>
+</ul>
+<p>Because traffic growth was the first priority, informational content played a major role.</p>
+<hr/>
+</section>
+<section class="case-section" id="updating-and-cleaning-existing-content"><h2 class="section-title">Updating and Cleaning Existing Content</h2>
+<p>I did not automatically rewrite every old blog.
+Existing articles were evaluated using search data.
+The priority was:</p>
+<h4>First</h4>
+<p>Blogs already receiving impressions</p>
+<h4>Second</h4>
+<p>Blogs targeting keywords with meaningful potential</p>
+<h4>Third</h4>
+<p>Content with no useful visibility or keyword opportunity
+Low-value content in the third category could then be redirected or removed instead of being maintained indefinitely.
+During the project:
+<strong>Approximately 40 existing blogs were rewritten or updated</strong>
+and
+<strong>Around 25 new blogs were published</strong></p>
+<hr/>
+</section>
+<section class="case-section" id="building-content-clusters"><h2 class="section-title">Building Content Clusters</h2>
+<p>Some of the strongest content opportunities came from comparison and alternative searches.
+Examples included topics such as:
+<strong>Streamit vs Muvi</strong>
+and
+<strong>Vimeo OTT alternatives</strong>
+These articles helped target users already evaluating streaming platforms.
+I developed clusters around:</p>
+<ul>
+<li>Platform comparisons</li>
+<li>OTT platform alternatives</li>
+<li>Streaming platform education</li>
+<li>Custom OTT development</li>
+<li>Streamit positioning</li>
+</ul>
+<p>Another important content cluster helped reinforce that Streamit was not simply a theme or template.
+The broader content ecosystem consistently explained Streamit's role as a custom OTT platform and development provider.
+This supported both non-branded visibility and the larger brand-positioning strategy.</p>
+<hr/>
+</section>
+<section class="case-section" id="building-a-strong-internal-linking-structure"><h2 class="section-title">Building a Strong Internal Linking Structure</h2>
+<p>Internal linking had barely been used on the original website.
+I developed clearer relationships between major page groups.</p>
+<h4>Blog</h4>
+<p>→ Solutions
+→ Industries
+→ Homepage
+→ Relevant blogs</p>
+<h4>Homepage</h4>
+<p>→ Core solutions</p>
+<h4>Solution Pages</h4>
+<p>→ Homepage
+→ Relevant industry pages</p>
+<h4>Industry Pages</h4>
+<p>→ Homepage
+→ Relevant solutions
+This helped search engines discover deeper pages while making the relationship between Streamit's topics clearer.
+Internal linking also became one of the factors that helped improve indexing across pages that had previously struggled to enter Google's index.</p>
+<hr/>
+</section>
+<section class="case-section" id="improving-indexing"><h2 class="section-title">Improving Indexing</h2>
+<p>Some pages were appearing in Google Search Console under:
+<strong>Crawled – currently not indexed</strong>
+and
+<strong>Discovered – currently not indexed</strong>
+Rather than treating this as purely a crawling issue, I improved the underlying page quality.
+The strategy included:</p>
+<ul>
+<li>Increasing useful content depth</li>
+<li>Improving keyword relevance</li>
+<li>Strengthening internal links</li>
+<li>Fixing technical issues</li>
+<li>Creating clearer page relationships</li>
+<li>Improving website architecture</li>
+</ul>
+<p>As the site became more useful and interconnected, indexing improved.
+This reinforced one of my biggest learnings from both Streamit and other SEO projects:
+<strong>Technical fixes matter, but strong content and internal linking often solve problems that look purely technical at first.</strong></p>
+<hr/>
+</section>
+<section class="case-section" id="improving-off-page-seo"><h2 class="section-title">Improving Off-Page SEO</h2>
+<p>Streamit's backlink strategy also changed.
+The website already had some links, but relevance and anchor selection needed improvement.
+I shifted the strategy toward:</p>
+<ul>
+<li>More niche-relevant websites</li>
+<li>Better contextual placements</li>
+<li>More relevant anchor selection</li>
+<li>Guest-post opportunities</li>
+<li>Link partnerships</li>
+</ul>
+<p>Approximately <strong>80 backlinks</strong> were built during the project through guest posts and link exchanges.
+The goal was to support Streamit's growing topical relevance rather than simply increase the number of referring links.</p>
+<hr/>
+</section>
+<section class="case-section" id="competitor-research"><h2 class="section-title">Competitor Research</h2>
+<p>I regularly studied established OTT and streaming platforms including:</p>
+<ul>
+<li>VPlayed</li>
+<li>Muvi</li>
+<li>Dacast</li>
+<li>Uscreen</li>
+<li>Vimeo OTT</li>
+</ul>
+<p>Competitor research helped identify:</p>
+<ul>
+<li>Non-branded keyword opportunities</li>
+<li>Industry landing-page opportunities</li>
+<li>Blog topics</li>
+<li>Comparison searches</li>
+<li>Alternative searches</li>
+<li>Content gaps</li>
+</ul>
+<p>The goal was not to copy competitors.
+It was to understand where search demand already existed and where Streamit could build stronger or more relevant pages.</p>
+<hr/>
+</section>
+<section class="case-section" id="preparing-streamit-for-ai-search"><h2 class="section-title">Preparing Streamit for AI Search</h2>
+<p>The SEO strategy also expanded beyond traditional search results.
+I worked on improving how easily AI-driven search systems could understand and reference Streamit's content.
+This included:</p>
+<ul>
+<li>FAQs</li>
+<li>Structured content</li>
+<li>Entity clarity</li>
+<li>Schema</li>
+<li>Brand citations</li>
+<li>Informative guides</li>
+<li>Comparison content</li>
+<li>Brand mentions</li>
+</ul>
+<p>According to Semrush AI visibility reporting, Streamit later recorded:
+<strong>16 prompts</strong> triggering AI responses mentioning the brand
+<strong>125 AI responses</strong> citing Streamit as a source
+<strong>115 Streamit pages</strong> appearing as citations in AI-generated answers
+These figures represent third-party AI visibility reporting rather than Google Search Console data.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="overall-seo-results"><h2 class="section-title">Overall SEO Results</h2>
+<p>Comparing the selected Google Search Console periods:</p>
+<h3>Organic Clicks</h3>
+<p><strong>235 → 1,550</strong>
+Increase: <strong>+1,315 clicks</strong>
+Growth: <strong>+559.6%</strong>
+Organic clicks grew to approximately <strong>6.6×</strong> the previous level.</p>
+<hr/>
+<h3>Search Impressions</h3>
+<p><strong>2,480 → 14,300</strong>
+Increase: <strong>+11,820 impressions</strong>
+Growth: <strong>+476.6%</strong>
+Search visibility grew to approximately <strong>5.8×</strong> the previous level.</p>
+<hr/>
+<h3>CTR</h3>
+<p><strong>9.5% → 10.9%</strong>
+Improvement: <strong>+1.4 percentage points</strong></p>
+<hr/>
+<h3>Average Position</h3>
+<p><strong>12.6 → 10.2</strong>
+Improvement: <strong>2.4 positions</strong></p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console period comparison for streamit.tech showing 1.55K clicks versus 235, 14.3K impressions versus 2.48K, 10.9% CTR versus 9.5%, and average position 10.2 versus 12.6." decoding="async" height="729" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/streamit/03-google-search-console-period-over-period-organic-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, period-over-period organic performance</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="homepage-growth"><h2 class="section-title">Homepage Growth</h2>
+<p>The Streamit homepage showed particularly strong improvement.</p>
+<h4>Clicks</h4>
+<p><strong>182 → 1,528</strong>
+Increase: <strong>+1,346 clicks</strong>
+Growth: <strong>+739.6%</strong>
+The homepage generated approximately <strong>8.4×</strong> its previous organic clicks.</p>
+<h4>Impressions</h4>
+<p><strong>2,167 → 12,527</strong>
+Increase: <strong>+10,360 impressions</strong>
+Growth: <strong>+478.1%</strong></p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console homepage comparison for streamit.tech showing 1.53K clicks versus 182, 12.5K impressions versus 2.17K, 12.2% CTR versus 8.4%, and average position 5.8 versus 12.6." decoding="async" height="733" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/streamit/04-google-search-console-streamit-homepage-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, Streamit homepage performance</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section" id="another-brand-search-win"><h2 class="section-title">Another Brand Search Win</h2>
+<p>The variation:</p>
+<h3>“stream it”</h3>
+<p>also improved.</p>
+<h4>Clicks</h4>
+<p><strong>0 → 54</strong></p>
+<h4>Impressions</h4>
+<p><strong>1 → 433</strong></p>
+<h4>Average Position</h4>
+<p><strong>46 → 16.8</strong>
+This provided another signal that Google's understanding and visibility of the Streamit brand was strengthening.</p>
+<hr/>
+</section>
+<section class="case-section" id="brand-growth-vs-non-branded-growth"><h2 class="section-title">Brand Growth vs Non-Branded Growth</h2>
+<p>A significant share of the initial growth came from solving Streamit's brand-search problem.
+That was intentional.
+For a young website whose own main domain was barely visible for its brand name, establishing the correct primary brand property was the first priority.
+At the same time, new solution pages, industry pages, comparison content, educational blogs, and keyword clusters started building the foundation for broader non-branded visibility.
+Streamit therefore moved through two stages:
+<strong>First: establish the brand</strong>
+<strong>Then: expand what the brand can rank for</strong></p>
+<hr/>
+</section>
+<section class="case-section" id="business-impact"><h2 class="section-title">Business Impact</h2>
+<p>Organic visibility was not the only area that improved.
+Lead and conversion performance also improved during the project.
+However, commercial and conversion figures are confidential and are therefore not included in this portfolio.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="proof-of-work"><h2 class="section-title">Proof of Work</h2>
+<p>The final portfolio version can show direct evidence beside the relevant result rather than placing all screenshots in one gallery.</p>
+<h4>Overall Organic Growth</h4>
+<p><strong>GSC Screenshot</strong>
+235 → 1,550 clicks
+2,480 → 14,300 impressions</p>
+<h4>Brand Keyword</h4>
+<p><strong>GSC Screenshot</strong>
+“streamit”
+Position 78 → 3 during the comparison period</p>
+<h4>Current Brand SERP</h4>
+<p><strong>Google SERP Screenshot</strong>
+streamit.tech ranking #1 for “streamit”</p>
+<h4>Homepage Growth</h4>
+<p><strong>GSC Screenshot</strong>
+182 → 1,528 clicks</p>
+<h4>Organic User Growth</h4>
+<p><strong>GA4 Screenshot</strong>
+This makes each performance claim immediately verifiable.</p>
+<hr/>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Analytics 4 Traffic Acquisition report filtered to Organic Search, comparing March through July 2026 with October 2025 through February 2026." decoding="async" height="727" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/streamit/05-google-analytics-4-organic-search-traffic-comparison.webp" width="1389"/>
+</div>
+<figcaption>Google Analytics 4, Organic Search traffic comparison</figcaption>
+</figure></section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Google Analytics</li>
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Screaming Frog</li>
+<li>PageSpeed Insights</li>
+<li>Ahrefs</li>
+<li>SEO Meta in 1 Click</li>
+<li>Schema Validation Tools</li>
+</ul>
+<hr/>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The hardest part of the project was not simply increasing traffic.
+It was changing Google's understanding of what Streamit represented.
+The main website originally existed behind Streamit's own marketplace products and other properties for its branded query.
+At the same time, the site itself looked more like a product preview than an OTT service provider.
+Solving this required several SEO areas to work together:</p>
+<ul>
+<li>Brand consolidation</li>
+<li>Website positioning</li>
+<li>Content expansion</li>
+<li>Technical SEO</li>
+<li>Internal linking</li>
+<li>External brand signals</li>
+<li>Website architecture</li>
+</ul>
+<p>Seeing streamit.tech eventually become the primary result for the Streamit brand became the clearest sign that those signals were working together.</p>
+<hr/>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>One experiment that produced particularly strong results was adding greater depth to solution and industry pages instead of keeping them short.
+I also significantly expanded internal linking across the website.
+Both changes helped improve page discovery, indexing, topical relationships, and overall search visibility.
+The project reinforced a principle I strongly believe in:
+<strong>Classic SEO fundamentals still win when they are applied consistently and strategically.</strong>
+Technical SEO alone was not enough.
+Content alone was not enough.
+Backlinks alone were not enough.
+The results came from making all of those parts support the same website strategy.</p>
+<hr/>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>Streamit started as a young domain with very little organic visibility and a website built primarily to preview products.
+Six months later, it had a much clearer identity:
+A website structured around OTT solutions, industries, products, educational content, and a broader streaming business offering.
+For me, this project represents more than traffic growth.
+It demonstrates the kind of responsibility I am comfortable taking on:
+<strong>Taking ownership of an SEO project end to end, identifying what the website needs, building the strategy, coordinating the team, executing the plan, and measuring what happens next.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="earthly-jewels.html"><span class="case-pagination-label">Previous Case Study</span><strong>Earthly Jewels</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="tinyfacets.html"><span class="case-pagination-label">Next Case Study</span><strong>Tinyfacets</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a aria-current="page" href="streamit.html">Streamit</a><a href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>

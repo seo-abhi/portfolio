@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tinyfacets SEO Case Study | Abhi Patel</title>
+<meta content="Tinyfacets SEO case study by Abhi Patel, showing how an SEO foundation was built from day one for a new kids gold jewellery Shopify store." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<meta content="#000000" name="theme-color"/>
+<style>
+    :root {
+      --bg: #000;
+      --surface: #070707;
+      --surface-2: #0b0b0b;
+      --text: #fff;
+      --copy: #d1d1d1;
+      --muted: #9a9a9a;
+      --muted-2: #707070;
+      --line: #242424;
+      --line-strong: #393939;
+      --max: 1240px;
+      --reading: 850px;
+      --radius: 18px;
+      --ease: 220ms ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ::selection { background: #fff; color: #000; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #000;
+      background: #fff;
+      border-radius: 8px;
+      font-weight: 800;
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .025em;
+      white-space: nowrap;
+    }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-center a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .nav-center a:hover { color: #fff; }
+    .nav-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background var(--ease), color var(--ease);
+    }
+    .nav-cta:hover { background: #fff; color: #000; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 128px) 0 clamp(70px, 9vw, 118px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .32;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 1080px;
+      font-size: clamp(3.5rem, 8.4vw, 8.6rem);
+      line-height: .88;
+      letter-spacing: -.068em;
+      font-weight: 900;
+    }
+    .hero-subtitle {
+      max-width: 1000px;
+      margin-top: 26px;
+      color: #f2f2f2;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      line-height: 1.13;
+      letter-spacing: -.032em;
+      font-weight: 700;
+    }
+    .hero-copy {
+      max-width: 900px;
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+      color: var(--copy);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+    }
+
+    /* Snapshot */
+    .snapshot {
+      border-bottom: 1px solid var(--line);
+      padding: clamp(58px, 7vw, 86px) 0;
+    }
+    .snapshot-top {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .snapshot h2 {
+      margin-top: 12px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: .96;
+      letter-spacing: -.052em;
+    }
+    .snapshot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+    .meta-item {
+      min-height: 105px;
+      padding: 22px;
+      background: var(--surface);
+    }
+    .meta-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted-2);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .meta-value {
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .kpi {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, #0b0b0b 0%, #040404 100%);
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .kpi-value {
+      margin-top: 26px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: .9;
+      letter-spacing: -.052em;
+      font-weight: 900;
+    }
+    .kpi-detail {
+      margin-top: 12px;
+      color: var(--copy);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* Article */
+    .article {
+      padding: clamp(70px, 8vw, 116px) 0 140px;
+    }
+    .article-layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(48px, 7vw, 100px);
+      align-items: start;
+    }
+    .article-rail {
+      position: sticky;
+      top: 104px;
+    }
+    .rail-title {
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .rail-links {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+    .rail-links a {
+      display: block;
+      padding: 7px 0;
+      color: #7e7e7e;
+      font-size: 12px;
+      line-height: 1.35;
+      transition: color var(--ease), transform var(--ease);
+    }
+    .rail-links a:hover {
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: var(--reading);
+    }
+
+    .case-section {
+      scroll-margin-top: 110px;
+      padding: 0 0 clamp(64px, 8vw, 100px);
+      margin-bottom: clamp(64px, 8vw, 100px);
+      border-bottom: 1px solid var(--line);
+    }
+    .case-section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .case-section > h1 {
+      margin-bottom: 30px;
+      font-size: clamp(2.25rem, 5vw, 4.75rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      font-weight: 880;
+    }
+    .case-section h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .case-section h3 {
+      margin: 30px 0 12px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .case-section p {
+      margin: 0 0 18px;
+      color: var(--copy);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .case-section strong {
+      color: #fff;
+      font-weight: 800;
+    }
+    .case-section ul {
+      margin: 20px 0 24px;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+    .case-section li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--copy);
+      line-height: 1.62;
+    }
+    .case-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Tools list */
+    #tools-platforms-used .tools-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+      row-gap: 12px;
+      margin-top: 28px;
+    }
+
+    #tools-platforms-used .tools-list li {
+      padding: 15px 18px 15px 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e3e3e3;
+    }
+
+    #tools-platforms-used .tools-list li::before {
+      left: 18px;
+      top: 1.55em;
+      width: 6px;
+      height: 6px;
+    }
+
+    .case-section blockquote {
+      margin: 28px 0;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Structured/problem sections */
+    .case-section--structured > h2 {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Keyword strategy */
+    .keyword-strategy .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px;
+      margin: 14px 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .keyword-strategy .keyword-list li {
+      position: relative;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px 14px 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e6e6e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .keyword-strategy .keyword-list li::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+
+    .keyword-strategy .keyword-list--primary {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 430px;
+    }
+
+    .keyword-strategy .keyword-list--primary li {
+      min-height: 66px;
+      font-size: 17px;
+    }
+
+    .keyword-strategy .keyword-objective {
+      margin-top: 8px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+    }
+
+    /* Proof images */
+    .evidence {
+      margin: 36px 0 44px;
+    }
+    .evidence-frame {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: #f4f4f4;
+    }
+    .evidence img {
+      width: 100%;
+      height: auto;
+    }
+    .evidence figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Strong metric blocks inside results sections */
+    #consolidating-the-streamit-ecosystem h2,
+    #overall-seo-results h2,
+    #homepage-growth h3,
+    #another-brand-search-win h2 {
+      margin-top: 26px;
+    }
+
+    /* Proof-of-work recap */
+    #proof-of-work h3 {
+      margin-top: 18px;
+      padding: 18px 18px 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      background: var(--surface);
+    }
+    #proof-of-work h3 + p {
+      margin: 0 0 16px;
+      padding: 0 18px 18px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 12px 12px;
+      background: var(--surface);
+      white-space: pre-line;
+    }
+
+    /* Takeaway */
+    #my-biggest-takeaway {
+      padding: clamp(42px, 6vw, 70px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #0c0c0c 0%, #030303 100%);
+    }
+    #my-biggest-takeaway > h1 {
+      max-width: 700px;
+    }
+    #my-biggest-takeaway p:last-child strong {
+      display: block;
+      margin-top: 26px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 46px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: var(--muted-2);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1050px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+      .article-rail {
+        display: none;
+      }
+      .article-content {
+        max-width: 920px;
+      }
+      .snapshot-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-center { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .nav-cta { display: none; }
+      .hero {
+        padding: 52px 0 64px;
+      }
+      .hero h1 {
+        font-size: clamp(3.15rem, 17vw, 5.6rem);
+      }
+      .hero-subtitle {
+        font-size: 1.42rem;
+      }
+      .snapshot-meta {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi {
+        min-height: 145px;
+      }
+      .article {
+        padding-top: 64px;
+      }
+      .case-section > h1 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+      }
+      .case-section p,
+      .case-section li {
+        font-size: 15px;
+      }
+
+      #tools-platforms-used .tools-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .keyword-strategy .keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .keyword-strategy .keyword-list--primary {
+        max-width: none;
+      }
+
+      .link-flow-grid,
+      .status-list,
+      .compact-keyword-list {
+        grid-template-columns: 1fr;
+      }
+
+      .link-flow-card {
+        padding: 18px;
+      }
+
+      .horizontal-flow {
+        padding: 16px;
+      }
+      #my-biggest-takeaway {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+
+    /* Internal-linking and process flows */
+    .link-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 30px;
+    }
+
+    .link-flow-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .link-flow-card h3 {
+      margin: 0 0 16px;
+    }
+
+    .link-flow-steps,
+    .horizontal-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .link-flow-steps span:not(.flow-arrow),
+    .horizontal-flow span:not(.flow-arrow) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: #030303;
+      color: #ececec;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .horizontal-flow {
+      margin: 20px 0 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .status-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 24px !important;
+    }
+
+    .status-list li,
+    .compact-keyword-list li {
+      padding: 15px 18px 15px 40px !important;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .compact-keyword-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 12px !important;
+      margin: 18px 0 26px !important;
+    }
+
+    /* Earthly Jewels result sections */
+    #overall-seo-results h2,
+    #keyword-growth-example h2,
+    #collection-page-growth h2 {
+      margin-top: 26px;
+    }
+
+    /* Compact flow statements */
+    .flow-statement {
+      margin: 24px 0 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #fff;
+      background: var(--surface);
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Tinyfacets structured keyword architecture */
+    .keyword-architecture {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .keyword-architecture-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .keyword-architecture-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .keyword-architecture-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Search-result mini cards */
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .result-mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .result-mini-card h3 {
+      margin: 0 0 12px;
+    }
+
+    .result-mini-card p {
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    /* Screenshot placeholders, ready for future proof images */
+    .evidence-placeholder {
+      margin: 34px 0 44px;
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px dashed var(--line-strong);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,0)),
+        var(--surface);
+      text-align: center;
+    }
+
+    .evidence-placeholder .placeholder-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .evidence-placeholder .placeholder-copy {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .evidence-placeholder figcaption {
+      margin-top: 16px;
+      color: var(--muted-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Learnings */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .learning-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: #e7e7e7;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 620px) {
+      .keyword-architecture,
+      .result-mini-grid,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Final indexing-status card fix */
+    .status-list {
+      list-style: none !important;
+      padding-left: 0 !important;
+    }
+
+    .status-list li {
+      list-style: none !important;
+      padding: 16px 18px !important;
+      display: flex;
+      align-items: center;
+      min-height: 58px;
+    }
+
+    .status-list li::before,
+    .status-list li::marker {
+      content: none !important;
+      display: none !important;
+    }
+
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building SEO From Day One for a New Kids Gold Jewellery Brand",
+    "about": "SEO case study for Tinyfacets",
+    "author": {
+      "@type": "Person",
+      "name": "Abhi Patel",
+      "jobTitle": "SEO Specialist"
+    }
+  }
+  </script>
+<meta content="Abhi Patel" name="author"/><meta content="article" property="og:type"/><meta content="Tinyfacets SEO Case Study | Abhi Patel" property="og:title"/><meta content="Tinyfacets SEO case study by Abhi Patel, showing how an SEO foundation was built from day one for a new kids gold jewellery Shopify store." property="og:description"/><meta content="Abhi Patel SEO Portfolio" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Tinyfacets SEO Case Study | Abhi Patel" name="twitter:title"/><meta content="Tinyfacets SEO case study by Abhi Patel, showing how an SEO foundation was built from day one for a new kids gold jewellery Shopify store." name="twitter:description"/><link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../assets/css/site-shell.css" rel="stylesheet"/><link href="../assets/css/design-refresh.css" rel="stylesheet"/><script defer="True" src="../assets/js/site-shell.js"></script><!-- Run finalize-domain.py with the real production domain before launch to inject canonicals, og:url, og:image, BreadcrumbList and sitemap.xml. --></head>
+<body data-page="case-study" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="global-header"><div class="global-shell global-header-inner">
+<a class="global-brand" href="../index.html">ABHI PATEL</a>
+<button aria-controls="global-primary-nav" aria-expanded="false" aria-label="Open navigation" class="global-menu-toggle" type="button"><span></span></button>
+<nav aria-label="Primary navigation" class="global-nav" id="global-primary-nav"><ul class="global-nav-list">
+<li><a class="global-nav-link" href="../index.html#about">About Me</a></li>
+<li><a class="global-nav-link" href="../index.html#what-i-do">What I Do</a></li>
+<li><a class="global-nav-link" href="../index.html#process">My SEO Process</a></li>
+<li><a class="global-nav-link" href="../index.html#projects">Featured SEO Projects</a></li>
+<li><a class="global-nav-link" href="../index.html#tools">Tools &amp; Platforms</a></li>
+<li class="global-case-menu is-current"><button aria-controls="global-case-dropdown" aria-expanded="false" aria-haspopup="true" class="global-case-trigger" type="button"><span>Case Studies</span><svg aria-hidden="true" class="global-case-chevron" viewbox="0 0 12 8"><path d="M1 1.25 6 6.25 11 1.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></button><div class="global-case-dropdown" id="global-case-dropdown"><a class="global-all-cases" href="../seo-case-studies.html">All Case Studies</a><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a aria-current="page" href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></li>
+</ul></nav><a class="global-contact" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div></header>
+<main id="main">
+<section class="hero">
+<div class="container hero-inner">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="../index.html">Home</a>
+<span>/</span>
+<a href="../seo-case-studies.html">Case Studies</a>
+<span>/</span>
+<span>Tinyfacets</span>
+</nav>
+<div class="eyebrow">SEO Case Study / Tinyfacets</div>
+<h1>Tinyfacets SEO Case Study</h1>
+<div class="hero-subtitle">Building SEO From Day One for a New Kids Gold Jewellery Brand</div>
+<div class="hero-copy">
+<p>Tinyfacets was a completely different SEO challenge from most projects I had worked on.</p><p>There was no old SEO strategy to repair, no historical rankings to recover, and no established authority to build upon.</p><p>When I started working on Tinyfacets, the website had just gone live. The store already contained approximately **70 products, 6 main collections, and 7 supporting pages**, but as a brand-new domain it had virtually no search history, rankings, authority, or backlink profile.</p><p>This also became the first project where I independently owned SEO from the beginning.</p><p>Instead of fixing someone else's SEO strategy, I had to build the search foundation myself, from technical SEO and keyword architecture to collections, products, content, internal linking, Local SEO, and AI-search accessibility.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="snapshot-title" class="snapshot">
+<div class="container">
+<div class="snapshot-top">
+<div>
+<div class="section-kicker">Project Snapshot</div>
+<h2 id="snapshot-title">Building the search foundation from the first months.</h2>
+</div>
+<div class="snapshot-meta">
+<div class="meta-item">
+<span class="meta-label">Industry</span>
+<div class="meta-value">Kids Gold Jewellery / E-commerce</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Platform</span>
+<div class="meta-value">Shopify</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">SEO Period</span>
+<div class="meta-value">Approximately 2 Months</div>
+</div>
+<div class="meta-item">
+<span class="meta-label">Role</span>
+<div class="meta-value">SEO Lead</div>
+</div>
+</div>
+</div>
+<div aria-label="Early SEO results" class="kpi-grid">
+<article class="kpi">
+<div class="kpi-label">Search Impressions</div>
+<div>
+<div class="kpi-value">12.6K</div>
+<div class="kpi-detail">Early organic search footprint</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Organic Clicks</div>
+<div>
+<div class="kpi-value">185</div>
+<div class="kpi-detail">First months of SEO activity</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">CTR</div>
+<div>
+<div class="kpi-value">1.5%</div>
+<div class="kpi-detail">Google Search Console</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Average Position</div>
+<div>
+<div class="kpi-value">12.5</div>
+<div class="kpi-detail">Early search visibility</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Indexed Pages</div>
+<div>
+<div class="kpi-value">122</div>
+<div class="kpi-detail">Products, collections and content</div>
+</div>
+</article>
+<article class="kpi">
+<div class="kpi-label">Ranking Keywords</div>
+<div>
+<div class="kpi-value">868</div>
+<div class="kpi-detail">Reported keyword footprint</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<article class="article">
+<div class="container article-layout">
+<aside aria-label="Case study section navigation" class="article-rail">
+<div class="rail-title">On this page</div>
+<ul class="rail-links">
+<li><a href="#the-starting-point">Starting Point</a></li>
+<li><a href="#the-initial-seo-problems">Initial Problems</a></li>
+<li><a href="#my-role">My Role</a></li>
+<li><a href="#starting-with-the-technical-foundation">Technical Foundation</a></li>
+<li><a href="#understanding-the-kids-jewellery-search-market">Market Research</a></li>
+<li><a href="#building-the-keyword-strategy-from-zero">Keyword Strategy</a></li>
+<li><a href="#repositioning-the-homepage-around-search-intent">Homepage SEO</a></li>
+<li><a href="#turning-collections-into-search-landing-pages">Collection SEO</a></li>
+<li><a href="#optimizing-product-pages-at-scale">Product SEO</a></li>
+<li><a href="#building-the-content-strategy">Content Strategy</a></li>
+<li><a href="#building-a-strong-internal-linking-structure">Internal Linking</a></li>
+<li><a href="#improving-indexing">Indexing</a></li>
+<li><a href="#shopify-technical-seo">Shopify SEO</a></li>
+<li><a href="#improving-local-seo">Local SEO</a></li>
+<li><a href="#preparing-tinyfacets-for-ai-search">AI Search</a></li>
+<li><a href="#overall-seo-results">Overall Results</a></li>
+<li><a href="#building-non-branded-visibility">Non-Branded Visibility</a></li>
+<li><a href="#proof-of-work">Proof of Work</a></li>
+<li><a href="#my-biggest-takeaway">Biggest Takeaway</a></li>
+</ul>
+</aside>
+<div class="article-content">
+<section class="case-section" id="the-starting-point"><h2 class="section-title">The Starting Point</h2>
+<p>Tinyfacets was not a website with damaged SEO.
+It was a website with almost no SEO history at all.
+The domain had just launched, which meant there was:</p>
+<ul>
+<li>No established domain authority</li>
+<li>No ranking history</li>
+<li>Almost no backlink profile</li>
+<li>No meaningful brand-search history</li>
+<li>No historical Google Search Console data</li>
+<li>No established topical authority</li>
+</ul>
+<p>At the same time, the website already contained dozens of products and several important commercial collections.
+The challenge was making sure those pages did not remain simple Shopify product listings.
+They needed:</p>
+<div aria-label="SEO foundation flow" class="horizontal-flow"><span>Keyword Targeting</span><span aria-hidden="true" class="flow-arrow">→</span><span>Useful Content</span><span aria-hidden="true" class="flow-arrow">→</span><span>Internal Relationships</span><span aria-hidden="true" class="flow-arrow">→</span><span>Structured Data</span><span aria-hidden="true" class="flow-arrow">→</span><span>Technical Accessibility</span><span aria-hidden="true" class="flow-arrow">→</span><span>Search Discovery</span></div>
+The goal was therefore not simply:
+**How do I improve Tinyfacets SEO?**
+It was:
+**How do I build the SEO foundation of a new jewellery brand correctly from the beginning?**
+
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="the-initial-seo-problems"><h2 class="section-title">The Initial SEO Problems</h2>
+<p>Although the website was new, there were still several important areas that needed to be established or improved.</p>
+<h3>Technical SEO</h3>
+<p>The initial technical work included areas such as:</p>
+<ul>
+<li>Crawling</li>
+<li>Indexing</li>
+<li>XML sitemap</li>
+<li>Robots.txt</li>
+<li>Redirects</li>
+<li>Mobile usability</li>
+<li>Page speed</li>
+<li>Heading hierarchy</li>
+<li>Generic Shopify structured data</li>
+<li>Filter-related issues</li>
+<li>Favicon issues</li>
+<li>Template limitations</li>
+</ul>
+<p>Because the site had only recently launched, the objective was to solve these issues before they became larger problems as more products and content were added.</p>
+<hr/>
+<h3>On-Page SEO</h3>
+<p>Commercial pages needed clearer search targeting.
+The main opportunities included:</p>
+<ul>
+<li>Homepage keyword targeting</li>
+<li>Collection-page optimization</li>
+<li>Product naming</li>
+<li>Product descriptions</li>
+<li>Metadata</li>
+<li>Heading structures</li>
+<li>Image alt text</li>
+<li>Internal linking</li>
+<li>Keyword differentiation across similar products</li>
+</ul>
+<p>Without this structure, dozens of similar jewellery products could easily begin competing against one another for the same terms.</p>
+<hr/>
+<h3>Content</h3>
+<p>The website also needed an informational search layer.
+There was no large existing blog library to clean up or optimize.
+The challenge was deciding:
+<strong>What content should Tinyfacets publish first?</strong>
+Rather than producing random jewellery articles, the strategy needed to support:</p>
+<ul>
+<li>Parent questions</li>
+<li>Buying decisions</li>
+<li>Gifting intent</li>
+<li>Product discovery</li>
+<li>Commercial collections</li>
+<li>Long-tail search opportunities</li>
+</ul>
+<p>This gave the content program a clear purpose from the beginning.</p>
+<hr/>
+<h3>Off-Page SEO</h3>
+<p>As a fresh domain, Tinyfacets had almost no backlink profile.
+That meant authority building needed to begin gradually.
+The objective at this stage was not to chase a large backlink count.
+It was to establish the first relevant external signals while the website developed its own search footprint.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="my-role"><h2 class="section-title">My Role</h2>
+<p>Tinyfacets became the first SEO project where I was independently responsible for SEO from the beginning.
+My responsibilities include:</p>
+<ul>
+<li>SEO strategy</li>
+<li>Technical audits</li>
+<li>Keyword research</li>
+<li>Competitor research</li>
+<li>Homepage optimization</li>
+<li>Collection SEO</li>
+<li>Product SEO</li>
+<li>Content planning</li>
+<li>Blog briefs</li>
+<li>Internal linking</li>
+<li>Local SEO</li>
+<li>AI search optimization</li>
+<li>Developer recommendations</li>
+<li>Content approvals</li>
+<li>UX recommendations</li>
+<li>Monthly SEO reporting</li>
+</ul>
+<p>I work with a developer and content writer while leading SEO strategy and deciding which opportunities should be prioritized.
+I own the SEO process from research and planning through implementation coordination, monitoring, and ongoing improvement.</p>
+<hr/>
+</section>
+<section class="case-section" id="starting-with-the-technical-foundation"><h2 class="section-title">Starting With the Technical Foundation</h2>
+<p>Because Tinyfacets was a brand-new domain, I wanted the technical foundation to be correct before scaling content.
+The initial sequence was:</p>
+<div aria-label="Initial SEO sequence" class="horizontal-flow"><span>Audit</span><span aria-hidden="true" class="flow-arrow">→</span><span>Technical SEO</span><span aria-hidden="true" class="flow-arrow">→</span><span>On-Page SEO</span><span aria-hidden="true" class="flow-arrow">→</span><span>Content</span></div>
+I reviewed:
+
+<ul>
+<li>Crawlability</li>
+<li>Indexability</li>
+<li>Sitemap configuration</li>
+<li>Robots.txt</li>
+<li>Redirects</li>
+<li>Mobile usability</li>
+<li>Site speed</li>
+<li>Structured data</li>
+<li>Heading hierarchy</li>
+<li>Shopify-specific technical issues</li>
+</ul>
+<p>The objective was not to overengineer a new website.
+It was to ensure that the pages we planned to optimize and create had a clean enough foundation to be crawled, understood, and indexed.
+Once that foundation was in place, I moved into keyword research, commercial-page optimization, internal linking, and content development.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="understanding-the-kids-jewellery-search-market"><h2 class="section-title">Understanding the Kids Jewellery Search Market</h2>
+<p>Tinyfacets had almost no historical first-party search data when SEO began.
+That made competitor and SERP research especially important.
+I studied established jewellery brands and websites with relevant kids jewellery offerings, including:</p>
+<ul>
+<li>BlueStone</li>
+<li>Tanishq</li>
+<li>Joyalukkas</li>
+<li>WHP Jewellers</li>
+<li>Doodles by Purvi</li>
+<li>Vaibhav Jewellers</li>
+</ul>
+<p>I analyzed:</p>
+<ul>
+<li>Collection architecture</li>
+<li>Keyword targeting</li>
+<li>Product naming</li>
+<li>Product descriptions</li>
+<li>Metadata</li>
+<li>Content depth</li>
+<li>Blog topics</li>
+<li>Internal linking</li>
+</ul>
+<p>The purpose was not to copy competitor websites.
+It was to understand how parents search for children's jewellery and identify areas where Tinyfacets could build more focused commercial and informational pages.
+The research helped identify opportunities around:</p>
+<ul>
+<li>Better collection targeting</li>
+<li>More specific product keywords</li>
+<li>Stronger product descriptions</li>
+<li>Parent-focused educational content</li>
+<li>New commercial collections</li>
+<li>Better internal discovery</li>
+</ul>
+<hr/>
+</section>
+<section class="case-section" id="building-the-keyword-strategy-from-zero"><h2 class="section-title">Building the Keyword Strategy From Zero</h2>
+<p>Because historical Google Search Console data was not yet useful, keyword research relied on:</p>
+<ul class="keyword-list">
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Google SERPs</li>
+<li>Google Trends</li>
+<li>Competitor research</li>
+<li>Search intent</li>
+</ul>
+<p>The primary commercial direction became:</p>
+<ul class="keyword-list keyword-list--primary"><li><strong>Gold Jewellery for Kids</strong></li></ul>
+<p>From there, individual commercial areas received more specific keyword targets.
+Examples included:</p>
+<ul class="keyword-list">
+<li>Gold Bracelets for Kids</li>
+<li>Kids Gold Earrings</li>
+<li>Kids Nazariya Bracelet</li>
+<li>Kids Gold Necklace</li>
+<li>Kids Gold Pendant</li>
+<li>Kids Gold Rings</li>
+</ul>
+<p>This established a simple search hierarchy.</p>
+<hr/>
+<div class="keyword-architecture"><div class="keyword-architecture-card"><h4>Homepage</h4><p>Broader kids gold jewellery intent</p></div><div class="keyword-architecture-card"><h4>Collections</h4><p>Specific jewellery-category intent</p></div><div class="keyword-architecture-card"><h4>Products</h4><p>Longer and more design-specific search terms</p></div><div class="keyword-architecture-card"><h4>Blogs</h4><p>Informational, gifting, sizing, and buying questions</p></div></div></section>
+<section class="case-section" id="repositioning-the-homepage-around-search-intent"><h2 class="section-title">Repositioning the Homepage Around Search Intent</h2>
+<p>The homepage needed to do more than introduce Tinyfacets as a brand.
+It also needed to establish what the website represented in search.
+One of the important experiments was moving the main H1 toward:</p>
+<h3>Gold Jewellery for Kids, Made for Little Gifts</h3>
+<p>The objective was to bring the site's primary commercial topic directly into the main brand message without making the homepage feel like keyword-stuffed SEO copy.
+The homepage was optimized around:</p>
+<ul>
+<li>Primary keyword relevance</li>
+<li>Heading hierarchy</li>
+<li>Collection discovery</li>
+<li>Internal linking</li>
+<li>Product relevance</li>
+<li>FAQs</li>
+<li>Trust signals</li>
+<li>Metadata</li>
+</ul>
+<p>The wider principle became:</p>
+<div class="flow-statement">Optimize for search, but write first for parents buying jewellery for children.</div>
+The current live homepage still uses **“Gold Jewellery for Kids, Made for Little Gifts”** and organizes discovery around bracelets, earrings, nazariya, pendants, rings, and necklaces, showing how that broader search positioning became part of the live site structure.
+
+<hr/>
+</section>
+<section class="case-section" id="preventing-keyword-cannibalization"><h2 class="section-title">Preventing Keyword Cannibalization</h2>
+<p>Product catalogues create a different keyword challenge from service websites.
+Tinyfacets contains many designs within the same jewellery categories.
+If every earring page targeted:
+<strong>kids gold earrings</strong>
+or every bracelet targeted:
+<strong>gold bracelet for kids</strong>
+dozens of product URLs could begin competing for the same broad terms.
+Instead, product keyword targeting was expanded using:</p>
+<ul>
+<li>Jewellery type</li>
+<li>Design</li>
+<li>Motif</li>
+<li>Boys or girls intent where relevant</li>
+<li>Collection secondary keywords</li>
+<li>Long-tail variations</li>
+</ul>
+<p>Examples include:</p>
+<h3>Double Cherry Gold Stud Earrings for Girls</h3>
+<p>and:</p>
+<h3>Three Little Hearts Gold Nazariya Bracelet</h3>
+<p>This helped preserve broader commercial terms for collection pages while giving individual product pages more specific search intent.</p>
+<hr/>
+</section>
+<section class="case-section" id="turning-collections-into-search-landing-pages"><h2 class="section-title">Turning Collections Into Search Landing Pages</h2>
+<p>Collections became one of the most important parts of the strategy.
+At launch, these pages were primarily product listings.
+I expanded them into more complete commercial search destinations built around:</p>
+<ul class="keyword-list">
+<li>H1</li>
+<li>Product Grid</li>
+<li>Buying Information</li>
+<li>Related Collections</li>
+<li>Contextual Internal Links</li>
+<li>FAQs</li>
+</ul>
+For each collection, I personally worked on:
+
+<ul>
+<li>Keyword targeting</li>
+<li>H1 and H2 structure</li>
+<li>Collection content</li>
+<li>Meta title</li>
+<li>Meta description</li>
+<li>FAQs</li>
+<li>Internal linking</li>
+<li>Image SEO</li>
+<li>Schema recommendations</li>
+</ul>
+<p>Technical implementation such as structured data was coordinated with the developer.
+So far, approximately:</p>
+<h3>8 Collection Pages</h3>
+<p>have been optimized.
+The live Rings and Nazariya collections now include substantial supporting content, buying information, related jewellery discovery, and FAQs rather than existing only as grids of products.</p>
+<hr/>
+</section>
+<section class="case-section" id="creating-new-collections-from-search-opportunities"><h2 class="section-title">Creating New Collections From Search Opportunities</h2>
+<p>SEO did not only influence how existing pages were optimized.
+It also influenced which commercial pages could be created.
+One example was:</p>
+<h3>Kids Gold Jewellery Under 10K</h3>
+<p>Instead of allowing website architecture to be driven only by internal catalogue organization, search demand could also identify useful buying-focused collection opportunities.
+The principle became:</p>
+<div class="flow-statement">Catalogue Structure + Search Intent = Better Commercial Architecture</div>
+This gives Tinyfacets additional opportunities to target specific buying searches as the catalogue grows.
+
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="early-collection-visibility">
+<h2 class="section-title">Early Collection Visibility</h2>
+<p>Collections quickly became some of Tinyfacets' strongest non-branded search assets.</p>
+<p>One early example was:</p>
+<h3>Kids Nazariya Collection</h3>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>15</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>1,909</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>0.8%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>13.0</strong></p></div>
+</div>
+<p>Other collections also began building visibility.</p>
+<ul class="keyword-list">
+<li><strong>Bracelets:</strong> 2,020 impressions, 12.9 average position</li>
+<li><strong>Necklace:</strong> 1,406 impressions, 17.7 average position</li>
+<li><strong>Pendants:</strong> 976 impressions, 14.8 average position</li>
+<li><strong>Rings:</strong> 1,126 impressions, 16.7 average position</li>
+<li><strong>Earrings:</strong> 666 impressions, 23.8 average position</li>
+</ul>
+<p>For a website only a few months into SEO, the important signal was not simply click volume. Multiple commercial collections were already being discovered and tested across relevant search queries.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console table showing early collection-page visibility for Tinyfacets, including Nazariya, Pendants, Necklace, Rings, Bracelets and other collection pages." decoding="async" height="732" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/01-google-search-console-early-collection-page-visibility.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early collection-page visibility</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section" id="optimizing-product-pages-at-scale"><h2 class="section-title">Optimizing Product Pages at Scale</h2>
+<p>Product SEO became another major part of the initial search foundation.
+I have personally optimized approximately:</p>
+<h3>80 Product Pages</h3>
+<p>The process includes:</p>
+<ul>
+<li>SEO-focused product naming</li>
+<li>H1 optimization</li>
+<li>Product descriptions</li>
+<li>Meta titles</li>
+<li>Meta descriptions</li>
+<li>Image alt text</li>
+<li>Internal linking</li>
+<li>Related collections</li>
+<li>Structured data recommendations</li>
+<li>Keyword differentiation</li>
+</ul>
+<p>Because many products share similar jewellery types and design characteristics, product naming became particularly important.
+Each URL needed enough differentiation for shoppers and search engines to understand why the page existed.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="early-product-seo-win">
+<h2 class="section-title">Early Product SEO Win</h2>
+<p>One product that gained early search visibility was:</p>
+<h3>Baby Elephant in Blue Gold Pendant</h3>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>3</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>146</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>2.1%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>5.5</strong></p></div>
+</div>
+<p>For a product page on a completely new domain, this was a useful early search signal. The product still exists in the live Tinyfacets catalogue under that name.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for Baby Elephant in Blue Gold Pendant showing 3 clicks, 146 impressions, 2.1 percent CTR and 5.5 average position." decoding="async" height="727" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/02-google-search-console-early-product-page-visibility.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early product-page visibility</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section" id="building-the-content-strategy"><h2 class="section-title">Building the Content Strategy</h2>
+<p>Blogging was not treated as an independent traffic activity.
+The content strategy was designed to support the commercial SEO ecosystem.
+Initial topic selection focused on:</p>
+<ul>
+<li>Search demand</li>
+<li>Lower-competition opportunities</li>
+<li>Parent questions</li>
+<li>Buying concerns</li>
+<li>Gifting searches</li>
+<li>Size guidance</li>
+<li>Commercial collection support</li>
+</ul>
+<p>Rather than asking:
+<strong>What jewellery article should we publish this week?</strong>
+the strategy asked:
+<strong>What question can we answer that also strengthens Tinyfacets' relevance around children's gold jewellery?</strong></p>
+<hr/>
+</section>
+<section class="case-section" id="building-the-first-content-cluster"><h2 class="section-title">Building the First Content Cluster</h2>
+<p>The first major cluster focused on helping parents choose, buy, size, and gift jewellery for children.
+Topics included:</p>
+<ul>
+<li>Gold Jewellery for Kids: Complete Buying &amp; Gifting Guide for Parents</li>
+<li>Gold Earrings for Baby Girl: What Parents Should Check Before Buying</li>
+<li>Baby Gold Ring Size Guide: Comfort, Fit and Gifting Tips</li>
+<li>Gold Kada for Baby Boy: A Simple Buying Guide for Parents</li>
+<li>Gold Pendant for Baby: Cute Designs and Gifting Ideas</li>
+<li>Black Beads Bracelet for Baby: Meaning, Style and Buying Tips</li>
+<li>Baby Gold Bracelet Size Guide: How to Choose the Right Fit</li>
+<li>Kids Gold Earrings Designs: Studs, Motifs and Daily Wear Styles</li>
+<li>Kids Gold Necklace Length Guide: How to Choose the Right Fit</li>
+<li>Kids Jewellery Online Buying Guide: What Parents Should Check First</li>
+<li>Gold Pendant Birthday Gift for Kids: Designs Parents Can Choose</li>
+</ul>
+<p>Each topic connected to either:
+<strong>A Search Problem</strong>
+or:
+<strong>A Commercial Category</strong>
+and often both.
+This gave Tinyfacets the beginning of a more deliberate topical content architecture rather than an unrelated collection of blog posts.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="early-blog-performance">
+<h2 class="section-title">Early Blog Performance</h2>
+<p>Only around:</p>
+<h3>5 Blogs</h3>
+<p>were live during the measured period. They had already begun receiving search impressions.</p>
+<p>One early example was:</p>
+<h3>Gold Jewellery for Kids: Complete Buying &amp; Gifting Guide for Parents</h3>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>3</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>190</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>1.6%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>8.4</strong></p></div>
+</div>
+<p>This article was particularly useful because it supported Tinyfacets' broadest commercial search topic while satisfying informational intent.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the Gold Jewellery for Kids buying guide showing 3 clicks, 190 impressions, 1.6 percent CTR and 8.4 average position." decoding="async" height="729" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/03-google-search-console-early-blog-visibility.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, early blog visibility</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section" id="building-a-strong-internal-linking-structure"><h2 class="section-title">Building a Strong Internal Linking Structure</h2>
+<p>Unlike older projects where internal linking needed to be repaired later, Tinyfacets gave me the opportunity to build the structure early.
+The internal-linking model became:</p><div class="link-flow-grid">
+<div class="link-flow-card">
+<h4>Homepage</h4>
+<div aria-label="Homepage internal linking flow" class="link-flow-steps">
+<span>Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Products</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Collections</h4>
+<div aria-label="Collections internal linking flow" class="link-flow-steps">
+<span>Related Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Homepage</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Products</h4>
+<div aria-label="Products internal linking flow" class="link-flow-steps">
+<span>Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Homepage</span>
+</div>
+</div>
+<div class="link-flow-card">
+<h4>Blogs</h4>
+<div aria-label="Blogs internal linking flow" class="link-flow-steps">
+<span>Collections</span><span aria-hidden="true" class="flow-arrow">→</span><span>Products</span>
+</div>
+</div>
+</div>
+<hr/>
+</section>
+<section class="case-section" id="improving-indexing"><h2 class="section-title">Improving Indexing</h2>
+<p>Even on a new website, not every page entered Google's index immediately.
+Some URLs appeared under:</p>
+<ul class="status-list">
+<li><strong>Crawled, currently not indexed</strong></li>
+<li><strong>Discovered, currently not indexed</strong></li>
+</ul>
+Thin content was one of the recurring issues.
+Instead of relying only on manual indexing requests, I improved:
+
+<ul>
+<li>Page content</li>
+<li>Keyword targeting</li>
+<li>Internal linking</li>
+<li>Page relationships</li>
+<li>Overall usefulness</li>
+</ul>
+<p>As these signals improved, index coverage also improved.
+The website reached approximately:</p>
+<h3>122 Indexed Pages</h3>
+<p>For a new ecommerce catalogue, getting products, collections, and informational content consistently discovered became an important early milestone.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="shopify-technical-seo"><h2 class="section-title">Shopify Technical SEO</h2>
+<p>Tinyfacets also presented several Shopify-specific technical considerations.
+These included:</p>
+<ul>
+<li>Heading hierarchy</li>
+<li>Generic structured data</li>
+<li>Filter-related issues</li>
+<li>Favicon issues</li>
+<li>Template limitations</li>
+</ul>
+<p>Shopify's default structured data was reviewed and expanded where necessary.
+Schema recommendations included:</p>
+<h3>Homepage</h3>
+<ul>
+<li>Organization</li>
+<li>WebSite</li>
+<li>FAQ where relevant</li>
+</ul>
+<h3>Collection Pages</h3>
+<ul>
+<li>Collection-related structured data</li>
+<li>ItemList</li>
+<li>FAQ where relevant</li>
+</ul>
+<h3>Product Pages</h3>
+<ul>
+<li>Product structured data</li>
+</ul>
+<p>Implementation was coordinated with the developer.</p>
+<hr/>
+</section>
+<section class="case-section" id="building-trust-into-the-seo-strategy"><h2 class="section-title">Building Trust Into the SEO Strategy</h2>
+<p>Kids gold jewellery is a trust-sensitive purchase.
+Parents are not only evaluating a design.
+They are also asking:</p>
+<ul>
+<li>What gold is being used?</li>
+<li>Is the jewellery hallmarked?</li>
+<li>Is it comfortable for children?</li>
+<li>Who operates the brand?</li>
+<li>What are the policies?</li>
+<li>What happens after purchase?</li>
+</ul>
+<p>Important website information was therefore reviewed around:</p>
+<ul>
+<li>BIS Hallmark information</li>
+<li>Brand story</li>
+<li>Founder information</li>
+<li>Business information</li>
+<li>Product information</li>
+<li>Policies</li>
+<li>FAQs</li>
+<li>Reviews</li>
+</ul>
+<p>These elements helped strengthen both customer confidence and the clarity of Tinyfacets as a business/entity.
+The live website now prominently presents BIS hallmarked gold, kid-friendly and lightweight design positioning, gifting use cases, business details, FAQs, policies, and clear operating-business information.</p>
+<hr/>
+</section>
+<section class="case-section" id="improving-local-seo"><h2 class="section-title">Improving Local SEO</h2>
+<p>Although Tinyfacets primarily operates as an ecommerce brand, Local SEO was included in the initial foundation.
+I helped build and maintain the Google Business Profile and ensured that it received regular updates.
+As branded search activity developed, the business profile also began appearing more consistently for relevant branded searches.
+Local SEO remains an ongoing area rather than a completed campaign at this early stage.</p>
+<hr/>
+</section>
+<section class="case-section" id="building-authority-for-a-new-domain"><h2 class="section-title">Building Authority for a New Domain</h2>
+<p>Tinyfacets began with virtually no backlink profile.
+Off-page SEO is therefore still in the foundation stage.
+Approximately:</p>
+<h3>5–7 Initial Backlinks</h3>
+<p>have been built, including links from relevant properties within the wider business ecosystem.
+The early anchor strategy primarily supported:</p>
+<ul>
+<li>Homepage relevance</li>
+<li>Brand establishment</li>
+<li>Core commercial positioning</li>
+</ul>
+<p>The objective at this stage is not backlink volume.
+It is to create the site's first relevant authority signals while the domain builds its own search history.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="preparing-tinyfacets-for-ai-search">
+<h2 class="section-title">Preparing Tinyfacets for AI Search</h2>
+<p>AI-search accessibility was considered from the beginning rather than being added later.</p>
+<p>The strategy includes:</p>
+<ul>
+<li>AI crawler access</li>
+<li>Structured data</li>
+<li>FAQs</li>
+<li>Clear answer-focused content</li>
+<li>Entity information</li>
+<li>Informational content</li>
+<li>Brand mentions</li>
+<li>Citations</li>
+</ul>
+<p>According to the third-party Semrush AI Visibility reporting provided for the project:</p>
+<ul class="keyword-list">
+<li><strong>2 AI Mentions</strong></li>
+<li><strong>13 AI Citations</strong></li>
+<li><strong>9 Cited Pages</strong></li>
+<li><strong>AI Visibility Score: 14/100 (Low)</strong></li>
+</ul>
+<p>These are third-party AI visibility figures rather than Google Search Console measurements. For a domain only a few months old, I treat them as early signs of visibility rather than mature AI-search performance.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Semrush AI Visibility overview for tinyfacets.in showing 2 mentions, 13 citations, 9 cited pages and an AI Visibility score of 14 out of 100." decoding="async" height="765" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/04-semrush-ai-visibility-third-party-ai-search-visibility-reporting.webp" width="1599"/>
+</div>
+<figcaption>Semrush AI Visibility, third-party AI-search visibility reporting</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="overall-seo-results">
+<h2 class="section-title">Overall SEO Results</h2>
+<p>Tinyfacets does not yet have years of historical performance data. That is exactly what makes the project different.</p>
+<p>Within approximately the first two months, Google Search Console recorded:</p>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Organic Clicks</h4><p><strong>185</strong></p></div>
+<div class="result-mini-card"><h4>Search Impressions</h4><p><strong>12.6K</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>1.5%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>12.5</strong></p></div>
+</div>
+<h3>Additional SEO Footprint</h3>
+<ul class="keyword-list">
+<li><strong>122 Indexed Pages</strong></li>
+<li><strong>868 Ranking Keywords Reported</strong></li>
+</ul>
+<p>More importantly, search visibility has begun expanding beyond branded queries into broader commercial searches.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console overall performance for Tinyfacets showing 185 clicks, 12.6K impressions, 1.5 percent CTR and 12.5 average position." decoding="async" height="730" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/05-google-search-console-first-months-of-organic-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, first months of organic performance</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="establishing-the-brand-query">
+<h2 class="section-title">Establishing the Brand Query</h2>
+<p>For:</p>
+<h3>“tiny facets”</h3>
+<p>Google Search Console recorded:</p>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>26</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>37</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>70.3%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>1.3</strong></p></div>
+</div>
+<p>This showed that the website established clear visibility for its primary brand search relatively early.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console performance for the query "tiny facets" showing 26 clicks, 37 impressions, 70.3 percent CTR and 1.3 average position.' decoding="async" height="728" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/06-google-search-console-tiny-facets-branded-query.webp" width="1598"/>
+</div>
+<figcaption>Google Search Console, “tiny facets” branded query</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="building-non-branded-visibility">
+<h2 class="section-title">Building Non-Branded Visibility</h2>
+<p>The more important long-term objective is helping Tinyfacets reach people who have never searched for the brand before.</p>
+<p>One useful early example was:</p>
+<h3>“kids jewellery”</h3>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>0</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>136</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>0%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>5.5</strong></p></div>
+</div>
+<p>This query had not yet generated clicks, so I treat it as early non-branded visibility rather than a mature traffic win. What makes it useful is that a new domain was already being tested around a broad kids jewellery category term.</p>
+<p>This suggested that Google was beginning to associate Tinyfacets with the wider kids jewellery market rather than only with its brand name.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt='Google Search Console performance for the query "kids jewellery" showing 0 clicks, 136 impressions, 0 percent CTR and 5.5 average position.' decoding="async" height="728" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/07-google-search-console-early-kids-jewellery-visibility.webp" width="1596"/>
+</div>
+<figcaption>Google Search Console, early “kids jewellery” visibility</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="homepage-performance">
+<h2 class="section-title">Homepage Performance</h2>
+<p>The homepage became the strongest page during the initial period.</p>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>125</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>1.34K</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>9.3%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>5.5</strong></p></div>
+</div>
+<p>The results include branded visibility, but they also reflect the broader commercial direction created through the homepage rewrite and site architecture.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the Tinyfacets homepage showing 125 clicks, 1.34K impressions, 9.3 percent CTR and 5.5 average position." decoding="async" height="727" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/08-google-search-console-tinyfacets-homepage-performance.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, Tinyfacets homepage performance</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="collection-search-growth">
+<h2 class="section-title">Collection Search Growth</h2>
+<p>Commercial collections also began building their own search footprint.</p>
+<p>The strongest early example was:</p>
+<h3>Kids Nazariya Collection</h3>
+<div class="result-mini-grid">
+<div class="result-mini-card"><h4>Clicks</h4><p><strong>15</strong></p></div>
+<div class="result-mini-card"><h4>Impressions</h4><p><strong>1,909</strong></p></div>
+<div class="result-mini-card"><h4>CTR</h4><p><strong>0.8%</strong></p></div>
+<div class="result-mini-card"><h4>Average Position</h4><p><strong>13.0</strong></p></div>
+</div>
+<p>The live collection today contains products plus substantial supporting information around kids nazariya bracelets, meaning, buying context, and related discovery.</p>
+<p>This was important because it demonstrated that Tinyfacets' search footprint was not being created only by the homepage. Commercial category pages were beginning to develop their own visibility.</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Search Console performance for the Kids Nazariya collection showing 15 clicks, 1,909 impressions, 0.8 percent CTR and 13.0 average position." decoding="async" height="727" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/09-google-search-console-kids-nazariya-collection.webp" width="1599"/>
+</div>
+<figcaption>Google Search Console, Kids Nazariya collection</figcaption>
+</figure>
+<hr/>
+</section>
+<section class="case-section" id="product-and-content-visibility"><h2 class="section-title">Product and Content Visibility</h2>
+<p>The early search footprint also extended beyond homepage and collections.</p><div class="result-mini-grid"><div class="result-mini-card"><h4>Product Example</h4><p><strong>Baby Elephant in Blue Gold Pendant</strong>
+3 clicks
+156 impressions
+5.5 average position</p></div><div class="result-mini-card"><h4>Blog Example</h4><p><strong>Gold Jewellery for Kids: Complete Buying &amp; Gifting Guide for Parents</strong>
+3 clicks
+199 impressions
+8.5 average position
+These numbers are still small.
+That is expected.
+The important part is that multiple page types were already beginning to participate in search:</p><div class="flow-statement">Homepage + Collections + Products + Blogs</div><hr/></div></div>
+
+
+
+
+
+rather than all visibility being concentrated on one URL.
+
+
+</section>
+<section class="case-section" id="business-impact"><h2 class="section-title">Business Impact</h2>
+<p>Organic search has also contributed to improving conversions and sales.
+However, commercial performance figures are confidential and are intentionally not included in this portfolio.</p>
+<hr/>
+</section>
+<section class="case-section case-section--proof" id="proof-of-work">
+<h2 class="section-title">Proof of Work</h2>
+<p>The portfolio version places first-party and third-party evidence directly beside the relevant claims throughout the case study.</p>
+<h4>Overall Search Footprint</h4>
+<p><strong>Google Search Console</strong><br/>185 clicks · 12.6K impressions · 1.5% CTR · 12.5 average position</p>
+<h4>Homepage Performance</h4>
+<p><strong>Google Search Console</strong><br/>125 clicks · 1.34K impressions · 9.3% CTR · 5.5 average position</p>
+<h4>Brand Search</h4>
+<p><strong>Google Search Console</strong><br/>“tiny facets” · 26 clicks · 37 impressions · 70.3% CTR · 1.3 average position</p>
+<h4>Non-Branded Visibility</h4>
+<p><strong>Google Search Console</strong><br/>“kids jewellery” · 0 clicks · 136 impressions · 5.5 average position</p>
+<h4>Collection Visibility</h4>
+<p><strong>Google Search Console</strong><br/>Kids Nazariya collection · 15 clicks · 1,909 impressions · 13.0 average position</p>
+<h4>Product Visibility</h4>
+<p><strong>Google Search Console</strong><br/>Baby Elephant in Blue Gold Pendant · 3 clicks · 146 impressions · 5.5 average position</p>
+<h4>Blog Visibility</h4>
+<p><strong>Google Search Console</strong><br/>Gold Jewellery for Kids buying guide · 3 clicks · 190 impressions · 8.4 average position</p>
+<h4>Organic Traffic</h4>
+<p><strong>Google Analytics 4</strong><br/>581 Organic Search sessions · 410 engaged sessions · 70.57% engagement rate · 1m 16s average engagement time per session · 173 users</p>
+<figure class="evidence">
+<div class="evidence-frame">
+<img alt="Google Analytics 4 Traffic Acquisition report filtered to Organic Search showing 581 sessions, 410 engaged sessions, 70.57 percent engagement rate, 1 minute 16 seconds average engagement time per session and 173 users." decoding="async" height="730" loading="lazy" sizes="(max-width: 980px) calc(100vw - 28px), 860px" src="../assets/images/case-studies/tinyfacets/10-google-analytics-4-organic-search-traffic-performance.webp" width="1383"/>
+</div>
+<figcaption>Google Analytics 4, Organic Search traffic performance</figcaption>
+</figure>
+<h4>AI Search Visibility</h4>
+<p><strong>Semrush AI Visibility</strong><br/>2 mentions · 13 citations · 9 cited pages · AI Visibility score 14/100 (Low)</p>
+<p>This makes the early-stage SEO story directly verifiable rather than relying only on written claims.</p>
+<hr/>
+</section>
+<section class="case-section case-section--structured" id="tools-platforms-used"><h2 class="section-title">Tools &amp; Platforms Used</h2>
+<ul class="tools-list">
+<li>Google Search Console</li>
+<li>Google Analytics</li>
+<li>Semrush</li>
+<li>Ubersuggest</li>
+<li>Screaming Frog</li>
+<li>PageSpeed Insights</li>
+<li>Google Trends</li>
+<li>Google Rich Results Test</li>
+<li>Google Business Profile</li>
+<li>Shopify</li>
+</ul>
+<hr/>
+</section>
+<section class="case-section" id="the-most-difficult-part"><h2 class="section-title">The Most Difficult Part</h2>
+<p>The hardest part of Tinyfacets was not fixing one large technical issue.
+It was making dozens of early SEO decisions correctly while the website had almost no historical data.
+There was no established Search Console dataset showing exactly what worked.
+There was no old keyword map.
+There was no mature internal-link architecture.
+There was no existing content strategy.
+There was very little authority.
+That meant several decisions had to be made through:</p>
+<ul>
+<li>Competitor research</li>
+<li>SERP analysis</li>
+<li>Search intent</li>
+<li>Keyword tools</li>
+<li>Ecommerce logic</li>
+<li>User needs</li>
+</ul>
+<p>The challenge was building a structure that could scale instead of creating SEO problems that would need to be repaired later.</p>
+<hr/>
+</section>
+<section class="case-section" id="what-i-learned"><h2 class="section-title">What I Learned</h2>
+<p>Tinyfacets reinforced a different lesson from projects where SEO was introduced much later.</p>
+<h3>Starting SEO early is significantly easier than repairing years of poor decisions.</h3>
+<p>Because SEO was involved immediately after launch, I could think about:</p>
+<div class="learning-grid">
+<div class="learning-item">Keywords before pages scaled</div>
+<div class="learning-item">Internal links before the website became large</div>
+<div class="learning-item">Schema before templates multiplied</div>
+<div class="learning-item">Content clusters before random blogs accumulated</div>
+<div class="learning-item">Cannibalization before hundreds of similar products existed</div>
+</div>
+One useful experiment was changing the homepage H1 toward:
+**Gold Jewellery for Kids, Made for Little Gifts**
+It brought the website's main commercial topic into the core brand message while still sounding natural to users.
+The current live homepage continues to use that positioning.
+
+<hr/>
+</section>
+<section class="case-section" id="my-biggest-takeaway"><h2 class="section-title">My Biggest Takeaway</h2>
+<p>Tinyfacets is particularly meaningful because it is the first SEO project I independently owned from the beginning.
+I did not inherit another SEO person's keyword map.
+I did not inherit their content structure.
+I did not inherit their internal-linking architecture.
+I did not inherit their technical SEO plan.
+Those systems had to be created.
+The website is still early in its organic growth journey, so this case study is not about pretending that two months of SEO represents a finished success story.
+It demonstrates what a strong start can look like:
+<strong>A new domain that is indexed, gaining non-branded visibility, building commercial rankings, creating topical content, and developing the search foundation required for long-term organic growth.</strong>
+For me, this project demonstrates that I can:
+<strong>Take a fresh website, build its SEO foundation end to end, coordinate execution across development and content, and turn a domain with no search history into one that is beginning to compete for meaningful organic searches.</strong></p>
+</section>
+</div>
+</div>
+</article><nav aria-label="More SEO case studies" class="case-pagination"><a class="case-pagination-link case-pagination-prev" href="streamit.html"><span class="case-pagination-label">Previous Case Study</span><strong>Streamit</strong></a><a class="case-pagination-all" href="../seo-case-studies.html">All SEO Case Studies</a><a class="case-pagination-link case-pagination-next" href="jewelite.html"><span class="case-pagination-label">Next Case Study</span><strong>Jewelite</strong></a></nav>
+</main>
+<footer class="global-footer"><div class="global-shell global-footer-shell"><div class="global-footer-main">
+<div class="global-footer-intro"><a class="global-footer-brand" href="../index.html">ABHI PATEL</a><p>SEO strategy, technical SEO, content, backlinks, Local SEO, and AI search optimization focused on sustainable organic growth.</p><a class="global-footer-cta" href="mailto:abhiaj1125@gmail.com">Get in Touch</a></div>
+<div class="global-footer-links-area"><nav aria-label="Footer navigation" class="global-footer-column"><span class="global-footer-label">Navigate</span><a href="../index.html#about">About Me</a><a href="../index.html#what-i-do">What I Do</a><a href="../index.html#process">My SEO Process</a><a href="../index.html#projects">Featured SEO Projects</a><a href="../index.html#tools">Tools &amp; Platforms</a></nav>
+<nav aria-label="SEO case studies" class="global-footer-column"><span class="global-footer-label">Case Studies</span><a class="global-footer-all-cases" href="../seo-case-studies.html">All Case Studies</a><div class="global-footer-case-grid"><a href="earthly-jewels.html">Earthly Jewels</a><a href="streamit.html">Streamit</a><a aria-current="page" href="tinyfacets.html">Tinyfacets</a><a href="jewelite.html">Jewelite</a><a href="iqonic-tech.html">IQONIC Tech</a><a href="kivicare.html">KiviCare</a><a href="iqonic-agency.html">IQONIC Agency</a><a href="bitrix-theme.html">Bitrix Theme</a><a href="allclonescript.html">AllCloneScript</a><a href="coinremitter.html">CoinRemitter</a></div></nav></div></div>
+<div class="global-footer-bottom"><span>© <span data-global-year=""></span> Abhi Patel. All rights reserved.</span><a class="global-back-to-top" href="#top">Back to top <svg aria-hidden="true" height="12" viewbox="0 0 12 12" width="12"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></svg></a></div></div></footer>
+</body>
+</html>
